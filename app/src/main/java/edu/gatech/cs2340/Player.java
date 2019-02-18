@@ -53,4 +53,10 @@ public class Player implements Serializable {
     public int getSkillTrader() { return skillTrader; }
 
     public void setSkillTrader(int skillTrader) { this.skillTrader = skillTrader; }
+
+    @Override
+    public String toString() {
+        return String.format("\nPlayer Name: %s, \nShip: %s, \ncredits: %d, \nEngineer Skill: %s, \nPilot Skill: %s, \nFighter Skill: %s, \nTrader Skill: %s",
+                playerName, shipOwned, credits, skillEngineer, skillPilot, skillFighter, skillTrader);
+    }
 }

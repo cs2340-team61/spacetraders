@@ -149,6 +149,7 @@ public class GameConfigActivity extends AppCompatActivity {
                     gameViewModel = new GameViewModel(getApplication());
                     gameViewModel.createGame(name, sE, sP, sF, sT, dif);
                     postConfig(v);
+
                     finish();
                 } else {
                     (Toast.makeText(getApplication(), "Totals Allocation must be equal to 16!", Toast.LENGTH_LONG)).show();
