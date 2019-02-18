@@ -8,17 +8,27 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class GameConfigActivity extends AppCompatActivity {
     private GameViewModel gameViewModel;
     private EditText playerName;
-    private EditText skillE;
-    private EditText skillP;
-    private EditText skillF;
-    private EditText skillT;
+    private TextView skillE;
+    private TextView skillP;
+    private TextView skillF;
+    private TextView skillT;
+    private TextView PointsR;
     private Spinner gameDiffSpin;
     private Button startGame;
+    private Button upE;
+    private Button upP;
+    private Button upF;
+    private Button upT;
+    private Button downE;
+    private Button downP;
+    private Button downF;
+    private Button downT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,16 +36,105 @@ public class GameConfigActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game_config);
 
         playerName = findViewById(R.id.player_name_input);
-        skillE = findViewById(R.id.skill_Value);
-        skillP = findViewById(R.id.skill_Value2);
-        skillF = findViewById(R.id.skill_Value3);
-        skillT = findViewById(R.id.skill_Value4);
+        skillE = findViewById(R.id.engineer_skill);
+        skillP = findViewById(R.id.pilot_skill);
+        skillF = findViewById(R.id.fight_skill);
+        skillT = findViewById(R.id.trader_skill);
+        PointsR = findViewById(R.id.remaining_points);
         gameDiffSpin = findViewById(R.id.diff_spinner);
         startGame = findViewById(R.id.start_button);
+        upE = findViewById(R.id.up1_button);
+        upP = findViewById(R.id.up1_button2);
+        upF = findViewById(R.id.up1_button3);
+        upT = findViewById(R.id.up1_button4);
+        downE = findViewById(R.id.down1_button1);
+        downP = findViewById(R.id.down1_button2);
+        downF = findViewById(R.id.down1_button3);
+        downT = findViewById(R.id.down1_button4);
 
         ArrayAdapter<Difficulty> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Difficulty.values());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         gameDiffSpin.setAdapter(adapter);
+
+        upE.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Integer.parseInt(skillE.getText().toString()) < 16 && Integer.parseInt(PointsR.getText().toString()) > 0) {
+                    skillE.setText("" + (Integer.parseInt(skillE.getText().toString()) + 1));
+                    PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) - 1));
+                }
+            }
+        });
+
+        upP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Integer.parseInt(skillP.getText().toString()) < 16 && Integer.parseInt(PointsR.getText().toString()) > 0) {
+                    skillP.setText("" + (Integer.parseInt(skillP.getText().toString()) + 1));
+                    PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) - 1));
+                }
+            }
+        });
+
+        upF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Integer.parseInt(skillF.getText().toString()) < 16 && Integer.parseInt(PointsR.getText().toString()) > 0) {
+                    skillF.setText("" + (Integer.parseInt(skillF.getText().toString()) + 1));
+                    PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) - 1));
+                }
+            }
+        });
+
+        upT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Integer.parseInt(skillT.getText().toString()) < 16 && Integer.parseInt(PointsR.getText().toString()) > 0) {
+                    skillT.setText("" + (Integer.parseInt(skillT.getText().toString()) + 1));
+                    PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) - 1));
+                }
+            }
+        });
+
+        downE.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Integer.parseInt(skillE.getText().toString()) > 0 && Integer.parseInt(PointsR.getText().toString()) < 16) {
+                    skillE.setText("" + (Integer.parseInt(skillE.getText().toString()) - 1));
+                    PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) + 1));
+                }
+            }
+        });
+
+        downP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Integer.parseInt(skillP.getText().toString()) > 0 && Integer.parseInt(PointsR.getText().toString()) < 16) {
+                    skillP.setText("" + (Integer.parseInt(skillP.getText().toString()) - 1));
+                    PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) + 1));
+                }
+            }
+        });
+
+        downF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Integer.parseInt(skillF.getText().toString()) > 0 && Integer.parseInt(PointsR.getText().toString()) < 16) {
+                    skillF.setText("" + (Integer.parseInt(skillF.getText().toString()) - 1));
+                    PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) + 1));
+                }
+            }
+        });
+
+        downT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Integer.parseInt(skillT.getText().toString()) > 0 && Integer.parseInt(PointsR.getText().toString()) < 16) {
+                    skillT.setText("" + (Integer.parseInt(skillT.getText().toString()) - 1));
+                    PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) + 1));
+                }
+            }
+        });
 
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,14 +145,13 @@ public class GameConfigActivity extends AppCompatActivity {
                 int sF = Integer.parseInt(skillF.getText().toString());
                 int sT = Integer.parseInt(skillT.getText().toString());
                 Difficulty dif = (Difficulty) gameDiffSpin.getSelectedItem();
-                if (sT + sP + sF + sE != 16) {
-                    (Toast.makeText(getApplication(), "Totals Allocation must be equal to 16!", Toast.LENGTH_LONG)).show();
-                    finish();
-                } else {
+                if (sT + sP + sF + sE == 16) {
                     gameViewModel = new GameViewModel(getApplication());
                     gameViewModel.createGame(name, sE, sP, sF, sT, dif);
                     postConfig(v);
                     finish();
+                } else {
+                    (Toast.makeText(getApplication(), "Totals Allocation must be equal to 16!", Toast.LENGTH_LONG)).show();
                 }
             }
         });
