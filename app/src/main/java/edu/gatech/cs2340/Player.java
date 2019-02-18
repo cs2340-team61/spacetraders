@@ -10,15 +10,15 @@ public class Player implements Serializable {
 
     private int credits;
 
+    private int skillEngineer;
+
     private int skillPilot;
 
     private int skillFighter;
 
     private int skillTrader;
 
-    private int skillEngineer;
-
-    public Player(String pN, int sE, int sF, int sP, int sT) {
+    public Player(String pN, int sE, int sP, int sF, int sT) {
         playerName = pN;
         shipOwned = Ship.Gnat;
         credits = 1000;
