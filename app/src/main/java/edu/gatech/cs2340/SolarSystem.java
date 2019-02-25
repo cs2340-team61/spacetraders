@@ -6,6 +6,26 @@ public class SolarSystem {
     private int x;
     private int y;
 
+    private String[] ssNames = {
+            "Milky Way",
+            "Iridescent",
+            "Locus Sil",
+            "Azurite 655",
+            "Kalitrop S-6",
+            "BG-786",
+            "Lycan System",
+            "Crecent",
+            "ZFG-987",
+            "Crylic",
+            "Richter",
+            "Kaisic",
+            "Deluvar",
+            "Hozin",
+            "Jello",
+            "Mystery",
+
+    };
+
     private String ssName;
     private Planet[] planets = new Planet[3];
 
@@ -16,6 +36,7 @@ public class SolarSystem {
         planets[0] = new Planet(x + rand.nextInt(3) + 2, y + rand.nextInt(8) + 2);
         planets[1] = new Planet(x + rand.nextInt(3) - 2, y - rand.nextInt(8) - 2);
         planets[2] = new Planet(x - rand.nextInt(3) - 2, y + rand.nextInt(10) - 5);
+        ssName = ssNames[rand.nextInt(ssNames.length)+ 1];
     }
 
     public int getX() { return x; }
