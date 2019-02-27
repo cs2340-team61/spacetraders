@@ -18,7 +18,7 @@ public class Universe {
         solarSystems = new SolarSystem[5];
     }
 
-    public void addSolarSystem(SolarSystem obj) {
+    public void addSolarSystem() {
         solarSystems[numOfSS] = new SolarSystem(numOfSS * 50);
         numOfSS++;
     }
@@ -33,4 +33,13 @@ public class Universe {
 
     public SolarSystem[] getSolarSystems() { return solarSystems; }
 
+    @Override
+    public String toString() {
+        return String.format("Universe:\n     "
+                + solarSystems[0].toString()
+                + solarSystems[1].toString()
+                + solarSystems[2].toString()
+                + solarSystems[3].toString()
+                + solarSystems[4].toString());
+    }
 }

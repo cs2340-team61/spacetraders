@@ -36,7 +36,7 @@ public class SolarSystem {
         planets[0] = new Planet(x + rand.nextInt(3) + 2, y + rand.nextInt(8) + 2);
         planets[1] = new Planet(x + rand.nextInt(3) - 2, y - rand.nextInt(8) - 2);
         planets[2] = new Planet(x - rand.nextInt(3) - 2, y + rand.nextInt(10) - 5);
-        ssName = ssNames[rand.nextInt(ssNames.length)+ 1];
+        ssName = ssNames[rand.nextInt(ssNames.length)];
     }
 
     public int getX() { return x; }
@@ -46,4 +46,10 @@ public class SolarSystem {
     public Planet[] getPlanets() { return planets; }
 
     public String getSsName() { return ssName; }
+
+    @Override
+    public String toString() {
+        return String.format("\n\nSolar System Name %s \nX center: %d \nY center: %d \nPlanets:      " +
+                planets[0].toString() + planets[1].toString() + planets[2].toString(), ssName, x, y);
+    }
 }

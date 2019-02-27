@@ -160,6 +160,13 @@ public class GameConfigActivity extends AppCompatActivity {
 
     public void postConfig(View view) {
         Intent intent = new Intent(this, PostConfigActivity.class);
+        intent.putExtra("EngineerSkill", "" +Integer.parseInt(skillE.getText().toString()));
+        intent.putExtra("PilotSkill", "" +Integer.parseInt(skillP.getText().toString()));
+        intent.putExtra("FighterSkill", "" + Integer.parseInt(skillF.getText().toString()));
+        intent.putExtra("TraderSkill", "" + Integer.parseInt(skillT.getText().toString()));
+        intent.putExtra("name", playerName.getText());
+        intent.putExtra("Difficulty", ((Difficulty) gameDiffSpin.getSelectedItem()).getDiff());
+
         startActivity(intent);
     }
 }

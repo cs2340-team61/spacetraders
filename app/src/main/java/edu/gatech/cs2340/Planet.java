@@ -85,6 +85,22 @@ public class Planet {
         Random rand = new Random();
         techLevel = techLevels[rand.nextInt(8)];
         resources = resourceLevels[rand.nextInt(2) * rand.nextInt(13)];
-        planetName = planetNames[rand.nextInt(planetNames.length + 1)];
+        planetName = planetNames[rand.nextInt(planetNames.length)];
+    }
+
+    public int getxPlanet() { return xPlanet; }
+
+    public int getyPlanet() { return yPlanet; }
+
+    public String getPlanetName() { return planetName; }
+
+    public String getResources() { return resources; }
+
+    public String getTechLevel() { return techLevel; }
+
+    @Override
+    public String toString() {
+        return String.format("\nPlanet name: %s \nX: %d \nY: %d \nResource: %s \nTech Level: %s",
+                planetName, xPlanet, yPlanet, resources, techLevel );
     }
 }
