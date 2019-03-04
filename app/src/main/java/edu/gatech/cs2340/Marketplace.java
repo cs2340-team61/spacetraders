@@ -1,5 +1,7 @@
 package edu.gatech.cs2340;
 
+import java.util.Random;
+
 public class Marketplace {
     private int MTLP;
 
@@ -46,7 +48,7 @@ public class Marketplace {
     private int getMTH() { return this.MTH;}
 
     private int techLevel() {
-        int level = 0;
+        int level = -1;
         Planet planet = new Planet(12, 16);
         String string = planet.getTechLevel();
         if (string.equals("Pre-Agriculture")) {
@@ -214,6 +216,13 @@ public class Marketplace {
         ER = null;
         MTL = 3500;
         MTH = 5000;
+    }
+
+    public int calculatePrice() {
+        Random rand = new Random();
+        int buffer = rand.nextInt(getVar());
+        int price = getBasePrice() + (getIPL() * (techLevel() - getMTLP())) + (getBasePrice() * (buffer / 100));
+        return price;
     }
 }
 
