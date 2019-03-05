@@ -347,85 +347,13 @@
         tools:layout_editor_absoluteX="273dp" />
 
     <Button
-        android:id="@+id/Add_Water_Sells"
-        android:layout_width="48dp"
-        android:layout_height="33dp"
-        android:text="Sell"
+        android:id="@+id/Sell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sell Selected Items"
         android:textSize="10sp"
-        tools:layout_editor_absoluteX="347dp"
-        tools:layout_editor_absoluteY="150dp" />
-
-    <Button
-        android:id="@+id/Add_Furs_Sell"
-        android:layout_width="48dp"
-        android:layout_height="33dp"
-        android:text="Sell"
-        android:textSize="10sp"
-        tools:layout_editor_absoluteX="347dp"
-        tools:layout_editor_absoluteY="187dp" />
-
-    <Button
-        android:id="@+id/Add_Food_Sell"
-        android:layout_width="48dp"
-        android:layout_height="33dp"
-        android:text="Sell"
-        android:textSize="10sp"
-        tools:layout_editor_absoluteX="347dp"
-        tools:layout_editor_absoluteY="222dp" />
-
-    <Button
-        android:id="@+id/Add_Ore_Sell"
-        android:layout_width="48dp"
-        android:layout_height="33dp"
-        android:text="Sell"
-        android:textSize="10sp"
-        tools:layout_editor_absoluteX="347dp"
-        tools:layout_editor_absoluteY="271dp" />
-
-    <Button
-        android:id="@+id/Add_Games_Sell"
-        android:layout_width="48dp"
-        android:layout_height="33dp"
-        android:text="Sell"
-        android:textSize="10sp"
-        tools:layout_editor_absoluteX="347dp"
-        tools:layout_editor_absoluteY="322dp" />
-
-    <Button
-        android:id="@+id/Add_Firearms_Sell"
-        android:layout_width="48dp"
-        android:layout_height="33dp"
-        android:text="Sell"
-        android:textSize="10sp"
-        tools:layout_editor_absoluteX="347dp"
-        tools:layout_editor_absoluteY="380dp" />
-
-    <Button
-        android:id="@+id/Add_Medicine_Sell"
-        android:layout_width="48dp"
-        android:layout_height="33dp"
-        android:text="Sell"
-        android:textSize="10sp"
-        tools:layout_editor_absoluteX="347dp"
-        tools:layout_editor_absoluteY="429dp" />
-
-    <Button
-        android:id="@+id/Add_Narcotics_Sell"
-        android:layout_width="48dp"
-        android:layout_height="33dp"
-        android:text="Sell"
-        android:textSize="10sp"
-        tools:layout_editor_absoluteX="347dp"
-        tools:layout_editor_absoluteY="477dp" />
-
-    <Button
-        android:id="@+id/Add_Robots_Sell"
-        android:layout_width="48dp"
-        android:layout_height="33dp"
-        android:text="Sell"
-        android:textSize="10sp"
-        tools:layout_editor_absoluteX="347dp"
-        tools:layout_editor_absoluteY="526dp" />
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="628dp" />
 
     <Button
         android:id="@+id/Minus_Water"
@@ -526,7 +454,7 @@
         android:layout_height="33dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Add_Water_Sells"
+        app:layout_constraintEnd_toStartOf="@+id/Sell"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/Water_Amount_Sells"
         app:layout_constraintTop_toBottomOf="@+id/editText5"
@@ -538,7 +466,7 @@
         android:layout_height="33dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Add_Water_Sells"
+        app:layout_constraintEnd_toStartOf="@+id/Sell"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/Water_Amount_Sells"
         app:layout_constraintTop_toBottomOf="@+id/editText5"
@@ -550,7 +478,7 @@
         android:layout_height="33dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Add_Water_Sells"
+        app:layout_constraintEnd_toStartOf="@+id/Sell"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/Water_Amount_Sells"
         app:layout_constraintTop_toBottomOf="@+id/editText5"
@@ -562,7 +490,7 @@
         android:layout_height="33dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Add_Water_Sells"
+        app:layout_constraintEnd_toStartOf="@+id/Sell"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/Water_Amount_Sells"
         app:layout_constraintTop_toBottomOf="@+id/editText5"
@@ -574,7 +502,7 @@
         android:layout_height="33dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Add_Water_Sells"
+        app:layout_constraintEnd_toStartOf="@+id/Sell"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/Water_Amount_Sells"
         app:layout_constraintTop_toBottomOf="@+id/editText5"
@@ -586,7 +514,7 @@
         android:layout_height="33dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Add_Water_Sells"
+        app:layout_constraintEnd_toStartOf="@+id/Sell"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/Water_Amount_Sells"
         app:layout_constraintTop_toBottomOf="@+id/editText5"
@@ -598,7 +526,7 @@
         android:layout_height="33dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Add_Water_Sells"
+        app:layout_constraintEnd_toStartOf="@+id/Sell"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/Water_Amount_Sells"
         app:layout_constraintTop_toBottomOf="@+id/editText5"
@@ -610,7 +538,7 @@
         android:layout_height="33dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Add_Water_Sells"
+        app:layout_constraintEnd_toStartOf="@+id/Sell"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/Water_Amount_Sells"
         app:layout_constraintTop_toBottomOf="@+id/editText5"
@@ -622,7 +550,7 @@
         android:layout_height="33dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Add_Water_Sells"
+        app:layout_constraintEnd_toStartOf="@+id/Sell"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/Water_Amount_Sells"
         app:layout_constraintTop_toBottomOf="@+id/editText5"
@@ -842,20 +770,6 @@
         tools:layout_editor_absoluteY="535dp" />
 
     <android.support.constraint.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="89dp" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="161dp" />
-
-    <android.support.constraint.Guideline
         android:id="@+id/guideline5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -917,13 +831,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="505dp" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="238dp" />
 
     <Button
         android:id="@+id/Leave"
