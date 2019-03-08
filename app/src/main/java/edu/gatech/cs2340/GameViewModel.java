@@ -6,15 +6,27 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 public class GameViewModel extends AndroidViewModel {
+    private Game model;
+
     public GameViewModel(@NonNull Application application) {
         super(application);
+        model = Model.getInstance().getMyGame();
     }
 
     public void createGame(String playerName, int sE, int sP, int sF, int sT, Difficulty dif) {
-        Player player = new Player(playerName, sE, sP, sF, sT);
         Universe universe = new Universe();
-        Game game = new Game(dif, player, universe);
-        Log.d("APP", game.getPlayer().toString());
-        Log.d("APP", game.getUniverse().toString());
+        Player player = new Player(playerName, sE, sP, sF, sT);
+        model.setGameDiff(dif);
+        model.setPlayer(player);
+        model.setUniverse(universe);
+        model.addS();
+        Log.d("APP", model.getPlayer().toString());
+        Log.d("APP", model.getUniverse().toString());
     }
+
+    public Planet getPlayerLocation() {
+        return model.getPlayerLocation();
+    }
+
+
 }
