@@ -6,21 +6,6 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/editText20"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="0"
-        android:textAlignment="center"
-        android:textSize="11sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.042"
-        app:layout_constraintStart_toEndOf="@+id/editText6" />
-
-    <EditText
         android:id="@+id/editText8"
         android:layout_width="75dp"
         android:layout_height="49dp"
@@ -40,14 +25,13 @@
         android:id="@+id/editText9"
         android:layout_width="75dp"
         android:layout_height="49dp"
+        android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Ore"
         android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/editText10"
-        app:layout_constraintEnd_toStartOf="@+id/Firearms_Amount_Sells"
-        app:layout_constraintHorizontal_bias="0.075"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText8" />
 
@@ -55,14 +39,13 @@
         android:id="@+id/editText10"
         android:layout_width="75dp"
         android:layout_height="49dp"
+        android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Games"
         android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/editText11"
-        app:layout_constraintEnd_toStartOf="@+id/Medicine_Amount_Sells"
-        app:layout_constraintHorizontal_bias="0.075"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText9" />
 
@@ -70,14 +53,13 @@
         android:id="@+id/editText11"
         android:layout_width="75dp"
         android:layout_height="49dp"
+        android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Firearms"
         android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/editText12"
-        app:layout_constraintEnd_toStartOf="@+id/Narcotics_Amount_Sells"
-        app:layout_constraintHorizontal_bias="0.075"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText10" />
 
@@ -112,7 +94,7 @@
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/editText8"
-        app:layout_constraintVertical_bias="0.519" />
+        app:layout_constraintVertical_bias="0.65" />
 
     <EditText
         android:id="@+id/editText14"
@@ -128,7 +110,7 @@
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText4"
-        app:layout_constraintVertical_bias="0.685" />
+        app:layout_constraintVertical_bias="0.793" />
 
     <EditText
         android:id="@+id/editText6"
@@ -173,12 +155,17 @@
         android:id="@+id/editText5"
         android:layout_width="75dp"
         android:layout_height="44dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Buy"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="248dp"
-        tools:layout_editor_absoluteY="94dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editText4"
@@ -188,163 +175,34 @@
         android:inputType="textPersonName"
         android:text="Available"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="94dp" />
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="92dp" />
 
     <EditText
         android:id="@+id/editText15"
         android:layout_width="75dp"
         android:layout_height="44dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="152dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Price"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="94dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editText3"
         android:layout_width="75dp"
         android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="96dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Item"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="17dp"
-        tools:layout_editor_absoluteY="94dp" />
-
-    <EditText
-        android:id="@+id/Water_Amount_Sells"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="0"
-        android:textAlignment="center"
-        android:textSize="11sp"
-        android:visibility="visible"
-        tools:layout_editor_absoluteX="273dp"
-        tools:layout_editor_absoluteY="154dp" />
-
-    <EditText
-        android:id="@+id/Ore_Amount_Sells"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="0"
-        android:textAlignment="center"
-        android:textSize="11sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5"
-        app:layout_constraintVertical_bias="0.237"
-        tools:layout_editor_absoluteX="273dp" />
-
-    <EditText
-        android:id="@+id/Games_Amount_Sells"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="0"
-        android:textAlignment="center"
-        android:textSize="11sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5"
-        app:layout_constraintVertical_bias="0.328"
-        tools:layout_editor_absoluteX="273dp" />
-
-    <EditText
-        android:id="@+id/Firearms_Amount_Sells"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="0"
-        android:textAlignment="center"
-        android:textSize="11sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5"
-        app:layout_constraintVertical_bias="0.428"
-        tools:layout_editor_absoluteX="273dp" />
-
-    <EditText
-        android:id="@+id/Medicine_Amount_Sells"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="0"
-        android:textAlignment="center"
-        android:textSize="11sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5"
-        app:layout_constraintVertical_bias="0.517"
-        tools:layout_editor_absoluteX="273dp" />
-
-    <EditText
-        android:id="@+id/Narcotics_Amount_Sells"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="0"
-        android:textAlignment="center"
-        android:textSize="11sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5"
-        app:layout_constraintVertical_bias="0.605"
-        tools:layout_editor_absoluteX="273dp" />
-
-    <EditText
-        android:id="@+id/Robots_Amount_Sells"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="0"
-        android:textAlignment="center"
-        android:textSize="11sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5"
-        app:layout_constraintVertical_bias="0.694"
-        tools:layout_editor_absoluteX="273dp" />
-
-    <EditText
-        android:id="@+id/Furs_Amount_Sells"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="0"
-        android:textAlignment="center"
-        android:textSize="11sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5"
-        app:layout_constraintVertical_bias="0.087"
-        tools:layout_editor_absoluteX="273dp" />
-
-    <EditText
-        android:id="@+id/Food_Amount_Sells"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="0"
-        android:textAlignment="center"
-        android:textSize="11sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5"
-        app:layout_constraintVertical_bias="0.15"
-        tools:layout_editor_absoluteX="273dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/Purchase"
@@ -353,18 +211,18 @@
         android:text="Purchase Selected"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="609dp" />
+        tools:layout_editor_absoluteY="667dp" />
 
     <Button
         android:id="@+id/Minus_Water"
         android:layout_width="35dp"
         android:layout_height="33dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
         android:text="-"
-        app:layout_constraintEnd_toStartOf="@+id/Water_Amount_Sells"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.637"
         app:layout_constraintStart_toEndOf="@+id/editText6"
         app:layout_constraintTop_toBottomOf="@+id/editText5" />
 
@@ -372,10 +230,11 @@
         android:id="@+id/Minus_Furs"
         android:layout_width="35dp"
         android:layout_height="33dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
         android:text="-"
-        app:layout_constraintEnd_toStartOf="@+id/Water_Amount_Sells"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.637"
         app:layout_constraintStart_toEndOf="@+id/editText6"
         app:layout_constraintTop_toBottomOf="@+id/editText5" />
 
@@ -383,18 +242,24 @@
         android:id="@+id/Minus_Food"
         android:layout_width="35dp"
         android:layout_height="33dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="216dp"
+        android:layout_marginEnd="8dp"
         android:text="-"
-        tools:layout_editor_absoluteX="238dp"
-        tools:layout_editor_absoluteY="222dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/Minus_Ore"
         android:layout_width="35dp"
         android:layout_height="33dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="8dp"
         android:text="-"
-        app:layout_constraintEnd_toStartOf="@+id/Water_Amount_Sells"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.637"
         app:layout_constraintStart_toEndOf="@+id/editText6"
         app:layout_constraintTop_toBottomOf="@+id/editText5" />
 
@@ -402,29 +267,37 @@
         android:id="@+id/Minus_Games"
         android:layout_width="35dp"
         android:layout_height="33dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="8dp"
         android:text="-"
-        tools:layout_editor_absoluteX="238dp"
-        tools:layout_editor_absoluteY="324dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText5" />
 
     <Button
         android:id="@+id/Minus_Firearms"
         android:layout_width="35dp"
         android:layout_height="33dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="228dp"
+        android:layout_marginEnd="8dp"
         android:text="-"
-        app:layout_constraintEnd_toStartOf="@+id/Water_Amount_Sells"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/editText6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText5" />
 
     <Button
         android:id="@+id/Minus_Medicine"
         android:layout_width="35dp"
         android:layout_height="33dp"
-        android:layout_marginTop="288dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginEnd="8dp"
         android:text="-"
-        app:layout_constraintEnd_toStartOf="@+id/Water_Amount_Sells"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.637"
         app:layout_constraintStart_toEndOf="@+id/editText6"
         app:layout_constraintTop_toBottomOf="@+id/editText5" />
 
@@ -432,10 +305,11 @@
         android:id="@+id/Minus_Narcotics"
         android:layout_width="35dp"
         android:layout_height="33dp"
-        android:layout_marginTop="336dp"
+        android:layout_marginTop="384dp"
+        android:layout_marginEnd="8dp"
         android:text="-"
-        app:layout_constraintEnd_toStartOf="@+id/Water_Amount_Sells"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.644"
         app:layout_constraintStart_toEndOf="@+id/editText6"
         app:layout_constraintTop_toBottomOf="@+id/editText5" />
 
@@ -443,10 +317,11 @@
         android:id="@+id/Minus_Robots"
         android:layout_width="35dp"
         android:layout_height="33dp"
-        android:layout_marginTop="388dp"
+        android:layout_marginTop="440dp"
+        android:layout_marginEnd="8dp"
         android:text="-"
-        app:layout_constraintEnd_toStartOf="@+id/Water_Amount_Sells"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.644"
         app:layout_constraintStart_toEndOf="@+id/editText6"
         app:layout_constraintTop_toBottomOf="@+id/editText5" />
 
@@ -454,109 +329,112 @@
         android:id="@+id/Plus_Water"
         android:layout_width="35dp"
         android:layout_height="33dp"
+        android:layout_marginStart="364dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Sell"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/Water_Amount_Sells"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText5"
-        app:layout_constraintVertical_bias="0.021" />
+        app:layout_constraintVertical_bias="0.017" />
 
     <Button
         android:id="@+id/Plus_Furs"
         android:layout_width="35dp"
         android:layout_height="33dp"
+        android:layout_marginStart="364dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Sell"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/Water_Amount_Sells"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText5"
-        app:layout_constraintVertical_bias="0.085" />
+        app:layout_constraintVertical_bias="0.076" />
 
     <Button
         android:id="@+id/Plus_Food"
         android:layout_width="35dp"
         android:layout_height="33dp"
+        android:layout_marginStart="364dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Sell"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/Water_Amount_Sells"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText5"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintVertical_bias="0.149" />
 
     <Button
         android:id="@+id/Plus_Ore"
         android:layout_width="35dp"
         android:layout_height="33dp"
+        android:layout_marginStart="364dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Sell"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/Water_Amount_Sells"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText5"
-        app:layout_constraintVertical_bias="0.237" />
+        app:layout_constraintVertical_bias="0.234" />
 
     <Button
         android:id="@+id/Plus_Games"
         android:layout_width="35dp"
         android:layout_height="33dp"
+        android:layout_marginStart="364dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Sell"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/Water_Amount_Sells"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText5"
-        app:layout_constraintVertical_bias="0.328" />
+        app:layout_constraintVertical_bias="0.325" />
 
     <Button
         android:id="@+id/Plus_Firearms"
         android:layout_width="35dp"
         android:layout_height="33dp"
+        android:layout_marginStart="364dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Sell"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/Water_Amount_Sells"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText5"
-        app:layout_constraintVertical_bias="0.428" />
+        app:layout_constraintVertical_bias="0.411" />
 
     <Button
         android:id="@+id/Plus_Medicine"
         android:layout_width="35dp"
         android:layout_height="33dp"
+        android:layout_marginStart="364dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Sell"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/Water_Amount_Sells"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText5"
-        app:layout_constraintVertical_bias="0.519" />
+        app:layout_constraintVertical_bias="0.507" />
 
     <Button
         android:id="@+id/Plus_Narcotics"
         android:layout_width="35dp"
         android:layout_height="33dp"
+        android:layout_marginStart="368dp"
+        android:layout_marginBottom="8dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Sell"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/Water_Amount_Sells"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText5"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.707" />
 
     <Button
         android:id="@+id/Plus_Robots"
         android:layout_width="35dp"
         android:layout_height="33dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:text="+"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Sell"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/Water_Amount_Sells"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText5"
-        app:layout_constraintVertical_bias="0.692" />
+        app:layout_constraintVertical_bias="0.79" />
 
     <TextView
         android:id="@+id/textView4"
@@ -578,7 +456,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
-        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteX="128dp"
         tools:layout_editor_absoluteY="156dp" />
 
     <TextView
@@ -688,10 +566,10 @@
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Minus_Water"
-        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintHorizontal_bias="0.648"
         app:layout_constraintStart_toEndOf="@+id/Water_Quanitity"
         app:layout_constraintTop_toBottomOf="@+id/editText15"
-        app:layout_constraintVertical_bias="0.605" />
+        app:layout_constraintVertical_bias="0.706" />
 
     <TextView
         android:id="@+id/Robots_Price"
@@ -702,74 +580,74 @@
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Minus_Water"
-        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintHorizontal_bias="0.648"
         app:layout_constraintStart_toEndOf="@+id/Water_Quanitity"
         app:layout_constraintTop_toBottomOf="@+id/editText15"
-        app:layout_constraintVertical_bias="0.686" />
+        app:layout_constraintVertical_bias="0.788" />
 
     <TextView
         android:id="@+id/Furs_Quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="195dp" />
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="193dp" />
 
     <TextView
         android:id="@+id/Food_Quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="236dp" />
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="238dp" />
 
     <TextView
         android:id="@+id/Ore_Quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="285dp" />
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="286dp" />
 
     <TextView
         android:id="@+id/Games_Quanity"
         android:layout_width="7dp"
         android:layout_height="wrap_content"
         android:text="0"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="336dp" />
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="337dp" />
 
     <TextView
         android:id="@+id/games_Quanity"
         android:layout_width="7dp"
         android:layout_height="wrap_content"
         android:text="0"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="380dp" />
+        tools:layout_editor_absoluteX="129dp"
+        tools:layout_editor_absoluteY="379dp" />
 
     <TextView
         android:id="@+id/games_Quanity2"
         android:layout_width="7dp"
         android:layout_height="wrap_content"
         android:text="0"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="438dp" />
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="439dp" />
 
     <TextView
         android:id="@+id/games_Quanity3"
         android:layout_width="7dp"
         android:layout_height="wrap_content"
         android:text="0"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="488dp" />
+        tools:layout_editor_absoluteX="135dp"
+        tools:layout_editor_absoluteY="547dp" />
 
     <TextView
         android:id="@+id/games_Quanity4"
         android:layout_width="7dp"
         android:layout_height="wrap_content"
         android:text="0"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="535dp" />
+        tools:layout_editor_absoluteX="135dp"
+        tools:layout_editor_absoluteY="594dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline5"
@@ -841,9 +719,204 @@
         android:text="Leave "
         app:layout_constraintBottom_toTopOf="@+id/editText5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.195" />
+        app:layout_constraintVertical_bias="0.659" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Total Credits"
+        app:layout_constraintBottom_toTopOf="@+id/editText4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="114dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="148dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="48dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="48dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="228dp"
+        android:layout_marginEnd="48dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="276dp"
+        android:layout_marginEnd="48dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="324dp"
+        android:layout_marginEnd="48dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="376dp"
+        android:layout_marginEnd="48dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="428dp"
+        android:layout_marginEnd="48dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="528dp"
+        android:layout_marginEnd="44dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="584dp"
+        android:layout_marginEnd="44dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="636dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="636dp"
+        android:layout_marginEnd="124dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="480dp"
+        android:layout_marginEnd="332dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="480dp"
+        android:layout_marginEnd="248dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="480dp"
+        android:layout_marginEnd="168dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="480dp"
+        android:layout_marginEnd="48dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="32dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="364dp"
+        android:layout_marginTop="472dp"
+        android:text="+"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="32dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="472dp"
+        android:layout_marginEnd="108dp"
+        android:text="-"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

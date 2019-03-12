@@ -1,7 +1,9 @@
 package edu.gatech.cs2340;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -29,5 +31,18 @@ public class GameStartActivity extends AppCompatActivity {
 
         startMessage.setText("Welcome Trader! You are currently located on the planet " + gameViewModel.getPlayerLocation().getPlanetName()
                 + " and you have started with a Gnat Ship, 1000 credits.\n What to do?");
+
+        goMarket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                marketplace(v);
+                finish();
+            }
+        });
+    }
+
+    public void marketplace(View view) {
+        Intent intent = new Intent(this, MarketplaceActivity.class);
+        startActivity(intent);
     }
 }

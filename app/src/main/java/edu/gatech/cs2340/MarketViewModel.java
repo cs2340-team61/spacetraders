@@ -5,5 +5,15 @@ import android.arch.lifecycle.AndroidViewModel;
 import android.support.annotation.NonNull;
 
 public class MarketViewModel extends AndroidViewModel {
-    public MarketViewModel(@NonNull Application application) { super(application);}
+    private Game model;
+
+    public MarketViewModel(@NonNull Application application) {
+        super(application);
+        model = Model.getInstance().getMyGame();
+    }
+
+    public void createMarket() {
+        model.createMarketGoods();
+        model.createMarketplace();
+    }
 }

@@ -25,6 +25,8 @@ public class Marketplace {
 
     private int MTH;
 
+    private int level;
+
     private int getMTLP() { return this.MTLP; }
 
     private int getMTLU() { return this.MTLU;}
@@ -47,10 +49,8 @@ public class Marketplace {
 
     private int getMTH() { return this.MTH;}
 
-    private int techLevel() {
-        int level = -1;
-        Planet planet = new Planet(12, 16);
-        String string = planet.getTechLevel();
+    public void techLevel(String string) {
+        level = -1;
         if (string.equals("Pre-Agriculture")) {
             level = 0;
         }
@@ -73,10 +73,10 @@ public class Marketplace {
             level = 6;
         }
         if (string.equals("Hi-Tech")) {
-            return level = 7;
+            level = 7;
         }
-        return level;
-    }
+
+     }
 
     public void Water() {
         MTLP = 0;
@@ -220,8 +220,8 @@ public class Marketplace {
 
     public int calculatePrice() {
         Random rand = new Random();
-        int buffer = rand.nextInt(getVar());
-        int price = getBasePrice() + (getIPL() * (techLevel() - getMTLP())) + (getBasePrice() * (buffer / 100));
+        int buffer = rand.nextInt(getVar()) + 1;
+        int price = getBasePrice() + (getIPL() * (level - getMTLP())) + (getBasePrice() * (buffer));
         return price;
     }
 }

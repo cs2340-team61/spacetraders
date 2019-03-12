@@ -8,6 +8,8 @@ public class Player implements Serializable {
 
     private Ship shipOwned;
 
+    private ShipInventory shipInventory;
+
     private int credits;
 
     private int skillEngineer;
@@ -53,6 +55,8 @@ public class Player implements Serializable {
     public int getSkillTrader() { return skillTrader; }
 
     public void setSkillTrader(int skillTrader) { this.skillTrader = skillTrader; }
+
+    public ShipInventory getShipInventory() { return shipInventory; }
 
     @Override
     public String toString() {
