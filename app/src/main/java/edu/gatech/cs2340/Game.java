@@ -51,6 +51,17 @@ public class Game {
     }
 
     public void createMarketGoods() {
+        water = new Marketplace();
+        furs = new Marketplace();
+        food = new Marketplace();
+        ore = new Marketplace();
+        games = new Marketplace();
+        firearms = new Marketplace();
+        medicine = new Marketplace();
+        machines = new Marketplace();
+        narcotics = new Marketplace();
+        robots = new Marketplace();
+
         water.Water();
         furs.Furs();
         food.Food();
@@ -123,4 +134,24 @@ public class Game {
     public Marketplace getRobots() { return robots; }
 
     public Marketplace getWater() { return water; }
+
+    public int getFoodPrice() { return foodPrice; }
+
+    public int getFursPrice() { return fursPrice; }
+
+    public int getWaterPrice() { return waterPrice; }
+
+    public int getOrePrice() { return orePrice; }
+
+    public int getGamesPrice() { return gamesPrice; }
+
+    public int getFirearmsPrice() { return firearmsPrice; }
+
+    public int getMedicinePrice() { return medicinePrice; }
+
+    public int getMachinesPrice() { return machinesPrice; }
+
+    public int getNarcoticsPrice() { return narcoticsPrice; }
+
+    public int getRobotsPrice() { return robotsPrice; }
 }
