@@ -27,6 +27,7 @@ public class Game {
     private int machinesPrice;
     private int narcoticsPrice;
     private int robotsPrice;
+    private ShipInventory inventory;
 
     public Game() {
 
@@ -110,6 +111,12 @@ public class Game {
     public Universe getUniverse() { return universe; }
 
     public Player getPlayer() { return player; }
+
+    public ShipInventory getInventory() { return inventory; }
+
+    public void setInventory(ShipInventory inventory) {
+        this.inventory = inventory;
+    }
 
     public Planet getPlayerLocation() { return playerLocation; }
 

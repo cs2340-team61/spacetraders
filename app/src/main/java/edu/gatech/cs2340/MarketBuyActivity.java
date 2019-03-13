@@ -61,6 +61,7 @@ public class MarketBuyActivity extends AppCompatActivity {
     private Button narcoticsDown;
     private Button robotsDown;
     private Button purchase;
+    private Button leave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,6 +131,7 @@ public class MarketBuyActivity extends AppCompatActivity {
         robotsDown = findViewById(R.id.Minus_Robots);
 
         purchase = findViewById(R.id.Purchase);
+        leave = findViewById(R.id.Leave);
 
         Integer[] quants = marketViewModel.quantityMarket();
         waterQ.setText("" + quants[0]);
@@ -351,6 +353,23 @@ public class MarketBuyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 marketViewModel.setCredits(Integer.parseInt(credLeft.getText().toString()));
+                marketViewModel.addWater(Integer.parseInt(waterB.getText().toString()));
+                marketViewModel.addFurs(Integer.parseInt(fursB.getText().toString()));
+                marketViewModel.addFood(Integer.parseInt(foodB.getText().toString()));
+                marketViewModel.addOre(Integer.parseInt(oreB.getText().toString()));
+                marketViewModel.addGames(Integer.parseInt(gamesB.getText().toString()));
+                marketViewModel.addFirearms(Integer.parseInt(firearmsB.getText().toString()));
+                marketViewModel.addMedicine(Integer.parseInt(medicineB.getText().toString()));
+                marketViewModel.addMachines(Integer.parseInt(machinesB.getText().toString()));
+                marketViewModel.addNarcotics(Integer.parseInt(narcoticsB.getText().toString()));
+                marketViewModel.addRobots(Integer.parseInt(robotsB.getText().toString()));
+                finish();
+            }
+        });
+
+        leave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 finish();
             }
         });

@@ -1,5 +1,7 @@
 package edu.gatech.cs2340;
 
+import android.media.Image;
+
 import java.util.Random;
 
 public class SolarSystem {
@@ -23,20 +25,22 @@ public class SolarSystem {
             "Hozin",
             "Jello",
             "Mystery",
+            "Illicient",
+            "Affluent"
 
     };
 
     private String ssName;
     private Planet[] planets = new Planet[3];
 
-    public SolarSystem(int spreader) {
+    public SolarSystem(int spreader, int nameHelp) {
         Random rand = new Random();
         x = (rand.nextInt(3) + 1) * 10 + spreader;
         y = (rand.nextInt(210)) + 20;
         planets[0] = new Planet(x + rand.nextInt(3) + 2, y + rand.nextInt(8) + 2);
         planets[1] = new Planet(x + rand.nextInt(3) - 2, y - rand.nextInt(8) - 2);
         planets[2] = new Planet(x - rand.nextInt(3) - 2, y + rand.nextInt(10) - 5);
-        ssName = ssNames[rand.nextInt(ssNames.length)];
+        ssName = ssNames[nameHelp];
     }
 
     public int getX() { return x; }

@@ -29,10 +29,22 @@ public class MarketplaceActivity extends AppCompatActivity {
                 marketplaceBuy(v);
             }
         });
+
+        sellItems.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                marketplaceSell(v);
+            }
+        });
     }
 
     public void marketplaceBuy(View view) {
         Intent intent = new Intent(this, MarketBuyActivity.class);
+        startActivity(intent);
+    }
+
+    public void marketplaceSell(View view) {
+        Intent intent = new Intent(this, MarketSellActivity.class);
         startActivity(intent);
     }
 

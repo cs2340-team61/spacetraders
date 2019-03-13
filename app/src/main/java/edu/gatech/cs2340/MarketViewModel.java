@@ -134,7 +134,6 @@ public class MarketViewModel extends AndroidViewModel {
     public Integer[] getPrices() {
         String tech = model.getPlayerLocation().getTechLevel();
         Integer[] priceArr = new Integer[11];
-        Random rand = new Random();
         if (tech.equals("Pre-Agriculture")) {
             priceArr[0] = model.getWaterPrice();
             priceArr[1] = model.getFursPrice();
@@ -207,4 +206,70 @@ public class MarketViewModel extends AndroidViewModel {
 
         return priceArr;
     }
+
+    public void addWater(int add) {
+        model.getInventory().addWater(add);
+    }
+
+    public void addFurs(int add) {
+        model.getInventory().addFurs(add);
+    }
+
+    public void addFood(int add) {
+        model.getInventory().addFood(add);
+    }
+
+    public void addOre(int add) {
+        model.getInventory().addOre(add);
+    }
+
+    public void addGames(int add) {
+        model.getInventory().addGames(add);
+    }
+
+    public void addFirearms(int add) {
+        model.getInventory().addFirearms(add);
+    }
+
+    public void addMedicine(int add) {
+        model.getInventory().addMedicine(add);
+    }
+
+    public void addMachines(int add) { model.getInventory().addMachines(add); }
+
+    public void addNarcotics(int add) {
+        model.getInventory().addNarcotics(add);
+    }
+
+    public void addRobots(int add) {
+        model.getInventory().addRobots(add);
+    }
+
+    public void removeWater(int add) {
+        model.getInventory().removeWater(add);
+    }
+
+    public void removeFurs(int add) {
+        model.getInventory().removeFurs(add);
+    }
+
+    public void removeFood(int add) {
+        model.getInventory().removeFood(add);
+    }
+
+    public void removeOre(int add) { model.getInventory().removeOre(add); }
+
+    public void removeGames(int add) { model.getInventory().removeGames(add); }
+
+    public void removeFirearms(int add) { model.getInventory().removeFirearms(add); }
+
+    public void removeMedicine(int add) { model.getInventory().removeMedicine(add); }
+
+    public void removeMachines(int add) { model.getInventory().removeMachines(add); }
+
+    public void removeNarcotics(int add) { model.getInventory().removeNarcotics(add); }
+
+    public void removeRobots(int add) { model.getInventory().removeRobots(add); }
+
+    public int getMaxCargo() { return model.getInventory().getMaxCargo(); }
 }

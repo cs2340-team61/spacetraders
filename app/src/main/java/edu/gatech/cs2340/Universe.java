@@ -1,11 +1,14 @@
 package edu.gatech.cs2340;
 
+import java.util.Random;
+
 public class Universe {
     private int xLow;
     private int xHigh;
     private int yLow;
     private int yHigh;
     private int numOfSS;
+    private int nameHelp;
 
     private SolarSystem[] solarSystems;
 
@@ -15,12 +18,15 @@ public class Universe {
         yHigh = 250;
         yLow = 0;
         numOfSS = 0;
+        Random rand = new Random();
+        nameHelp = rand.nextInt(13);
         solarSystems = new SolarSystem[5];
     }
 
     public void addSolarSystem() {
-        solarSystems[numOfSS] = new SolarSystem(numOfSS * 50);
+        solarSystems[numOfSS] = new SolarSystem(numOfSS * 50, nameHelp % 13);
         numOfSS++;
+        nameHelp++;
     }
 
     public int getxHigh() { return xHigh; }

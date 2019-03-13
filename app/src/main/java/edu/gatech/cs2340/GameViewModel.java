@@ -20,6 +20,7 @@ public class GameViewModel extends AndroidViewModel {
         model.setPlayer(player);
         model.setUniverse(universe);
         model.addS();
+        model.setInventory(new ShipInventory());
         Log.d("APP", model.getPlayer().toString());
         Log.d("APP", model.getUniverse().toString());
     }

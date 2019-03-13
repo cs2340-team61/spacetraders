@@ -1,6 +1,10 @@
 package edu.gatech.cs2340;
 
+import android.service.notification.NotificationListenerService;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -10,6 +14,7 @@ public class Planet {
     private String planetName;
     private String techLevel;
     private String resources;
+    private ArrayList<String> names;
 
     private String[] planetNames = {
         "Earth",
@@ -49,6 +54,8 @@ public class Planet {
         "Endor",
         "Esmee",
         "Exo",
+        "Flight",
+        "Helios"
     };
 
     private String[] techLevels = {
@@ -85,9 +92,16 @@ public class Planet {
         Random rand = new Random();
         techLevel = techLevels[rand.nextInt(8)];
         resources = resourceLevels[rand.nextInt(2) * rand.nextInt(13)];
-        planetName = planetNames[rand.nextInt(planetNames.length)];
+        planetName = planetNames[rand.nextInt(39)];
     }
 
+    public void createPlanet(int x, int y) {
+        xPlanet = x;
+        yPlanet = y;
+        Random rand = new Random();
+        techLevel = techLevels[rand.nextInt(8)];
+        resources = resourceLevels[rand.nextInt(2) * rand.nextInt(13)];
+    }
     public int getxPlanet() { return xPlanet; }
 
     public int getyPlanet() { return yPlanet; }
