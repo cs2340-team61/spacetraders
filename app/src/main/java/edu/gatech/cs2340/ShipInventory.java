@@ -27,6 +27,26 @@ public class ShipInventory {
         maxCargo = 50;
     }
 
+    public int getNumWater() { return numWater; }
+
+    public int getNumFurs() { return numFurs; }
+
+    public int getNumFood() { return numFood; }
+
+    public int getNumOre() { return numOre; }
+
+    public int getNumGames() { return numGames; }
+
+    public int getNumFirearms() { return numFirearms; }
+
+    public int getNumMedicine() { return numMedicine; }
+
+    public int getNumMachines() { return numMachines; }
+
+    public int getNumNarcotics() { return numNarcotics; }
+
+    public int getNumRobots() { return numRobots; }
+
     public void addWater(int add) {
         numWater += add;
     }

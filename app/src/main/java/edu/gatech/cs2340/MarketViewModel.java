@@ -207,6 +207,8 @@ public class MarketViewModel extends AndroidViewModel {
         return priceArr;
     }
 
+    public ShipInventory getInventory() { return model.getInventory(); }
+
     public void addWater(int add) {
         model.getInventory().addWater(add);
     }

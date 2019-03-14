@@ -48,5 +48,10 @@ public class MarketplaceActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void leaveMarket(View view) {
+        Intent intent = new Intent(this,GameMainActivity.class);
+        startActivity(intent);
+    }
+
 
 }
