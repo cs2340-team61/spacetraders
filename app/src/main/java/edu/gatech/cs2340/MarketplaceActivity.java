@@ -11,6 +11,7 @@ public class MarketplaceActivity extends AppCompatActivity {
     private Button leaveMarket;
     private Button buyItems;
     private Button sellItems;
+    private Button inven;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,7 @@ public class MarketplaceActivity extends AppCompatActivity {
         leaveMarket = findViewById(R.id.Leave);
         buyItems = findViewById(R.id.buy_Market);
         sellItems = findViewById(R.id.Sell_Market);
+        inven = findViewById(R.id.button8);
         marketViewModel = new MarketViewModel(getApplication());
         marketViewModel.createMarket();
 
@@ -36,6 +38,21 @@ public class MarketplaceActivity extends AppCompatActivity {
                 marketplaceSell(v);
             }
         });
+
+        leaveMarket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                leaveMarket(v);
+                finish();
+            }
+        });
+
+        inven.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewInven(v);
+            }
+        });
     }
 
     public void marketplaceBuy(View view) {
@@ -50,6 +67,11 @@ public class MarketplaceActivity extends AppCompatActivity {
 
     public void leaveMarket(View view) {
         Intent intent = new Intent(this,GameMainActivity.class);
+        startActivity(intent);
+    }
+
+    public void viewInven(View view) {
+        Intent intent = new Intent(this, ShipInventoryActivity.class);
         startActivity(intent);
     }
 
