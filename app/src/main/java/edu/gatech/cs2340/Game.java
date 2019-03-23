@@ -28,9 +28,12 @@ public class Game {
     private int narcoticsPrice;
     private int robotsPrice;
     private ShipInventory inventory;
+    private Travel travel;
+    private ShipStats shipStats;
 
     public Game() {
-
+        travel = new Travel();
+        shipStats = new ShipStats();
     }
 
     public void addS() {
@@ -161,4 +164,16 @@ public class Game {
     public int getNarcoticsPrice() { return narcoticsPrice; }
 
     public int getRobotsPrice() { return robotsPrice; }
+
+    public int getDistance(int x1, int x2, int y1, int y2) {
+        return travel.calculateDist(x1, x2, y1, y2);
+    }
+
+    public int getFuelCost(int distance) { return travel.calculateFuel(distance); }
+
+    public void useFuel(int fuelUse) { shipStats.useFuel(fuelUse); }
+
+    public int getHealth() { return shipStats.getHealth(); }
+
+    public int getFuel() {return shipStats.getFuel(); }
 }

@@ -23,6 +23,7 @@ public class GameStartActivity extends AppCompatActivity {
 
         startMessage = findViewById(R.id.start_msg);
         goMarket = findViewById(R.id.button2);
+        goBank = findViewById(R.id.button);
         goTravel = findViewById(R.id.button4);
         viewShip = findViewById(R.id.button5);
         exit = findViewById(R.id.button3);
@@ -30,6 +31,7 @@ public class GameStartActivity extends AppCompatActivity {
 
         startMessage.setText("Welcome Trader! You are currently located on the planet " + gameViewModel.getPlayerLocation().getPlanetName()
                 + " and you have started with a Gnat Ship, 1000 credits.\n What to do?");
+
 
         goMarket.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,17 +41,30 @@ public class GameStartActivity extends AppCompatActivity {
             }
         });
 
+        goTravel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                travel(v);
+                finish();
+            }
+        });
+
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
-        });  goBank = findViewById(R.id.button);
+        });
 
     }
 
     public void marketplace(View view) {
         Intent intent = new Intent(this, MarketplaceActivity.class);
+        startActivity(intent);
+    }
+
+    public void travel(View view) {
+        Intent intent = new Intent(this, TravelActivity.class);
         startActivity(intent);
     }
 }

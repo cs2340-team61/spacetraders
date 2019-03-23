@@ -22,6 +22,7 @@ public class GameMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game_main);
 
         startMessage = findViewById(R.id.start_msg);
+        goBank = findViewById(R.id.button);
         goMarket = findViewById(R.id.button2);
         goTravel = findViewById(R.id.button4);
         viewShip = findViewById(R.id.button5);
@@ -38,16 +39,29 @@ public class GameMainActivity extends AppCompatActivity {
             }
         });
 
+        goTravel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                travel(v);
+                finish();
+            }
+        });
+
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
-        });  goBank = findViewById(R.id.button);
+        });
     }
 
     public void marketplace(View view) {
         Intent intent = new Intent(this, MarketplaceActivity.class);
+        startActivity(intent);
+    }
+
+    public void travel(View view) {
+        Intent intent = new Intent(this, TravelActivity.class);
         startActivity(intent);
     }
 }

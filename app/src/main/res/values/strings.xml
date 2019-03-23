@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Spacetraders</string>
     <string name="title_activity_post_config">postConfig</string>
+    <string name="title_activity_ship_stats">ShipStatsActivity</string>
 </resources>
