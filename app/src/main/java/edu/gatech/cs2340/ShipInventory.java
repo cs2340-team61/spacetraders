@@ -12,6 +12,7 @@ public class ShipInventory {
     private int numNarcotics;
     private int numRobots;
     private int maxCargo;
+    private int size;
 
     public ShipInventory() {
         numWater = 0;
@@ -24,7 +25,8 @@ public class ShipInventory {
         numMachines = 0;
         numNarcotics = 0;
         numRobots = 0;
-        maxCargo = 50;
+        maxCargo = 15;
+        size = 0;
     }
 
     public int getNumWater() { return numWater; }
@@ -128,6 +130,10 @@ public class ShipInventory {
     }
 
     public int getMaxCargo() { return maxCargo; }
+
+    public int getSize() { return size; }
+
+    public void setSize(int size) { this.size = size; }
 
     public void setMaxCargo(int maxCargo) { this.maxCargo = maxCargo; }
 }

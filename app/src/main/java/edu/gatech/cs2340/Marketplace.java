@@ -220,8 +220,8 @@ public class Marketplace {
 
     public int calculatePrice() {
         Random rand = new Random();
-        int buffer = (rand.nextInt(getVar()) + 1) / 100;
-        int price = getBasePrice() + (getIPL() * (level - getMTLP())) + (getBasePrice() * buffer);
+        int buffer = (rand.nextInt(getVar()) + 1);
+        int price = getBasePrice() + (getIPL() * (level - getMTLP())) + (buffer);
         return price;
     }
 }

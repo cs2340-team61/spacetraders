@@ -145,23 +145,29 @@ public class MarketSellActivity extends AppCompatActivity {
         robotsQ.setText("" + marketViewModel.getInventory().getNumRobots());
 
         Integer[] prices = marketViewModel.getPrices();
-        waterP.setText("" + prices[0]);
-        fursP.setText("" + prices[1]);
-        foodP.setText("" + prices[2]);
-        oreP.setText("" + prices[3]);
-        gamesP.setText("" + prices[4]);
-        firearmsP.setText("" + prices[5]);
-        medicineP.setText("" + prices[6]);
-        machinesP.setText("" + prices[7]);
-        narcoticsP.setText("" + prices[8]);
-        robotsP.setText("" + prices[9]);
+
+        for (int i = 0; i < 10; i++) {
+            if (prices[i] == 0) {
+                prices[i] = 2;
+            }
+        }
+        waterP.setText("" + (prices[0] - 2));
+        fursP.setText("" + (prices[1] - 2));
+        foodP.setText("" + (prices[2] - 2));
+        oreP.setText("" + (prices[3] - 2));
+        gamesP.setText("" + (prices[4] - 2));
+        firearmsP.setText("" + (prices[5] - 2));
+        medicineP.setText("" + (prices[6] - 2));
+        machinesP.setText("" + (prices[7] - 2));
+        narcoticsP.setText("" + (prices[8] - 2));
+        robotsP.setText("" + (prices[9] - 2));
 
         waterUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (Integer.parseInt(waterB.getText().toString()) < Integer.parseInt(waterQ.getText().toString())) {
                     waterB.setText("" + (Integer.parseInt(waterB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(waterP.getText().toString()) - 2));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(waterP.getText().toString())));
                 }
             }
         });
@@ -170,7 +176,7 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(fursB.getText().toString()) < Integer.parseInt(fursQ.getText().toString())) {
                     fursB.setText("" + (Integer.parseInt(fursB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(fursP.getText().toString()) - 2));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(fursP.getText().toString())));
                 }
             }
         });
@@ -179,7 +185,7 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(foodB.getText().toString()) < Integer.parseInt(foodQ.getText().toString())) {
                     foodB.setText("" + (Integer.parseInt(foodB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(foodP.getText().toString()) - 2));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(foodP.getText().toString())));
                 }
             }
         });
@@ -188,7 +194,7 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(oreB.getText().toString()) < Integer.parseInt(oreQ.getText().toString())) {
                     oreB.setText("" + (Integer.parseInt(oreB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(oreP.getText().toString()) - 2));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(oreP.getText().toString())));
                 }
             }
         });
@@ -197,7 +203,7 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(gamesB.getText().toString()) < Integer.parseInt(gamesQ.getText().toString())) {
                     gamesB.setText("" + (Integer.parseInt(gamesB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(gamesP.getText().toString()) - 2));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(gamesP.getText().toString())));
                 }
             }
         });
@@ -206,7 +212,7 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(firearmsB.getText().toString()) < Integer.parseInt(firearmsQ.getText().toString())) {
                     firearmsB.setText("" + (Integer.parseInt(firearmsB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(firearmsP.getText().toString()) - 2));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(firearmsP.getText().toString())));
                 }
             }
         });
@@ -215,7 +221,7 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(medicineB.getText().toString()) < Integer.parseInt(medicineQ.getText().toString())) {
                     medicineB.setText("" + (Integer.parseInt(medicineB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(medicineP.getText().toString()) - 2));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(medicineP.getText().toString())));
                 }
             }
         });
@@ -224,7 +230,7 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(machinesB.getText().toString()) < Integer.parseInt(machinesQ.getText().toString())) {
                     machinesB.setText("" + (Integer.parseInt(machinesB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(machinesP.getText().toString()) - 2));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(machinesP.getText().toString())));
                 }
             }
         });
@@ -233,7 +239,7 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(narcoticsB.getText().toString()) < Integer.parseInt(narcoticsQ.getText().toString())) {
                     narcoticsB.setText("" + (Integer.parseInt(narcoticsB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(narcoticsP.getText().toString()) - 2));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(narcoticsP.getText().toString())));
                 }
             }
         });
@@ -242,7 +248,7 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(robotsB.getText().toString()) < Integer.parseInt(robotsQ.getText().toString())) {
                     robotsB.setText("" + (Integer.parseInt(robotsB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(robotsP.getText().toString()) - 2));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(robotsP.getText().toString())));
                 }
             }
         });
@@ -252,7 +258,7 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(waterB.getText().toString()) > 0) {
                     waterB.setText("" + (Integer.parseInt(waterB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(waterP.getText().toString()) + 2));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(waterP.getText().toString())));
                 }
             }
         });
@@ -261,7 +267,7 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(fursB.getText().toString()) > 0) {
                     fursB.setText("" + (Integer.parseInt(fursB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(fursP.getText().toString()) + 2));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(fursP.getText().toString())));
                 }
             }
         });
@@ -270,7 +276,7 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(foodB.getText().toString()) > 0) {
                     foodB.setText("" + (Integer.parseInt(foodB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(foodP.getText().toString()) + 2));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(foodP.getText().toString())));
                 }
             }
         });
@@ -279,7 +285,7 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(oreB.getText().toString()) > 0) {
                     oreB.setText("" + (Integer.parseInt(oreB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(oreP.getText().toString()) + 2));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(oreP.getText().toString())));
                 }
             }
         });
@@ -288,7 +294,7 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(gamesB.getText().toString()) > 0) {
                     gamesB.setText("" + (Integer.parseInt(gamesB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(gamesP.getText().toString()) + 2));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(gamesP.getText().toString())));
                 }
             }
         });
@@ -297,7 +303,7 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(firearmsB.getText().toString()) > 0) {
                     firearmsB.setText("" + (Integer.parseInt(firearmsB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(firearmsP.getText().toString()) + 2));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(firearmsP.getText().toString())));
                 }
             }
         });
@@ -306,7 +312,7 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(medicineB.getText().toString()) > 0) {
                     medicineB.setText("" + (Integer.parseInt(medicineB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(medicineP.getText().toString()) + 2));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(medicineP.getText().toString())));
                 }
             }
         });
@@ -315,7 +321,7 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(machinesB.getText().toString()) > 0) {
                     machinesB.setText("" + (Integer.parseInt(machinesB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(machinesP.getText().toString()) + 2));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(machinesP.getText().toString())));
                 }
             }
         });
@@ -324,7 +330,7 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(narcoticsB.getText().toString()) > 0) {
                     narcoticsB.setText("" + (Integer.parseInt(narcoticsB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(narcoticsP.getText().toString()) + 2));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(narcoticsP.getText().toString())));
                 }
             }
         });
@@ -333,7 +339,7 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(robotsB.getText().toString()) > 0) {
                     robotsB.setText("" + (Integer.parseInt(robotsB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(robotsP.getText().toString()) + 2));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(robotsP.getText().toString())));
                 }
             }
         });
@@ -352,6 +358,7 @@ public class MarketSellActivity extends AppCompatActivity {
                 marketViewModel.removeMachines(Integer.parseInt(machinesB.getText().toString()));
                 marketViewModel.removeNarcotics(Integer.parseInt(narcoticsB.getText().toString()));
                 marketViewModel.removeRobots(Integer.parseInt(robotsB.getText().toString()));
+                marketViewModel.updateInventorySize();
                 finish();
             }
         });
