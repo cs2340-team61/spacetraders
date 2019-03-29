@@ -237,17 +237,21 @@ public class TravelActivity extends AppCompatActivity {
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Planet update = planets[Integer.parseInt(ssChoice.getText().toString()) * 3 + Integer.parseInt(pChoice.getText().toString()) - 4];
                 Planet playerLocation = travelViewModel.getPlayerLocation();
-                if(Integer.parseInt(currentFuel.getText().toString()) > travelViewModel.getFuelCost(travelViewModel.getDistance(planets[Integer.parseInt(ssChoice.getText().toString()) * 3 + Integer.parseInt(pChoice.getText().toString()) - 4].getxPlanet(),
-                    playerLocation.getxPlanet(),planets[Integer.parseInt(ssChoice.getText().toString()) * 3 + Integer.parseInt(pChoice.getText().toString()) - 4].getyPlanet(), playerLocation.getyPlanet()))) {
-                    Planet[] tempPlanets = travelViewModel.getPlanets();
-                    travelViewModel.updatePlayerLocation(planets[Integer.parseInt(ssChoice.getText().toString()) * 3 + Integer.parseInt(pChoice.getText().toString()) - 4]);
-                    travelViewModel.updateFuel(travelViewModel.getFuelCost(travelViewModel.getDistance(planets[Integer.parseInt(ssChoice.getText().toString()) * 3 + Integer.parseInt(pChoice.getText().toString()) - 4].getxPlanet(),
-                            playerLocation.getxPlanet(), planets[Integer.parseInt(ssChoice.getText().toString()) * 3 + Integer.parseInt(pChoice.getText().toString()) - 4].getyPlanet(), playerLocation.getyPlanet())));
-                    restartMain(v);
-                    finish();
+                if (update.equals(playerLocation)) {
+                    (Toast.makeText(getApplication(), "You are already on this planet!", Toast.LENGTH_LONG)).show();
                 } else {
-                    (Toast.makeText(getApplication(), "You do not have enough fuel!", Toast.LENGTH_LONG)).show();
+                    if (Integer.parseInt(currentFuel.getText().toString()) > travelViewModel.getFuelCost(travelViewModel.getDistance(update.getxPlanet(), playerLocation.getxPlanet(), update.getyPlanet(), playerLocation.getyPlanet()))) {
+                        Planet[] tempPlanets = travelViewModel.getPlanets();
+                        travelViewModel.updatePlayerLocation(update);
+                        travelViewModel.updateFuel(travelViewModel.getFuelCost(travelViewModel.getDistance(update.getxPlanet(),
+                                playerLocation.getxPlanet(), update.getyPlanet(), playerLocation.getyPlanet())));
+                        restartMain(v);
+                        finish();
+                    } else {
+                        (Toast.makeText(getApplication(), "You do not have enough fuel!", Toast.LENGTH_LONG)).show();
+                    }
                 }
             }
         });

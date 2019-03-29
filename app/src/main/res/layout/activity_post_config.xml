@@ -45,8 +45,8 @@
         android:text="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.159"
-        app:layout_constraintStart_toEndOf="@+id/skillEngineer"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.395" />
 
@@ -68,7 +68,7 @@
 
     <TextView
         android:id="@+id/trader_config"
-        android:layout_width="wrap_content"
+        android:layout_width="9dp"
         android:layout_height="20dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -77,10 +77,10 @@
         android:text="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.859"
-        app:layout_constraintStart_toEndOf="@+id/skillFighterC"
+        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.579" />
+        app:layout_constraintVertical_bias="0.677" />
 
     <TextView
         android:id="@+id/skillEngineerC"
@@ -137,10 +137,10 @@
         android:text="0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
-        app:layout_constraintStart_toEndOf="@+id/skillTraderC"
-        app:layout_constraintTop_toBottomOf="@+id/trader_config"
-        app:layout_constraintVertical_bias="0.405" />
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.637" />
 
     <TextView
         android:id="@+id/fight_config"
@@ -154,9 +154,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/skillPilotC"
-        app:layout_constraintTop_toBottomOf="@+id/engineer_config"
-        app:layout_constraintVertical_bias="0.091" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.578" />
 
     <Button
         android:id="@+id/exit_button"
