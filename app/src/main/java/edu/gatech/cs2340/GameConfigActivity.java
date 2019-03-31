@@ -20,20 +20,21 @@ public class GameConfigActivity extends AppCompatActivity {
     private TextView skillT;
     private TextView PointsR;
     private Spinner gameDiffSpin;
-    private Button startGame;
-    private Button upE;
-    private Button upP;
-    private Button upF;
-    private Button upT;
-    private Button downE;
-    private Button downP;
-    private Button downF;
-    private Button downT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_config);
+
+        Button startGame;
+        Button upE;
+        Button upP;
+        Button upF;
+        Button upT;
+        Button downE;
+        Button downP;
+        Button downF;
+        Button downT;
 
         playerName = findViewById(R.id.player_name_input);
         skillE = findViewById(R.id.engineer_skill);

@@ -8,18 +8,19 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class GameMainActivity extends AppCompatActivity {
-    private GameViewModel gameViewModel;
-    private TextView startMessage;
-    private Button goBank;
-    private Button goMarket;
-    private Button goTravel;
-    private Button viewShip;
-    private Button exit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_main);
+
+        GameViewModel gameViewModel;
+        TextView startMessage;
+        Button goBank;
+        Button goMarket;
+        Button goTravel;
+        Button viewShip;
+        Button exit;
 
         startMessage = findViewById(R.id.start_msg);
         goBank = findViewById(R.id.button);

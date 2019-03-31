@@ -55,7 +55,23 @@ public class Planet {
         "Esmee",
         "Exo",
         "Flight",
-        "Helios"
+        "Helios",
+        "Zeitnot",
+        "Zggrasdil",
+        "Zylia",
+        "Tusil",
+        "Rhode",
+        "Photos",
+        "Lima",
+        "Nendo",
+        "Portia",
+        "Onfleek",
+        "Calitrops",
+        "Sylus",
+        "Querko",
+        "Ulvanus",
+        "Orang"
+
     };
 
     private String[] techLevels = {
@@ -92,7 +108,7 @@ public class Planet {
         Random rand = new Random();
         techLevel = techLevels[rand.nextInt(8)];
         resources = resourceLevels[rand.nextInt(2) * rand.nextInt(13)];
-        planetName = planetNames[rand.nextInt(39)];
+        planetName = planetNames[rand.nextInt(53)];
     }
 
     public void createPlanet(int x, int y) {
