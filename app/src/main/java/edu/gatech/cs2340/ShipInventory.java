@@ -1,6 +1,8 @@
 package edu.gatech.cs2340;
 
-public class ShipInventory {
+import java.io.Serializable;
+
+public class ShipInventory implements Serializable {
     private int numWater;
     private int numFurs;
     private int numFood;

@@ -1,6 +1,8 @@
 package edu.gatech.cs2340;
 
-public class Game {
+import java.io.Serializable;
+
+public class Game implements Serializable {
     private Difficulty gameDiff;
     private Player player;
     private Universe universe;
@@ -28,7 +30,7 @@ public class Game {
     private int narcoticsPrice;
     private int robotsPrice;
     private ShipInventory inventory;
-    private Travel travel;
+    private transient Travel travel;
     private ShipStats shipStats;
 
     public Game() {

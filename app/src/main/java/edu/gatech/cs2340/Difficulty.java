@@ -1,6 +1,8 @@
 package edu.gatech.cs2340;
 
-public enum Difficulty {
+import java.io.Serializable;
+
+public enum Difficulty implements Serializable {
     Beginner ("Beginner"),
     Easy ("Easy"),
     Normal ("Normal"),
