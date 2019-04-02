@@ -4,8 +4,8 @@ public class Game {
     private Difficulty gameDiff;
     private Player player;
     private Universe universe;
-    SolarSystem[] sols;
-    Planet[] plans = new Planet[15];
+    private SolarSystem[] sols;
+    private Planet[] plans = new Planet[15];
     private Planet playerLocation;
     private Marketplace water;
     private Marketplace furs;
