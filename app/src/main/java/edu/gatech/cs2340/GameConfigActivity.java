@@ -35,6 +35,7 @@ public class GameConfigActivity extends AppCompatActivity {
         Button downP;
         Button downF;
         Button downT;
+        Button loadSavedGame;
 
         playerName = findViewById(R.id.player_name_input);
         skillE = findViewById(R.id.engineer_skill);
@@ -52,6 +53,7 @@ public class GameConfigActivity extends AppCompatActivity {
         downP = findViewById(R.id.down1_button2);
         downF = findViewById(R.id.down1_button3);
         downT = findViewById(R.id.down1_button4);
+        loadSavedGame = findViewById(R.id.up1_button5);
 
         ArrayAdapter<Difficulty> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Difficulty.values());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -154,6 +156,20 @@ public class GameConfigActivity extends AppCompatActivity {
                     finish();
                 } else {
                     (Toast.makeText(getApplication(), "Totals Allocation must be equal to 16!", Toast.LENGTH_LONG)).show();
+                }
+            }
+        });
+
+        loadSavedGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gameViewModel = new GameViewModel(getApplication());
+                boolean loadSuccess = gameViewModel.resumeSavedGame();
+                if (loadSuccess) {
+                    postConfig(v);
+                    finish();
+                } else {
+                    Toast.makeText(getApplication(), "No game saved", Toast.LENGTH_LONG).show();
                 }
             }
         });
