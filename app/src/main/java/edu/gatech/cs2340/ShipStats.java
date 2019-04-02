@@ -1,6 +1,8 @@
 package edu.gatech.cs2340;
 
-public class ShipStats {
+import java.io.Serializable;
+
+public class ShipStats implements Serializable {
     private int health;
     private int fuel;
     private int speed;

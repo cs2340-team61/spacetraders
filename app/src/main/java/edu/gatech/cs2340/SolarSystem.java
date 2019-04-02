@@ -2,9 +2,10 @@ package edu.gatech.cs2340;
 
 import android.media.Image;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class SolarSystem {
+public class SolarSystem implements Serializable {
     private int x;
     private int y;
 

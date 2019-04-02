@@ -1,8 +1,9 @@
 package edu.gatech.cs2340;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Marketplace {
+public class Marketplace implements Serializable {
     private int MTLP;
 
     private int MTLU;

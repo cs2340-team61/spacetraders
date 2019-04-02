@@ -2,13 +2,14 @@ package edu.gatech.cs2340;
 
 import android.service.notification.NotificationListenerService;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class Planet {
+public class Planet implements Serializable {
     private int xPlanet;
     private int yPlanet;
     private String planetName;

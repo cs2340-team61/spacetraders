@@ -1,8 +1,9 @@
 package edu.gatech.cs2340;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class Universe {
+public class Universe implements Serializable {
     private int xLow;
     private int xHigh;
     private int yLow;

@@ -6,6 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 public class GameMainActivity extends AppCompatActivity {
 
@@ -14,12 +19,13 @@ public class GameMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_main);
 
-        GameViewModel gameViewModel;
+        final GameViewModel gameViewModel;
         TextView startMessage;
         Button goBank;
         Button goMarket;
         Button goTravel;
         Button viewShip;
+        Button saveGame;
         Button exit;
 
         startMessage = findViewById(R.id.start_msg);
@@ -27,6 +33,7 @@ public class GameMainActivity extends AppCompatActivity {
         goMarket = findViewById(R.id.button2);
         goTravel = findViewById(R.id.button4);
         viewShip = findViewById(R.id.button5);
+        saveGame = findViewById(R.id.button8);
         exit = findViewById(R.id.button3);
         gameViewModel = new GameViewModel(getApplication());
 
@@ -45,6 +52,18 @@ public class GameMainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 travel(v);
                 finish();
+            }
+        });
+
+        saveGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean saveSuccess = gameViewModel.saveGame();
+                if (saveSuccess) {
+                    Toast.makeText(getApplication(), "Game saved", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplication(), "Could not save game", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
