@@ -60,4 +60,17 @@ public class TravelViewModel extends AndroidViewModel {
     public int getFuel() {
         return model.getFuel();
     }
+
+    public int checkForEvent() {
+        int event = 0;
+        if (model.pirateCheck()) {
+            event = 1;
+        } else if (model.policeCheck()) {
+            event = 2;
+        } else if (model.traderCheck()) {
+            event = 3;
+        }
+
+        return event;
+    }
 }

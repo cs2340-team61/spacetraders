@@ -32,6 +32,7 @@ public class Game implements Serializable {
     private ShipInventory inventory;
     private transient Travel travel;
     private ShipStats shipStats;
+    private RandomEvent rE;
 
     public Game() {
         travel = new Travel();
@@ -178,4 +179,15 @@ public class Game implements Serializable {
     public int getHealth() { return shipStats.getHealth(); }
 
     public int getFuel() {return shipStats.getFuel(); }
+
+    public boolean pirateCheck() {
+        return rE.encounterPirates();
+    }
+    public boolean policeCheck() {
+        return rE.encounterPolice();
+    }
+
+    public boolean traderCheck() {
+        return rE.encounterTraders();
+    }
 }
