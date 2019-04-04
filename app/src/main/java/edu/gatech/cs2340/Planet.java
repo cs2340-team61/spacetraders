@@ -104,20 +104,29 @@ public class Planet implements Serializable {
 
 
     public Planet(int x, int y) {
-        xPlanet = x;
-        yPlanet = y;
-        Random rand = new Random();
-        techLevel = techLevels[rand.nextInt(8)];
-        resources = resourceLevels[rand.nextInt(2) * rand.nextInt(13)];
-        planetName = planetNames[rand.nextInt(53)];
+        if (x >= 0 && y >= 0){
+            xPlanet = x;
+            yPlanet = y;
+            Random rand = new Random();
+            techLevel = techLevels[rand.nextInt(8)];
+            resources = resourceLevels[rand.nextInt(2) * rand.nextInt(13)];
+            planetName = planetNames[rand.nextInt(53)];
+        } else {
+            throw new IndexOutOfBoundsException("x and y cannot be negative");
+        }
     }
 
     public void createPlanet(int x, int y) {
-        xPlanet = x;
-        yPlanet = y;
-        Random rand = new Random();
-        techLevel = techLevels[rand.nextInt(8)];
-        resources = resourceLevels[rand.nextInt(2) * rand.nextInt(13)];
+        if (x >= 0 && y >= 0){
+            xPlanet = x;
+            yPlanet = y;
+            Random rand = new Random();
+            techLevel = techLevels[rand.nextInt(8)];
+            resources = resourceLevels[rand.nextInt(2) * rand.nextInt(13)];
+        } else {
+            throw new IndexOutOfBoundsException("x and y cannot be negative");
+        }
+
     }
     public int getxPlanet() { return xPlanet; }
 
