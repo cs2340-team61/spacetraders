@@ -258,12 +258,22 @@ public class TravelActivity extends AppCompatActivity {
                                     update.getyPlanet(), playerLocation.getyPlanet()))) {
                         Planet[] tempPlanets = travelViewModel.getPlanets();
                         travelViewModel.updatePlayerLocation(update);
-                        travelViewModel.updateFuel(travelViewModel.getFuelCost(
-                                travelViewModel.getDistance(update.getxPlanet(),
-                                playerLocation.getxPlanet(), update.getyPlanet(),
-                                        playerLocation.getyPlanet())));
-                        restartMain(v);
-                        finish();
+                        travelViewModel.updateFuel(travelViewModel.getFuelCost(travelViewModel.getDistance(update.getxPlanet(),
+                                playerLocation.getxPlanet(), update.getyPlanet(), playerLocation.getyPlanet())));
+                        int eventCheck = travelViewModel.checkForEvent();
+                        if (eventCheck == 1) {
+                            pirateStart(v);
+                            finish();
+                        } else if (eventCheck == 2) {
+                            policeStart(v);
+                            finish();
+                        } else if (eventCheck == 3) {
+                            traderStart(v);
+                            finish();
+                        } else {
+                            restartMain(v);
+                            finish();
+                        }
                     } else {
                         (Toast.makeText(getApplication(), "You do not have enough fuel!",
                                 Toast.LENGTH_LONG)).show();
@@ -283,6 +293,21 @@ public class TravelActivity extends AppCompatActivity {
 
     public void restartMain(View view) {
         Intent intent = new Intent(this,GameMainActivity.class);
+        startActivity(intent);
+    }
+
+    public void pirateStart(View view) {
+        Intent intent = new Intent(this, PirateActivity.class);
+        startActivity(intent);
+    }
+
+    public void policeStart(View view) {
+        Intent intent = new Intent(this, PoliceActivity.class);
+        startActivity(intent);
+    }
+
+    public void traderStart(View view) {
+        Intent intent = new Intent(this, TraderActivity.class);
         startActivity(intent);
     }
 }

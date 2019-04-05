@@ -2,13 +2,14 @@ package edu.gatech.cs2340;
 
 import android.service.notification.NotificationListenerService;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class Planet {
+public class Planet implements Serializable {
     private int xPlanet;
     private int yPlanet;
     private String planetName;
@@ -55,7 +56,23 @@ public class Planet {
         "Esmee",
         "Exo",
         "Flight",
-        "Helios"
+        "Helios",
+        "Zeitnot",
+        "Zggrasdil",
+        "Zylia",
+        "Tusil",
+        "Rhode",
+        "Photos",
+        "Lima",
+        "Nendo",
+        "Portia",
+        "Onfleek",
+        "Calitrops",
+        "Sylus",
+        "Querko",
+        "Ulvanus",
+        "Orang"
+
     };
 
     private String[] techLevels = {
@@ -87,20 +104,29 @@ public class Planet {
 
 
     public Planet(int x, int y) {
-        xPlanet = x;
-        yPlanet = y;
-        Random rand = new Random();
-        techLevel = techLevels[rand.nextInt(8)];
-        resources = resourceLevels[rand.nextInt(2) * rand.nextInt(13)];
-        planetName = planetNames[rand.nextInt(39)];
+        if (x >= 0 && y >= 0){
+            xPlanet = x;
+            yPlanet = y;
+            Random rand = new Random();
+            techLevel = techLevels[rand.nextInt(8)];
+            resources = resourceLevels[rand.nextInt(2) * rand.nextInt(13)];
+            planetName = planetNames[rand.nextInt(53)];
+        } else {
+            throw new IndexOutOfBoundsException("x and y cannot be negative");
+        }
     }
 
     public void createPlanet(int x, int y) {
-        xPlanet = x;
-        yPlanet = y;
-        Random rand = new Random();
-        techLevel = techLevels[rand.nextInt(8)];
-        resources = resourceLevels[rand.nextInt(2) * rand.nextInt(13)];
+        if (x >= 0 && y >= 0){
+            xPlanet = x;
+            yPlanet = y;
+            Random rand = new Random();
+            techLevel = techLevels[rand.nextInt(8)];
+            resources = resourceLevels[rand.nextInt(2) * rand.nextInt(13)];
+        } else {
+            throw new IndexOutOfBoundsException("x and y cannot be negative");
+        }
+
     }
     public int getxPlanet() { return xPlanet; }
 

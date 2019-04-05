@@ -1,14 +1,18 @@
 package edu.gatech.cs2340;
 
-public class ShipStats {
+import java.io.Serializable;
+
+public class ShipStats implements Serializable {
     private int health;
     private int fuel;
     private int speed;
+    private int laser;
 
     public ShipStats() {
         health = 100;
         fuel = 100;
         speed = 50;
+        laser = 50;
     }
 
     public void useFuel(double used) {
@@ -35,5 +39,10 @@ public class ShipStats {
 
     public int getHealth() { return health; }
 
+    public void setHealth(int health) { this.health = health; }
+
     public int getSpeed() { return speed; }
+
+    public int getLaser() { return laser; }
+
 }

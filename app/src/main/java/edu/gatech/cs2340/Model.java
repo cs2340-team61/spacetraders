@@ -12,4 +12,5 @@ public class Model {
     }
 
     public Game getMyGame() { return myGame; }
+    public void setMyGame(Game g) { myGame = g; }
 }

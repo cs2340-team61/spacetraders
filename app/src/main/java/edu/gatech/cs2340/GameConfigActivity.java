@@ -20,20 +20,22 @@ public class GameConfigActivity extends AppCompatActivity {
     private TextView skillT;
     private TextView PointsR;
     private Spinner gameDiffSpin;
-    private Button startGame;
-    private Button upE;
-    private Button upP;
-    private Button upF;
-    private Button upT;
-    private Button downE;
-    private Button downP;
-    private Button downF;
-    private Button downT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_config);
+
+        Button startGame;
+        Button upE;
+        Button upP;
+        Button upF;
+        Button upT;
+        Button downE;
+        Button downP;
+        Button downF;
+        Button downT;
+        Button loadSavedGame;
 
         playerName = findViewById(R.id.player_name_input);
         skillE = findViewById(R.id.engineer_skill);
@@ -51,6 +53,7 @@ public class GameConfigActivity extends AppCompatActivity {
         downP = findViewById(R.id.down1_button2);
         downF = findViewById(R.id.down1_button3);
         downT = findViewById(R.id.down1_button4);
+        loadSavedGame = findViewById(R.id.up1_button5);
 
         ArrayAdapter<Difficulty> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Difficulty.values());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -156,6 +159,20 @@ public class GameConfigActivity extends AppCompatActivity {
                 }
             }
         });
+
+        loadSavedGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gameViewModel = new GameViewModel(getApplication());
+                boolean loadSuccess = gameViewModel.resumeSavedGame();
+                if (loadSuccess) {
+                    mainGame(v);
+                    finish();
+                } else {
+                    Toast.makeText(getApplication(), "No game saved", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
     public void postConfig(View view) {
@@ -167,6 +184,11 @@ public class GameConfigActivity extends AppCompatActivity {
         intent.putExtra("name", playerName.getText());
         intent.putExtra("Difficulty", ((Difficulty) gameDiffSpin.getSelectedItem()).getDiff());
 
+        startActivity(intent);
+    }
+
+    public void mainGame(View view) {
+        Intent intent = new Intent(this, GameMainActivity.class);
         startActivity(intent);
     }
 }

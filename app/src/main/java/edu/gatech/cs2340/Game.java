@@ -1,11 +1,13 @@
 package edu.gatech.cs2340;
 
-public class Game {
+import java.io.Serializable;
+
+public class Game implements Serializable {
     private Difficulty gameDiff;
     private Player player;
     private Universe universe;
-    SolarSystem[] sols;
-    Planet[] plans = new Planet[15];
+    private SolarSystem[] sols;
+    private Planet[] plans = new Planet[15];
     private Planet playerLocation;
     private Marketplace water;
     private Marketplace furs;
@@ -30,10 +32,12 @@ public class Game {
     private ShipInventory inventory;
     private Travel travel;
     private ShipStats shipStats;
+    private RandomEvent rE;
 
     public Game() {
         travel = new Travel();
         shipStats = new ShipStats();
+        rE = new RandomEvent();
     }
 
     public void addS() {
@@ -175,5 +179,24 @@ public class Game {
 
     public int getHealth() { return shipStats.getHealth(); }
 
+    protected void setHealth(int health) {
+        shipStats.setHealth(health);
+    }
+
     public int getFuel() {return shipStats.getFuel(); }
+
+    protected int getSpeed() {return shipStats.getSpeed();}
+
+    protected int getLaser() {return shipStats.getLaser();}
+
+    public boolean pirateCheck() {
+        return rE.encounterPirates();
+    }
+    public boolean policeCheck() {
+        return rE.encounterPolice();
+    }
+
+    public boolean traderCheck() {
+        return rE.encounterTraders();
+    }
 }
