@@ -44,6 +44,7 @@ public class GameMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 marketplace(v);
+                finish();
             }
         });
 

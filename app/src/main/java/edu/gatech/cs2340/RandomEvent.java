@@ -8,7 +8,7 @@ public class RandomEvent implements Serializable {
         boolean value = false;
         Random random = new Random();
         int answer = random.nextInt(10);
-        if (answer == 5) {
+        if (!(answer == 5)) {
             value = true;
         }
         return value;

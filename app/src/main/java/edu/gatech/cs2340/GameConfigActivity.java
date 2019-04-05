@@ -166,7 +166,7 @@ public class GameConfigActivity extends AppCompatActivity {
                 gameViewModel = new GameViewModel(getApplication());
                 boolean loadSuccess = gameViewModel.resumeSavedGame();
                 if (loadSuccess) {
-                    postConfig(v);
+                    mainGame(v);
                     finish();
                 } else {
                     Toast.makeText(getApplication(), "No game saved", Toast.LENGTH_LONG).show();
@@ -184,6 +184,11 @@ public class GameConfigActivity extends AppCompatActivity {
         intent.putExtra("name", playerName.getText());
         intent.putExtra("Difficulty", ((Difficulty) gameDiffSpin.getSelectedItem()).getDiff());
 
+        startActivity(intent);
+    }
+
+    public void mainGame(View view) {
+        Intent intent = new Intent(this, GameMainActivity.class);
         startActivity(intent);
     }
 }

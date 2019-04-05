@@ -57,9 +57,17 @@ public class TravelViewModel extends AndroidViewModel {
         return model.getHealth();
     }
 
+    protected void setHealth(int health) {
+        model.setHealth(health);
+    }
+
     public int getFuel() {
         return model.getFuel();
     }
+
+    protected int getSpeed() {return model.getSpeed();}
+
+    protected int getLaser() {return model.getLaser();}
 
     public int checkForEvent() {
         int event = 0;

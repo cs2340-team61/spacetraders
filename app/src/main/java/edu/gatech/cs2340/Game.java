@@ -30,13 +30,14 @@ public class Game implements Serializable {
     private int narcoticsPrice;
     private int robotsPrice;
     private ShipInventory inventory;
-    private transient Travel travel;
+    private Travel travel;
     private ShipStats shipStats;
     private RandomEvent rE;
 
     public Game() {
         travel = new Travel();
         shipStats = new ShipStats();
+        rE = new RandomEvent();
     }
 
     public void addS() {
@@ -178,7 +179,15 @@ public class Game implements Serializable {
 
     public int getHealth() { return shipStats.getHealth(); }
 
+    protected void setHealth(int health) {
+        shipStats.setHealth(health);
+    }
+
     public int getFuel() {return shipStats.getFuel(); }
+
+    protected int getSpeed() {return shipStats.getSpeed();}
+
+    protected int getLaser() {return shipStats.getLaser();}
 
     public boolean pirateCheck() {
         return rE.encounterPirates();

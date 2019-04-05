@@ -1,6 +1,8 @@
 package edu.gatech.cs2340;
 
-public class Travel {
+import java.io.Serializable;
+
+public class Travel implements Serializable {
 
     public Travel() {}
 
