@@ -37,6 +37,8 @@ public class PirateActivity extends AppCompatActivity {
                     pirateHealth.setText("" + (Integer.parseInt(pirateHealth.getText().toString()) -
                             travelViewModel.getLaser()));
                     conText.setText("You dealt 50 damage to the Pirate");
+                } else {
+                    conText.setText("Your attack missed, :(");
                 }
 
                 if (random.nextInt(3) == random.nextInt(3)) {

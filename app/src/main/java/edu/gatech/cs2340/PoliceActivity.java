@@ -1,7 +1,12 @@
 package edu.gatech.cs2340;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import java.util.Random;
 
 public class PoliceActivity extends AppCompatActivity {
 
@@ -9,5 +14,49 @@ public class PoliceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_police);
+
+        Button flee;
+        Button stop;
+
+        flee = findViewById(R.id.fleeButton);
+        stop = findViewById(R.id.acceptFate);
+
+        flee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Random random = new Random();
+                if (1 == random.nextInt(2)) {
+                    restartMain(v);
+                    finish();
+                } else {
+                    gotCaught(v);
+                    finish();
+                }
+            }
+        });
+
+        stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Random random = new Random();
+                if (1 == random.nextInt(2)) {
+                    restartMain(v);
+                    finish();
+                } else {
+                    gotCaught(v);
+                    finish();
+                }
+            }
+        });
+    }
+
+    public void restartMain(View view) {
+        Intent intent = new Intent(this,GameMainActivity.class);
+        startActivity(intent);
+    }
+
+    public void gotCaught(View view) {
+        Intent intent = new Intent(this,PoliceCaughtActivity.class);
+        startActivity(intent);
     }
 }

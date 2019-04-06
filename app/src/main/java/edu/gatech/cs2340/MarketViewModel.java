@@ -299,6 +299,10 @@ public class MarketViewModel extends AndroidViewModel {
 
     public void removeNarcotics(int add) { model.getInventory().removeNarcotics(add); }
 
+    int getNumNarcotics() {
+        return model.getNumNarcotics();
+    }
+
     public void removeRobots(int add) { model.getInventory().removeRobots(add); }
 
     public int getMaxCargo() { return model.getInventory().getMaxCargo(); }

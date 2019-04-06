@@ -199,4 +199,8 @@ public class Game implements Serializable {
     public boolean traderCheck() {
         return rE.encounterTraders();
     }
+
+    int getNumNarcotics() {
+        return inventory.getNumNarcotics();
+    }
 }
