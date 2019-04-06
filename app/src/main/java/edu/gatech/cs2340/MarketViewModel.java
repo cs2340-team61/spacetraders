@@ -308,9 +308,15 @@ public class MarketViewModel extends AndroidViewModel {
     public int getMaxCargo() { return model.getInventory().getMaxCargo(); }
 
     public void updateInventorySize() {
-        int size = model.getInventory().getNumWater() + model.getInventory().getNumFurs() + model.getInventory().getNumFood()
-                + model.getInventory().getNumOre() + model.getInventory().getNumGames() + model.getInventory().getNumFirearms()
-                + model.getInventory().getNumMedicine() + model.getInventory().getNumMachines() + model.getInventory().getNumNarcotics()
+        int size = model.getInventory().getNumWater()
+                + model.getInventory().getNumFurs()
+                + model.getInventory().getNumFood()
+                + model.getInventory().getNumOre()
+                + model.getInventory().getNumGames()
+                + model.getInventory().getNumFirearms()
+                + model.getInventory().getNumMedicine()
+                + model.getInventory().getNumMachines()
+                + model.getInventory().getNumNarcotics()
                 + model.getInventory().getNumRobots();
         model.getInventory().setSize(size);
     }

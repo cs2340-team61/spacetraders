@@ -167,120 +167,170 @@ public class MarketBuyActivity extends AppCompatActivity {
         waterUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(waterB.getText().toString()) < Integer.parseInt(waterQ.getText().toString())
-                        && Integer.parseInt(credLeft.getText().toString()) > Integer.parseInt(waterP.getText().toString())
-                        && Integer.parseInt(cargoCurr.getText().toString()) < Integer.parseInt(cargoMax.getText().toString())) {
-                    waterB.setText("" + (Integer.parseInt(waterB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(waterP.getText().toString())));
-                    cargoCurr.setText("" + (Integer.parseInt(cargoCurr.getText().toString()) + 1));
+                int waterBVal = Integer.parseInt(waterB.getText().toString());
+                int waterQVal = Integer.parseInt(waterQ.getText().toString());
+                int waterPVal = Integer.parseInt(waterP.getText().toString());
+                int credLeftVal = Integer.parseInt(credLeft.getText().toString());
+                int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
+                int cargoMaxVal = Integer.parseInt(cargoMax.getText().toString());
+                if (waterBVal < waterQVal && credLeftVal > waterPVal
+                        && cargoCurrVal < cargoMaxVal) {
+                    waterB.setText("" + (waterBVal + 1));
+                    credLeft.setText("" + (credLeftVal - waterPVal));
+                    cargoCurr.setText("" + (cargoCurrVal + 1));
                 }
             }
         });
         fursUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(fursB.getText().toString()) < Integer.parseInt(fursQ.getText().toString())
-                        && Integer.parseInt(credLeft.getText().toString()) > Integer.parseInt(fursP.getText().toString())
-                        && Integer.parseInt(cargoCurr.getText().toString()) < Integer.parseInt(cargoMax.getText().toString())) {
-                    fursB.setText("" + (Integer.parseInt(fursB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(fursP.getText().toString())));
-                    cargoCurr.setText("" + (Integer.parseInt(cargoCurr.getText().toString()) + 1));
+                int fursBVal = Integer.parseInt(fursB.getText().toString());
+                int fursQVal = Integer.parseInt(fursQ.getText().toString());
+                int fursPVal = Integer.parseInt(fursP.getText().toString());
+                int credLeftVal = Integer.parseInt(credLeft.getText().toString());
+                int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
+                int cargoMaxVal = Integer.parseInt(cargoMax.getText().toString());
+                if (fursBVal < fursQVal && credLeftVal > fursPVal
+                        && cargoCurrVal < cargoMaxVal) {
+                    fursB.setText("" + (fursBVal + 1));
+                    credLeft.setText("" + (credLeftVal - fursPVal));
+                    cargoCurr.setText("" + (cargoCurrVal + 1));
                 }
             }
         });
         foodUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(foodB.getText().toString()) < Integer.parseInt(foodQ.getText().toString())
-                        && Integer.parseInt(credLeft.getText().toString()) > Integer.parseInt(foodP.getText().toString())
-                        && Integer.parseInt(cargoCurr.getText().toString()) < Integer.parseInt(cargoMax.getText().toString())) {
-                    foodB.setText("" + (Integer.parseInt(foodB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(foodP.getText().toString())));
-                    cargoCurr.setText("" + (Integer.parseInt(cargoCurr.getText().toString()) + 1));
+                int foodBVal = Integer.parseInt(foodB.getText().toString());
+                int foodQVal = Integer.parseInt(foodQ.getText().toString());
+                int foodPVal = Integer.parseInt(foodP.getText().toString());
+                int credLeftVal = Integer.parseInt(credLeft.getText().toString());
+                int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
+                int cargoMaxVal = Integer.parseInt(cargoMax.getText().toString());
+                if (foodBVal < foodQVal && credLeftVal > foodPVal
+                        && cargoCurrVal < cargoMaxVal) {
+                    foodB.setText("" + (foodBVal + 1));
+                    credLeft.setText("" + (credLeftVal - foodPVal));
+                    cargoCurr.setText("" + (cargoCurrVal + 1));
                 }
             }
         });
         oreUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(oreB.getText().toString()) < Integer.parseInt(oreQ.getText().toString())
-                        && Integer.parseInt(credLeft.getText().toString()) > Integer.parseInt(oreP.getText().toString())
-                        && Integer.parseInt(cargoCurr.getText().toString()) < Integer.parseInt(cargoMax.getText().toString())) {
-                    oreB.setText("" + (Integer.parseInt(oreB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(oreP.getText().toString())));
-                    cargoCurr.setText("" + (Integer.parseInt(cargoCurr.getText().toString()) + 1));
+                int oreBVal = Integer.parseInt(oreB.getText().toString());
+                int oreQVal = Integer.parseInt(oreQ.getText().toString());
+                int orePVal = Integer.parseInt(oreP.getText().toString());
+                int credLeftVal = Integer.parseInt(credLeft.getText().toString());
+                int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
+                int cargoMaxVal = Integer.parseInt(cargoMax.getText().toString());
+                if (oreBVal < oreQVal && credLeftVal > orePVal
+                        && cargoCurrVal < cargoMaxVal) {
+                    oreB.setText("" + (oreBVal + 1));
+                    credLeft.setText("" + (credLeftVal - orePVal));
+                    cargoCurr.setText("" + (cargoCurrVal + 1));
                 }
             }
         });
         gamesUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(gamesB.getText().toString()) < Integer.parseInt(gamesQ.getText().toString())
-                        && Integer.parseInt(credLeft.getText().toString()) > Integer.parseInt(gamesP.getText().toString())
-                        && Integer.parseInt(cargoCurr.getText().toString()) < Integer.parseInt(cargoMax.getText().toString())) {
-                    gamesB.setText("" + (Integer.parseInt(gamesB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(gamesP.getText().toString())));
-                    cargoCurr.setText("" + (Integer.parseInt(cargoCurr.getText().toString()) + 1));
+                int gamesBVal = Integer.parseInt(gamesB.getText().toString());
+                int gamesQVal = Integer.parseInt(gamesQ.getText().toString());
+                int gamesPVal = Integer.parseInt(gamesP.getText().toString());
+                int credLeftVal = Integer.parseInt(credLeft.getText().toString());
+                int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
+                int cargoMaxVal = Integer.parseInt(cargoMax.getText().toString());
+                if (gamesBVal < gamesQVal && credLeftVal > gamesPVal
+                        && cargoCurrVal < cargoMaxVal) {
+                    gamesB.setText("" + (gamesBVal + 1));
+                    credLeft.setText("" + (credLeftVal - gamesPVal));
+                    cargoCurr.setText("" + (cargoCurrVal + 1));
                 }
             }
         });
         firearmsUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(firearmsB.getText().toString()) < Integer.parseInt(firearmsQ.getText().toString())
-                        && Integer.parseInt(credLeft.getText().toString()) > Integer.parseInt(firearmsP.getText().toString())
-                        && Integer.parseInt(cargoCurr.getText().toString()) < Integer.parseInt(cargoMax.getText().toString())) {
-                    firearmsB.setText("" + (Integer.parseInt(firearmsB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(firearmsP.getText().toString())));
-                    cargoCurr.setText("" + (Integer.parseInt(cargoCurr.getText().toString()) + 1));
+                int firearmsBVal = Integer.parseInt(firearmsB.getText().toString());
+                int firearmsQVal = Integer.parseInt(firearmsQ.getText().toString());
+                int firearmsPVal = Integer.parseInt(firearmsP.getText().toString());
+                int credLeftVal = Integer.parseInt(credLeft.getText().toString());
+                int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
+                int cargoMaxVal = Integer.parseInt(cargoMax.getText().toString());
+                if (firearmsBVal < firearmsQVal && credLeftVal > firearmsPVal
+                        && cargoCurrVal < cargoMaxVal) {
+                    firearmsB.setText("" + (firearmsBVal + 1));
+                    credLeft.setText("" + (credLeftVal - firearmsPVal));
+                    cargoCurr.setText("" + (cargoCurrVal + 1));
                 }
             }
         });
         medicineUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(medicineB.getText().toString()) < Integer.parseInt(medicineQ.getText().toString())
-                        && Integer.parseInt(credLeft.getText().toString()) > Integer.parseInt(medicineP.getText().toString())
-                        && Integer.parseInt(cargoCurr.getText().toString()) < Integer.parseInt(cargoMax.getText().toString())) {
-                    medicineB.setText("" + (Integer.parseInt(medicineB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(medicineP.getText().toString())));
-                    cargoCurr.setText("" + (Integer.parseInt(cargoCurr.getText().toString()) + 1));
+                int medicineBVal = Integer.parseInt(medicineB.getText().toString());
+                int medicineQVal = Integer.parseInt(medicineQ.getText().toString());
+                int medicinePVal = Integer.parseInt(medicineP.getText().toString());
+                int credLeftVal = Integer.parseInt(credLeft.getText().toString());
+                int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
+                int cargoMaxVal = Integer.parseInt(cargoMax.getText().toString());
+                if (medicineBVal < medicineQVal && credLeftVal > medicinePVal
+                        && cargoCurrVal < cargoMaxVal) {
+                    medicineB.setText("" + (medicineBVal + 1));
+                    credLeft.setText("" + (credLeftVal - medicinePVal));
+                    cargoCurr.setText("" + (cargoCurrVal + 1));
                 }
             }
         });
         machinesUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(machinesB.getText().toString()) < Integer.parseInt(machinesQ.getText().toString())
-                        && Integer.parseInt(credLeft.getText().toString()) > Integer.parseInt(machinesP.getText().toString())
-                        && Integer.parseInt(cargoCurr.getText().toString()) < Integer.parseInt(cargoMax.getText().toString())) {
-                    machinesB.setText("" + (Integer.parseInt(machinesB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(machinesP.getText().toString())));
-                    cargoCurr.setText("" + (Integer.parseInt(cargoCurr.getText().toString()) + 1));
+                int machinesBVal = Integer.parseInt(machinesB.getText().toString());
+                int machinesQVal = Integer.parseInt(machinesQ.getText().toString());
+                int machinesPVal = Integer.parseInt(machinesP.getText().toString());
+                int credLeftVal = Integer.parseInt(credLeft.getText().toString());
+                int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
+                int cargoMaxVal = Integer.parseInt(cargoMax.getText().toString());
+                if (machinesBVal < machinesQVal && credLeftVal > machinesPVal
+                        && cargoCurrVal < cargoMaxVal) {
+                    machinesB.setText("" + (machinesBVal + 1));
+                    credLeft.setText("" + (credLeftVal - machinesPVal));
+                    cargoCurr.setText("" + (cargoCurrVal + 1));
                 }
             }
         });
         narcoticsUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(narcoticsB.getText().toString()) < Integer.parseInt(narcoticsQ.getText().toString())
-                        && Integer.parseInt(credLeft.getText().toString()) > Integer.parseInt(narcoticsP.getText().toString())
-                        && Integer.parseInt(cargoCurr.getText().toString()) < Integer.parseInt(cargoMax.getText().toString())) {
-                    narcoticsB.setText("" + (Integer.parseInt(narcoticsB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(narcoticsP.getText().toString())));
-                    cargoCurr.setText("" + (Integer.parseInt(cargoCurr.getText().toString()) + 1));
+                int narcoticsBVal = Integer.parseInt(narcoticsB.getText().toString());
+                int narcoticsQVal = Integer.parseInt(narcoticsQ.getText().toString());
+                int narcoticsPVal = Integer.parseInt(narcoticsP.getText().toString());
+                int credLeftVal = Integer.parseInt(credLeft.getText().toString());
+                int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
+                int cargoMaxVal = Integer.parseInt(cargoMax.getText().toString());
+                if (narcoticsBVal < narcoticsQVal && credLeftVal > narcoticsPVal
+                        && cargoCurrVal < cargoMaxVal) {
+                    narcoticsB.setText("" + (narcoticsBVal + 1));
+                    credLeft.setText("" + (credLeftVal - narcoticsPVal));
+                    cargoCurr.setText("" + (cargoCurrVal + 1));
                 }
             }
         });
         robotsUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(robotsB.getText().toString()) < Integer.parseInt(robotsQ.getText().toString())
-                        && Integer.parseInt(credLeft.getText().toString()) > Integer.parseInt(robotsP.getText().toString())
-                        && Integer.parseInt(cargoCurr.getText().toString()) < Integer.parseInt(cargoMax.getText().toString())) {
-                    robotsB.setText("" + (Integer.parseInt(robotsB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(robotsP.getText().toString())));
-                    cargoCurr.setText("" + (Integer.parseInt(cargoCurr.getText().toString()) + 1));
+                int robotsBVal = Integer.parseInt(robotsB.getText().toString());
+                int robotsQVal = Integer.parseInt(robotsQ.getText().toString());
+                int robotsPVal = Integer.parseInt(robotsP.getText().toString());
+                int credLeftVal = Integer.parseInt(credLeft.getText().toString());
+                int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
+                int cargoMaxVal = Integer.parseInt(cargoMax.getText().toString());
+                if (robotsBVal < robotsQVal && credLeftVal > robotsPVal
+                        && cargoCurrVal < cargoMaxVal) {
+                    robotsB.setText("" + (robotsBVal + 1));
+                    credLeft.setText("" + (credLeftVal - robotsPVal));
+                    cargoCurr.setText("" + (cargoCurrVal + 1));
                 }
             }
         });
@@ -288,100 +338,140 @@ public class MarketBuyActivity extends AppCompatActivity {
         waterDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(waterB.getText().toString()) > 0) {
-                    waterB.setText("" + (Integer.parseInt(waterB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(waterP.getText().toString())));
-                    cargoCurr.setText("" + (Integer.parseInt(cargoCurr.getText().toString()) - 1));
+                int waterBVal = Integer.parseInt(waterB.getText().toString());
+                int waterPVal = Integer.parseInt(waterP.getText().toString());
+                int credLeftVal = Integer.parseInt(credLeft.getText().toString());
+                int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
+                if (waterBVal > 0) {
+                    waterB.setText("" + (waterBVal - 1));
+                    credLeft.setText("" + (credLeftVal + waterPVal));
+                    cargoCurr.setText("" + (cargoCurrVal - 1));
                 }
             }
         });
         fursDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(fursB.getText().toString()) > 0) {
-                    fursB.setText("" + (Integer.parseInt(fursB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(fursP.getText().toString())));
-                    cargoCurr.setText("" + (Integer.parseInt(cargoCurr.getText().toString()) - 1));
+                int fursBVal = Integer.parseInt(fursB.getText().toString());
+                int fursPVal = Integer.parseInt(fursP.getText().toString());
+                int credLeftVal = Integer.parseInt(credLeft.getText().toString());
+                int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
+                if (fursBVal > 0) {
+                    fursB.setText("" + (fursBVal - 1));
+                    credLeft.setText("" + (credLeftVal + fursPVal));
+                    cargoCurr.setText("" + (cargoCurrVal - 1));
                 }
             }
         });
         foodDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(foodB.getText().toString()) > 0) {
-                    foodB.setText("" + (Integer.parseInt(foodB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(foodP.getText().toString())));
-                    cargoCurr.setText("" + (Integer.parseInt(cargoCurr.getText().toString()) - 1));
+                int foodBVal = Integer.parseInt(foodB.getText().toString());
+                int foodPVal = Integer.parseInt(foodP.getText().toString());
+                int credLeftVal = Integer.parseInt(credLeft.getText().toString());
+                int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
+                if (foodBVal > 0) {
+                    foodB.setText("" + (foodBVal - 1));
+                    credLeft.setText("" + (credLeftVal + foodPVal));
+                    cargoCurr.setText("" + (cargoCurrVal - 1));
                 }
             }
         });
         oreDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(oreB.getText().toString()) > 0) {
-                    oreB.setText("" + (Integer.parseInt(oreB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(oreP.getText().toString())));
-                    cargoCurr.setText("" + (Integer.parseInt(cargoCurr.getText().toString()) - 1));
+                int oreBVal = Integer.parseInt(oreB.getText().toString());
+                int orePVal = Integer.parseInt(oreP.getText().toString());
+                int credLeftVal = Integer.parseInt(credLeft.getText().toString());
+                int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
+                if (oreBVal > 0) {
+                    oreB.setText("" + (oreBVal - 1));
+                    credLeft.setText("" + (credLeftVal + orePVal));
+                    cargoCurr.setText("" + (cargoCurrVal - 1));
                 }
             }
         });
         gamesDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(gamesB.getText().toString()) > 0) {
-                    gamesB.setText("" + (Integer.parseInt(gamesB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(gamesP.getText().toString())));
-                    cargoCurr.setText("" + (Integer.parseInt(cargoCurr.getText().toString()) - 1));
+                int gamesBVal = Integer.parseInt(gamesB.getText().toString());
+                int gamesPVal = Integer.parseInt(gamesP.getText().toString());
+                int credLeftVal = Integer.parseInt(credLeft.getText().toString());
+                int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
+                if (gamesBVal > 0) {
+                    gamesB.setText("" + (gamesBVal - 1));
+                    credLeft.setText("" + (credLeftVal + gamesPVal));
+                    cargoCurr.setText("" + (cargoCurrVal - 1));
                 }
             }
         });
         firearmsDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(firearmsB.getText().toString()) > 0) {
-                    firearmsB.setText("" + (Integer.parseInt(firearmsB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(firearmsP.getText().toString())));
-                    cargoCurr.setText("" + (Integer.parseInt(cargoCurr.getText().toString()) - 1));
+                int firearmsBVal = Integer.parseInt(firearmsB.getText().toString());
+                int firearmsPVal = Integer.parseInt(firearmsP.getText().toString());
+                int credLeftVal = Integer.parseInt(credLeft.getText().toString());
+                int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
+                if (firearmsBVal > 0) {
+                    firearmsB.setText("" + (firearmsBVal - 1));
+                    credLeft.setText("" + (credLeftVal + firearmsPVal));
+                    cargoCurr.setText("" + (cargoCurrVal - 1));
                 }
             }
         });
         medicineDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(medicineB.getText().toString()) > 0) {
-                    medicineB.setText("" + (Integer.parseInt(medicineB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(medicineP.getText().toString())));
-                    cargoCurr.setText("" + (Integer.parseInt(cargoCurr.getText().toString()) - 1));
+                int medicineBVal = Integer.parseInt(medicineB.getText().toString());
+                int medicinePVal = Integer.parseInt(medicineP.getText().toString());
+                int credLeftVal = Integer.parseInt(credLeft.getText().toString());
+                int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
+                if (medicineBVal > 0) {
+                    medicineB.setText("" + (medicineBVal - 1));
+                    credLeft.setText("" + (credLeftVal + medicinePVal));
+                    cargoCurr.setText("" + (cargoCurrVal - 1));
                 }
             }
         });
         machinesDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(machinesB.getText().toString()) > 0) {
-                    machinesB.setText("" + (Integer.parseInt(machinesB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(machinesP.getText().toString())));
-                    cargoCurr.setText("" + (Integer.parseInt(cargoCurr.getText().toString()) - 1));
+                int machinesBVal = Integer.parseInt(machinesB.getText().toString());
+                int machinesPVal = Integer.parseInt(machinesP.getText().toString());
+                int credLeftVal = Integer.parseInt(credLeft.getText().toString());
+                int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
+                if (machinesBVal > 0) {
+                    machinesB.setText("" + (machinesBVal - 1));
+                    credLeft.setText("" + (credLeftVal + machinesPVal));
+                    cargoCurr.setText("" + (cargoCurrVal - 1));
                 }
             }
         });
         narcoticsDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(narcoticsB.getText().toString()) > 0) {
-                    narcoticsB.setText("" + (Integer.parseInt(narcoticsB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(narcoticsP.getText().toString())));
-                    cargoCurr.setText("" + (Integer.parseInt(cargoCurr.getText().toString()) - 1));
+                int narcoticsBVal = Integer.parseInt(narcoticsB.getText().toString());
+                int narcoticsPVal = Integer.parseInt(narcoticsP.getText().toString());
+                int credLeftVal = Integer.parseInt(credLeft.getText().toString());
+                int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
+                if (narcoticsBVal > 0) {
+                    narcoticsB.setText("" + (narcoticsBVal - 1));
+                    credLeft.setText("" + (credLeftVal + narcoticsPVal));
+                    cargoCurr.setText("" + (cargoCurrVal - 1));
                 }
             }
         });
         robotsDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(robotsB.getText().toString()) > 0) {
-                    robotsB.setText("" + (Integer.parseInt(robotsB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(robotsP.getText().toString())));
-                    cargoCurr.setText("" + (Integer.parseInt(cargoCurr.getText().toString()) - 1));
+                int robotsBVal = Integer.parseInt(robotsB.getText().toString());
+                int robotsPVal = Integer.parseInt(robotsP.getText().toString());
+                int credLeftVal = Integer.parseInt(credLeft.getText().toString());
+                int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
+                if (robotsBVal > 0) {
+                    robotsB.setText("" + (robotsBVal - 1));
+                    credLeft.setText("" + (credLeftVal + robotsPVal));
+                    cargoCurr.setText("" + (cargoCurrVal - 1));
                 }
             }
         });

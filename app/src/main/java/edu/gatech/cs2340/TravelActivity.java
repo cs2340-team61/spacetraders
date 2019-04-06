@@ -60,7 +60,8 @@ public class TravelActivity extends AppCompatActivity {
     private TextView fuelCost13;
     private TextView fuelCost14;
     private TextView fuelCost15;
-    private TextView currentHaelth;
+    // FIXED: typo: Haelth -> Health
+    private TextView currentHealth;
     private TextView currentFuel;
     private TextView ssChoice;
     private TextView pChoice;
@@ -127,7 +128,7 @@ public class TravelActivity extends AppCompatActivity {
         fuelCost13 = findViewById(R.id.fuelCost13);
         fuelCost14 = findViewById(R.id.fuelCost14);
         fuelCost15 = findViewById(R.id.fuelCost15);
-        currentHaelth = findViewById(R.id.currentHealth);
+        currentHealth = findViewById(R.id.currentHealth);
         currentFuel = findViewById(R.id.currentFuel);
         ssChoice = findViewById(R.id.ssChoice);
         pChoice = findViewById(R.id.pChoice);
@@ -163,39 +164,46 @@ public class TravelActivity extends AppCompatActivity {
         planet14.setText(planets[13].getPlanetName());
         planet15.setText(planets[14].getPlanetName());
 
-        distance1.setText(travelViewModel.getDistance(planets[0].getxPlanet(), playerLocation.getxPlanet(),planets[0].getyPlanet(), playerLocation.getyPlanet()) + " Units");
-        distance2.setText(travelViewModel.getDistance(planets[1].getxPlanet(), playerLocation.getxPlanet(),planets[1].getyPlanet(), playerLocation.getyPlanet()) + " Units");
-        distance3.setText(travelViewModel.getDistance(planets[2].getxPlanet(), playerLocation.getxPlanet(),planets[2].getyPlanet(), playerLocation.getyPlanet()) + " Units");
-        distance4.setText(travelViewModel.getDistance(planets[3].getxPlanet(), playerLocation.getxPlanet(),planets[3].getyPlanet(), playerLocation.getyPlanet()) + " Units");
-        distance5.setText(travelViewModel.getDistance(planets[4].getxPlanet(), playerLocation.getxPlanet(),planets[4].getyPlanet(), playerLocation.getyPlanet()) + " Units");
-        distance6.setText(travelViewModel.getDistance(planets[5].getxPlanet(), playerLocation.getxPlanet(),planets[5].getyPlanet(), playerLocation.getyPlanet()) + " Units");
-        distance7.setText(travelViewModel.getDistance(planets[6].getxPlanet(), playerLocation.getxPlanet(),planets[6].getyPlanet(), playerLocation.getyPlanet()) + " Units");
-        distance8.setText(travelViewModel.getDistance(planets[7].getxPlanet(), playerLocation.getxPlanet(),planets[7].getyPlanet(), playerLocation.getyPlanet()) + " Units");
-        distance9.setText(travelViewModel.getDistance(planets[8].getxPlanet(), playerLocation.getxPlanet(),planets[8].getyPlanet(), playerLocation.getyPlanet()) + " Units");
-        distance10.setText(travelViewModel.getDistance(planets[9].getxPlanet(), playerLocation.getxPlanet(),planets[9].getyPlanet(), playerLocation.getyPlanet()) + " Units");
-        distance11.setText(travelViewModel.getDistance(planets[10].getxPlanet(), playerLocation.getxPlanet(),planets[10].getyPlanet(), playerLocation.getyPlanet()) + " Units");
-        distance12.setText(travelViewModel.getDistance(planets[11].getxPlanet(), playerLocation.getxPlanet(),planets[11].getyPlanet(), playerLocation.getyPlanet()) + " Units");
-        distance13.setText(travelViewModel.getDistance(planets[12].getxPlanet(), playerLocation.getxPlanet(),planets[12].getyPlanet(), playerLocation.getyPlanet()) + " Units");
-        distance14.setText(travelViewModel.getDistance(planets[13].getxPlanet(), playerLocation.getxPlanet(),planets[13].getyPlanet(), playerLocation.getyPlanet()) + " Units");
-        distance15.setText(travelViewModel.getDistance(planets[14].getxPlanet(), playerLocation.getxPlanet(),planets[14].getyPlanet(), playerLocation.getyPlanet()) + " Units");
+        int distances[] = new int[15];
+        for (int i = 0; i < distances.length; i++) {
+            distances[i] = travelViewModel.getDistance(planets[i].getxPlanet(),
+                    playerLocation.getxPlanet(),planets[i].getyPlanet(),
+                    playerLocation.getyPlanet());
+        }
 
-        fuelCost1.setText(travelViewModel.getFuelCost(travelViewModel.getDistance(planets[0].getxPlanet(), playerLocation.getxPlanet(),planets[0].getyPlanet(), playerLocation.getyPlanet())) + " fuel");
-        fuelCost2.setText(travelViewModel.getFuelCost(travelViewModel.getDistance(planets[1].getxPlanet(), playerLocation.getxPlanet(),planets[1].getyPlanet(), playerLocation.getyPlanet())) + " fuel");
-        fuelCost3.setText(travelViewModel.getFuelCost(travelViewModel.getDistance(planets[2].getxPlanet(), playerLocation.getxPlanet(),planets[2].getyPlanet(), playerLocation.getyPlanet())) + " fuel");
-        fuelCost4.setText(travelViewModel.getFuelCost(travelViewModel.getDistance(planets[3].getxPlanet(), playerLocation.getxPlanet(),planets[3].getyPlanet(), playerLocation.getyPlanet())) + " fuel");
-        fuelCost5.setText(travelViewModel.getFuelCost(travelViewModel.getDistance(planets[4].getxPlanet(), playerLocation.getxPlanet(),planets[4].getyPlanet(), playerLocation.getyPlanet())) + " fuel");
-        fuelCost6.setText(travelViewModel.getFuelCost(travelViewModel.getDistance(planets[5].getxPlanet(), playerLocation.getxPlanet(),planets[5].getyPlanet(), playerLocation.getyPlanet())) + " fuel");
-        fuelCost7.setText(travelViewModel.getFuelCost(travelViewModel.getDistance(planets[6].getxPlanet(), playerLocation.getxPlanet(),planets[6].getyPlanet(), playerLocation.getyPlanet())) + " fuel");
-        fuelCost8.setText(travelViewModel.getFuelCost(travelViewModel.getDistance(planets[7].getxPlanet(), playerLocation.getxPlanet(),planets[7].getyPlanet(), playerLocation.getyPlanet())) + " fuel");
-        fuelCost9.setText(travelViewModel.getFuelCost(travelViewModel.getDistance(planets[8].getxPlanet(), playerLocation.getxPlanet(),planets[8].getyPlanet(), playerLocation.getyPlanet())) + " fuel");
-        fuelCost10.setText(travelViewModel.getFuelCost(travelViewModel.getDistance(planets[9].getxPlanet(), playerLocation.getxPlanet(),planets[9].getyPlanet(), playerLocation.getyPlanet())) + " fuel");
-        fuelCost11.setText(travelViewModel.getFuelCost(travelViewModel.getDistance(planets[10].getxPlanet(), playerLocation.getxPlanet(),planets[10].getyPlanet(), playerLocation.getyPlanet())) + " fuel");
-        fuelCost12.setText(travelViewModel.getFuelCost(travelViewModel.getDistance(planets[11].getxPlanet(), playerLocation.getxPlanet(),planets[11].getyPlanet(), playerLocation.getyPlanet())) + " fuel");
-        fuelCost13.setText(travelViewModel.getFuelCost(travelViewModel.getDistance(planets[12].getxPlanet(), playerLocation.getxPlanet(),planets[12].getyPlanet(), playerLocation.getyPlanet())) + " fuel");
-        fuelCost14.setText(travelViewModel.getFuelCost(travelViewModel.getDistance(planets[13].getxPlanet(), playerLocation.getxPlanet(),planets[13].getyPlanet(), playerLocation.getyPlanet())) + " fuel");
-        fuelCost15.setText(travelViewModel.getFuelCost(travelViewModel.getDistance(planets[14].getxPlanet(), playerLocation.getxPlanet(),planets[14].getyPlanet(), playerLocation.getyPlanet())) + " fuel");
+        distance1.setText(distances[0] + " Units");
+        distance2.setText(distances[1] + " Units");
+        distance3.setText(distances[2] + " Units");
+        distance4.setText(distances[3] + " Units");
+        distance5.setText(distances[4] + " Units");
+        distance6.setText(distances[5] + " Units");
+        distance7.setText(distances[6] + " Units");
+        distance8.setText(distances[7] + " Units");
+        distance9.setText(distances[8] + " Units");
+        distance10.setText(distances[9] + " Units");
+        distance11.setText(distances[10] + " Units");
+        distance12.setText(distances[11] + " Units");
+        distance13.setText(distances[12] + " Units");
+        distance14.setText(distances[13] + " Units");
+        distance15.setText(distances[14] + " Units");
 
-        currentHaelth.setText("" + travelViewModel.getHealth());
+        fuelCost1.setText(travelViewModel.getFuelCost(distances[0]) + " fuel");
+        fuelCost2.setText(travelViewModel.getFuelCost(distances[1]) + " fuel");
+        fuelCost3.setText(travelViewModel.getFuelCost(distances[2]) + " fuel");
+        fuelCost4.setText(travelViewModel.getFuelCost(distances[3]) + " fuel");
+        fuelCost5.setText(travelViewModel.getFuelCost(distances[4]) + " fuel");
+        fuelCost6.setText(travelViewModel.getFuelCost(distances[5]) + " fuel");
+        fuelCost7.setText(travelViewModel.getFuelCost(distances[6]) + " fuel");
+        fuelCost8.setText(travelViewModel.getFuelCost(distances[7]) + " fuel");
+        fuelCost9.setText(travelViewModel.getFuelCost(distances[8]) + " fuel");
+        fuelCost10.setText(travelViewModel.getFuelCost(distances[9]) + " fuel");
+        fuelCost11.setText(travelViewModel.getFuelCost(distances[10]) + " fuel");
+        fuelCost12.setText(travelViewModel.getFuelCost(distances[11]) + " fuel");
+        fuelCost13.setText(travelViewModel.getFuelCost(distances[12]) + " fuel");
+        fuelCost14.setText(travelViewModel.getFuelCost(distances[13]) + " fuel");
+        fuelCost15.setText(travelViewModel.getFuelCost(distances[14]) + " fuel");
+
+        currentHealth.setText("" + travelViewModel.getHealth());
         currentFuel.setText("" + travelViewModel.getFuel());
 
         ssUp.setOnClickListener(new View.OnClickListener() {
@@ -237,12 +245,17 @@ public class TravelActivity extends AppCompatActivity {
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Planet update = planets[Integer.parseInt(ssChoice.getText().toString()) * 3 + Integer.parseInt(pChoice.getText().toString()) - 4];
+                Planet update = planets[Integer.parseInt(ssChoice.getText().toString()) * 3
+                        + Integer.parseInt(pChoice.getText().toString()) - 4];
                 Planet playerLocation = travelViewModel.getPlayerLocation();
                 if (update.equals(playerLocation)) {
-                    (Toast.makeText(getApplication(), "You are already on this planet!", Toast.LENGTH_LONG)).show();
+                    (Toast.makeText(getApplication(), "You are already on this planet!",
+                            Toast.LENGTH_LONG)).show();
                 } else {
-                    if (Integer.parseInt(currentFuel.getText().toString()) > travelViewModel.getFuelCost(travelViewModel.getDistance(update.getxPlanet(), playerLocation.getxPlanet(), update.getyPlanet(), playerLocation.getyPlanet()))) {
+                    if (Integer.parseInt(currentFuel.getText().toString())
+                            > travelViewModel.getFuelCost(travelViewModel.getDistance(
+                                    update.getxPlanet(), playerLocation.getxPlanet(),
+                                    update.getyPlanet(), playerLocation.getyPlanet()))) {
                         Planet[] tempPlanets = travelViewModel.getPlanets();
                         travelViewModel.updatePlayerLocation(update);
                         travelViewModel.updateFuel(travelViewModel.getFuelCost(travelViewModel.getDistance(update.getxPlanet(),
@@ -262,7 +275,8 @@ public class TravelActivity extends AppCompatActivity {
                             finish();
                         }
                     } else {
-                        (Toast.makeText(getApplication(), "You do not have enough fuel!", Toast.LENGTH_LONG)).show();
+                        (Toast.makeText(getApplication(), "You do not have enough fuel!",
+                                Toast.LENGTH_LONG)).show();
                     }
                 }
             }
