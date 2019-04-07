@@ -7,7 +7,13 @@ import android.support.annotation.NonNull;
 import java.util.Random;
 
 public class MarketViewModel extends AndroidViewModel {
-    private Game model;
+    private final Game model;
+    private static final int bigB = 11;
+    private static final int addB = 20;
+    private static final int otherB = 15;
+    private static final int biggerB = 13;
+    private static final int magic25 = 25;
+    private static final int magic30 = 30;
 
     public MarketViewModel(@NonNull Application application) {
         super(application);
@@ -29,11 +35,11 @@ public class MarketViewModel extends AndroidViewModel {
 
     public Integer[] quantityMarket() {
         String tech = model.getPlayerLocation().getTechLevel();
-        Integer[] quantArr = new Integer[11];
+        Integer[] quantArr = new Integer[bigB];
         Random rand = new Random();
         if (tech.equals("Pre-Agriculture")) {
-            quantArr[0] = ((rand.nextInt(11)) + 20) * 20 + rand.nextInt(10);
-            quantArr[1] = ((rand.nextInt(11)) + 20) * 20 + rand.nextInt(10);
+            quantArr[0] = ((rand.nextInt(bigB)) + addB) * addB + rand.nextInt(10);
+            quantArr[1] = ((rand.nextInt(bigB)) + addB) * addB + rand.nextInt(10);
             quantArr[2] = 0;
             quantArr[3] = 0;
             quantArr[4] = 0;
@@ -44,9 +50,9 @@ public class MarketViewModel extends AndroidViewModel {
             quantArr[9] = 0;
         }
         if (tech.equals("Agriculture")) {
-            quantArr[0] = ((rand.nextInt(11)) + 20) * 20 + rand.nextInt(10);
-            quantArr[1] = ((rand.nextInt(11)) + 20) * 10 + rand.nextInt(10);
-            quantArr[2] = ((rand.nextInt(11)) + 20) * 25 + rand.nextInt(10);
+            quantArr[0] = ((rand.nextInt(bigB)) + addB) * addB + rand.nextInt(10);
+            quantArr[1] = ((rand.nextInt(bigB)) + addB) * 10 + rand.nextInt(10);
+            quantArr[2] = ((rand.nextInt(bigB)) + addB) * magic25 + rand.nextInt(10);
             quantArr[3] = 0;
             quantArr[4] = 0;
             quantArr[5] = 0;
@@ -56,10 +62,10 @@ public class MarketViewModel extends AndroidViewModel {
             quantArr[9] = 0;
         }
         if (tech.equals("Medieval")) {
-            quantArr[0] = ((rand.nextInt(11)) + 20) * 30 + rand.nextInt(10);
-            quantArr[1] = ((rand.nextInt(11)) + 20) * 10 + rand.nextInt(10);
-            quantArr[2] = ((rand.nextInt(11)) + 20) * 15 + rand.nextInt(10);
-            quantArr[3] = ((rand.nextInt(11)) + 20) * 5 + rand.nextInt(10);
+            quantArr[0] = ((rand.nextInt(bigB)) + addB) * magic30 + rand.nextInt(10);
+            quantArr[1] = ((rand.nextInt(bigB)) + addB) * 10 + rand.nextInt(10);
+            quantArr[2] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
+            quantArr[3] = ((rand.nextInt(bigB)) + addB) * 5 + rand.nextInt(10);
             quantArr[4] = 0;
             quantArr[5] = 0;
             quantArr[6] = 0;
@@ -68,75 +74,75 @@ public class MarketViewModel extends AndroidViewModel {
             quantArr[9] = 0;
         }
         if (tech.equals("Renaissance")) {
-            quantArr[0] = ((rand.nextInt(11)) + 20) * 20 + rand.nextInt(10);
-            quantArr[1] = ((rand.nextInt(11)) + 20) * 10 + rand.nextInt(10);
-            quantArr[2] = ((rand.nextInt(11)) + 20) * 15 + rand.nextInt(10);
-            quantArr[3] = ((rand.nextInt(11)) + 20) * 15 + rand.nextInt(10);
-            quantArr[4] = (rand.nextInt(11))  + rand.nextInt(10);
-            quantArr[5] = ((rand.nextInt(11)) + 20)  + rand.nextInt(10);
+            quantArr[0] = ((rand.nextInt(bigB)) + addB) * addB + rand.nextInt(10);
+            quantArr[1] = ((rand.nextInt(bigB)) + addB) * 10 + rand.nextInt(10);
+            quantArr[2] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
+            quantArr[3] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
+            quantArr[4] = (rand.nextInt(bigB))  + rand.nextInt(10);
+            quantArr[5] = ((rand.nextInt(bigB)) + addB)  + rand.nextInt(10);
             quantArr[6] = 0;
             quantArr[7] = 0;
             quantArr[8] = 0;
             quantArr[9] = 0;
         }
         if (tech.equals("Early Industrial")) {
-            quantArr[0] = ((rand.nextInt(11)) + 20) * 20 + rand.nextInt(10);
-            quantArr[1] = ((rand.nextInt(11)) + 20) * 10 + rand.nextInt(10);
-            quantArr[2] = ((rand.nextInt(11)) + 20) * 15 + rand.nextInt(10);
-            quantArr[3] = ((rand.nextInt(11)) + 20) * 15 + rand.nextInt(10);
-            quantArr[4] = ((rand.nextInt(11)) + 10) * 3  + rand.nextInt(10);
-            quantArr[5] = ((rand.nextInt(11)) + 20) * 4  + rand.nextInt(10);
-            quantArr[6] = ((rand.nextInt(11)) + 5) * 2  + rand.nextInt(10);
-            quantArr[7] = ((rand.nextInt(11)) + 5)  + rand.nextInt(10);
+            quantArr[0] = ((rand.nextInt(bigB)) + addB) * addB + rand.nextInt(10);
+            quantArr[1] = ((rand.nextInt(bigB)) + addB) * 10 + rand.nextInt(10);
+            quantArr[2] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
+            quantArr[3] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
+            quantArr[4] = ((rand.nextInt(bigB)) + 10) * 3  + rand.nextInt(10);
+            quantArr[5] = ((rand.nextInt(bigB)) + addB) * 4  + rand.nextInt(10);
+            quantArr[6] = ((rand.nextInt(bigB)) + 5) * 2  + rand.nextInt(10);
+            quantArr[7] = ((rand.nextInt(bigB)) + 5)  + rand.nextInt(10);
             quantArr[8] = 0;
             quantArr[9] = 0;
         }
         if (tech.equals("Industrial")) {
-            quantArr[0] = ((rand.nextInt(11)) + 20) * 20 + rand.nextInt(10);
-            quantArr[1] = ((rand.nextInt(11)) + 20) * 10 + rand.nextInt(10);
-            quantArr[2] = ((rand.nextInt(11)) + 20) * 15 + rand.nextInt(10);
-            quantArr[3] = ((rand.nextInt(11)) + 20) * 15 + rand.nextInt(10);
-            quantArr[4] = ((rand.nextInt(13)) + 10)  + rand.nextInt(10);
-            quantArr[5] = ((rand.nextInt(11)) + 20) * 6  + rand.nextInt(10);
-            quantArr[6] = ((rand.nextInt(13)) + 20) * 4  + rand.nextInt(10);
-            quantArr[7] = ((rand.nextInt(11)) + 20) * 6  + rand.nextInt(10);
-            quantArr[8] = ((rand.nextInt(13)) + 20) * 5  + rand.nextInt(10);
+            quantArr[0] = ((rand.nextInt(bigB)) + addB) * addB + rand.nextInt(10);
+            quantArr[1] = ((rand.nextInt(bigB)) + addB) * 10 + rand.nextInt(10);
+            quantArr[2] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
+            quantArr[3] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
+            quantArr[4] = ((rand.nextInt(biggerB)) + 10)  + rand.nextInt(10);
+            quantArr[5] = ((rand.nextInt(bigB)) + addB) * 6  + rand.nextInt(10);
+            quantArr[6] = ((rand.nextInt(biggerB)) + addB) * 4  + rand.nextInt(10);
+            quantArr[7] = ((rand.nextInt(bigB)) + addB) * 6  + rand.nextInt(10);
+            quantArr[8] = ((rand.nextInt(biggerB)) + addB) * 5  + rand.nextInt(10);
             quantArr[9] = 0;
         }
         if (tech.equals("Post-Industrial")) {
-            quantArr[0] = ((rand.nextInt(11)) + 20) * 20 + rand.nextInt(10);
-            quantArr[1] = ((rand.nextInt(11)) + 20) * 10 + rand.nextInt(10);
-            quantArr[2] = ((rand.nextInt(11)) + 20) * 15 + rand.nextInt(10);
-            quantArr[3] = ((rand.nextInt(11)) + 20) * 15 + rand.nextInt(10);
-            quantArr[4] = ((rand.nextInt(11)) + 20) * 10  + rand.nextInt(10);
-            quantArr[5] = ((rand.nextInt(11)) + 20) * 3  + rand.nextInt(10);
-            quantArr[6] = ((rand.nextInt(13)) + 20) * 8  + rand.nextInt(10);
-            quantArr[7] = ((rand.nextInt(11)) + 20) * 4  + rand.nextInt(10);
-            quantArr[8] = ((rand.nextInt(13)) + 20) * 2  + rand.nextInt(10);
-            quantArr[9] = ((rand.nextInt(8)) + 20)  + rand.nextInt(10);
+            quantArr[0] = ((rand.nextInt(bigB)) + addB) * addB + rand.nextInt(10);
+            quantArr[1] = ((rand.nextInt(bigB)) + addB) * 10 + rand.nextInt(10);
+            quantArr[2] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
+            quantArr[3] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
+            quantArr[4] = ((rand.nextInt(bigB)) + addB) * 10  + rand.nextInt(10);
+            quantArr[5] = ((rand.nextInt(bigB)) + addB) * 3  + rand.nextInt(10);
+            quantArr[6] = ((rand.nextInt(biggerB)) + addB) * 8  + rand.nextInt(10);
+            quantArr[7] = ((rand.nextInt(bigB)) + addB) * 4  + rand.nextInt(10);
+            quantArr[8] = ((rand.nextInt(biggerB)) + addB) * 2  + rand.nextInt(10);
+            quantArr[9] = ((rand.nextInt(8)) + addB)  + rand.nextInt(10);
         }
         if (tech.equals("Hi-Tech")) {
-            quantArr[0] = ((rand.nextInt(11)) + 20) * 20 + rand.nextInt(10);
-            quantArr[1] = ((rand.nextInt(11)) + 20) * 10 + rand.nextInt(10);
-            quantArr[2] = ((rand.nextInt(11)) + 20) * 15 + rand.nextInt(10);
-            quantArr[3] = ((rand.nextInt(11)) + 20) * 15 + rand.nextInt(10);
-            quantArr[4] = ((rand.nextInt(11)) + 20) * 6  + rand.nextInt(10);
-            quantArr[5] = ((rand.nextInt(11)) + 20) * 2  + rand.nextInt(10);
-            quantArr[6] = ((rand.nextInt(13)) + 20) * 4  + rand.nextInt(10);
-            quantArr[7] = ((rand.nextInt(11)) + 20) * 4  + rand.nextInt(10);
-            quantArr[8] = ((rand.nextInt(13)) + 20) * 2  + rand.nextInt(10);
-            quantArr[9] = ((rand.nextInt(8)) + 20) * 3  + rand.nextInt(10);
+            quantArr[0] = ((rand.nextInt(bigB)) + addB) * addB + rand.nextInt(10);
+            quantArr[1] = ((rand.nextInt(bigB)) + addB) * 10 + rand.nextInt(10);
+            quantArr[2] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
+            quantArr[3] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
+            quantArr[4] = ((rand.nextInt(bigB)) + addB) * 6  + rand.nextInt(10);
+            quantArr[5] = ((rand.nextInt(bigB)) + addB) * 2  + rand.nextInt(10);
+            quantArr[6] = ((rand.nextInt(biggerB)) + addB) * 4  + rand.nextInt(10);
+            quantArr[7] = ((rand.nextInt(bigB)) + addB) * 4  + rand.nextInt(10);
+            quantArr[8] = ((rand.nextInt(biggerB)) + addB) * 2  + rand.nextInt(10);
+            quantArr[9] = ((rand.nextInt(8)) + addB) * 3  + rand.nextInt(10);
         }
 
         return quantArr;
     }
 
-    public Integer[] getPrices() {
+    Integer[] getPrices() {
         String tech = model.getPlayerLocation().getTechLevel();
-        Integer[] priceArr = new Integer[11];
+        Integer[] priceArr = new Integer[bigB];
         if (tech.equals("Pre-Agriculture")) {
-            priceArr[0] = model.getWaterPrice();
-            priceArr[1] = model.getFursPrice();
+            priceArr[0] = getWaterPrice();
+            priceArr[1] = getFursPrice();
             priceArr[2] = 0;
             priceArr[3] = 0;
             priceArr[4] = 0;
@@ -148,9 +154,9 @@ public class MarketViewModel extends AndroidViewModel {
 
         }
         if (tech.equals("Agriculture")) {
-            priceArr[0] = model.getWaterPrice();
-            priceArr[1] = model.getFursPrice();
-            priceArr[2] = model.getFoodPrice();
+            priceArr[0] = getWaterPrice();
+            priceArr[1] = getFursPrice();
+            priceArr[2] = getFoodPrice();
             priceArr[3] = 0;
             priceArr[4] = 0;
             priceArr[5] = 0;
@@ -160,10 +166,10 @@ public class MarketViewModel extends AndroidViewModel {
             priceArr[9] = 0;
         }
         if (tech.equals("Medieval")) {
-            priceArr[0] = model.getWaterPrice();
-            priceArr[1] = model.getFursPrice();
-            priceArr[2] = model.getFoodPrice();
-            priceArr[3] = model.getOrePrice();
+            priceArr[0] = getWaterPrice();
+            priceArr[1] = getFursPrice();
+            priceArr[2] = getFoodPrice();
+            priceArr[3] = getOrePrice();
             priceArr[4] = 0;
             priceArr[5] = 0;
             priceArr[6] = 0;
@@ -172,157 +178,220 @@ public class MarketViewModel extends AndroidViewModel {
             priceArr[9] = 0;
         }
         if (tech.equals("Renaissance")) {
-            priceArr[0] = model.getWaterPrice();
-            priceArr[1] = model.getFursPrice();
-            priceArr[2] = model.getFoodPrice();
-            priceArr[3] = model.getOrePrice();
-            priceArr[4] = model.getGamesPrice();
-            priceArr[5] = model.getFirearmsPrice();
+            priceArr[0] = getWaterPrice();
+            priceArr[1] = getFursPrice();
+            priceArr[2] = getFoodPrice();
+            priceArr[3] = getOrePrice();
+            priceArr[4] = getGamesPrice();
+            priceArr[5] = getFirearmsPrice();
             priceArr[6] = 0;
             priceArr[7] = 0;
             priceArr[8] = 0;
             priceArr[9] = 0;
         }
         if (tech.equals("Early Industrial")) {
-            priceArr[0] = model.getWaterPrice();
-            priceArr[1] = model.getFursPrice();
-            priceArr[2] = model.getFoodPrice();
-            priceArr[3] = model.getOrePrice();
-            priceArr[4] = model.getGamesPrice();
-            priceArr[5] = model.getFirearmsPrice();
-            priceArr[6] = model.getMedicinePrice();
-            priceArr[7] = model.getMachinesPrice();
+            priceArr[0] = getWaterPrice();
+            priceArr[1] = getFursPrice();
+            priceArr[2] = getFoodPrice();
+            priceArr[3] = getOrePrice();
+            priceArr[4] = getGamesPrice();
+            priceArr[5] = getFirearmsPrice();
+            priceArr[6] = getMedicinePrice();
+            priceArr[7] = getMachinesPrice();
             priceArr[8] = 0;
             priceArr[9] = 0;
         }
         if (tech.equals("Industrial")) {
-            priceArr[0] = model.getWaterPrice();
-            priceArr[1] = model.getFursPrice();
-            priceArr[2] = model.getFoodPrice();
-            priceArr[3] = model.getOrePrice();
-            priceArr[4] = model.getGamesPrice();
-            priceArr[5] = model.getFirearmsPrice();
-            priceArr[6] = model.getMedicinePrice();
-            priceArr[7] = model.getMachinesPrice();
-            priceArr[8] = model.getNarcoticsPrice();
+            priceArr[0] = getWaterPrice();
+            priceArr[1] = getFursPrice();
+            priceArr[2] = getFoodPrice();
+            priceArr[3] = getOrePrice();
+            priceArr[4] = getGamesPrice();
+            priceArr[5] = getFirearmsPrice();
+            priceArr[6] = getMedicinePrice();
+            priceArr[7] = getMachinesPrice();
+            priceArr[8] = getNarcoticsPrice();
             priceArr[9] = 0;
         }
         if (tech.equals("Post-Industrial")) {
-            priceArr[0] = model.getWaterPrice();
-            priceArr[1] = model.getFursPrice();
-            priceArr[2] = model.getFoodPrice();
-            priceArr[3] = model.getOrePrice();
-            priceArr[4] = model.getGamesPrice();
-            priceArr[5] = model.getFirearmsPrice();
-            priceArr[6] = model.getMedicinePrice();
-            priceArr[7] = model.getMachinesPrice();
-            priceArr[8] = model.getNarcoticsPrice();
-            priceArr[9] = model.getRobotsPrice();
+            priceArr[0] = getWaterPrice();
+            priceArr[1] = getFursPrice();
+            priceArr[2] = getFoodPrice();
+            priceArr[3] = getOrePrice();
+            priceArr[4] = getGamesPrice();
+            priceArr[5] = getFirearmsPrice();
+            priceArr[6] = getMedicinePrice();
+            priceArr[7] = getMachinesPrice();
+            priceArr[8] = getNarcoticsPrice();
+            priceArr[9] = getRobotsPrice();
         }
         if (tech.equals("Hi-Tech")) {
             priceArr[0] = model.getWaterPrice();
-            priceArr[1] = model.getFursPrice();
-            priceArr[2] = model.getFoodPrice();
-            priceArr[3] = model.getOrePrice();
-            priceArr[4] = model.getGamesPrice();
-            priceArr[5] = model.getFirearmsPrice();
-            priceArr[6] = model.getMedicinePrice();
-            priceArr[7] = model.getMachinesPrice();
-            priceArr[8] = model.getNarcoticsPrice();
-            priceArr[9] = model.getRobotsPrice();
+            priceArr[1] = getFursPrice();
+            priceArr[2] = getFoodPrice();
+            priceArr[3] = getOrePrice();
+            priceArr[4] = getGamesPrice();
+            priceArr[5] = getFirearmsPrice();
+            priceArr[6] = getMedicinePrice();
+            priceArr[7] = getMachinesPrice();
+            priceArr[8] = getNarcoticsPrice();
+            priceArr[9] = getRobotsPrice();
         }
 
         return priceArr;
     }
 
-    public ShipInventory getInventory() { return model.getInventory(); }
+    ShipInventory getInventory() { return model.getInventory(); }
 
-    public void addWater(int add) {
+    void addWater(int add) {
         model.getInventory().addWater(add);
     }
 
-    public void addFurs(int add) {
+    void addFurs(int add) {
         model.getInventory().addFurs(add);
     }
 
-    public void addFood(int add) {
+    void addFood(int add) {
         model.getInventory().addFood(add);
     }
 
-    public void addOre(int add) {
+    void addOre(int add) {
         model.getInventory().addOre(add);
     }
 
-    public void addGames(int add) {
+    void addGames(int add) {
         model.getInventory().addGames(add);
     }
 
-    public void addFirearms(int add) {
+    void addFirearms(int add) {
         model.getInventory().addFirearms(add);
     }
 
-    public void addMedicine(int add) {
+    void addMedicine(int add) {
         model.getInventory().addMedicine(add);
     }
 
-    public void addMachines(int add) { model.getInventory().addMachines(add); }
+    void addMachines(int add) { model.getInventory().addMachines(add); }
 
-    public void addNarcotics(int add) {
+    void addNarcotics(int add) {
         model.getInventory().addNarcotics(add);
     }
 
-    public void addRobots(int add) {
+    void addRobots(int add) {
         model.getInventory().addRobots(add);
     }
 
-    public void removeWater(int add) {
+    void removeWater(int add) {
         model.getInventory().removeWater(add);
     }
 
-    public void removeFurs(int add) {
+    void removeFurs(int add) {
         model.getInventory().removeFurs(add);
     }
 
-    public void removeFood(int add) {
+    void removeFood(int add) {
         model.getInventory().removeFood(add);
     }
 
-    public void removeOre(int add) { model.getInventory().removeOre(add); }
+    void removeOre(int add) { model.getInventory().removeOre(add); }
 
-    public void removeGames(int add) { model.getInventory().removeGames(add); }
+    void removeGames(int add) { model.getInventory().removeGames(add); }
 
-    public void removeFirearms(int add) { model.getInventory().removeFirearms(add); }
+    void removeFirearms(int add) { model.getInventory().removeFirearms(add); }
 
-    public void removeMedicine(int add) { model.getInventory().removeMedicine(add); }
+    void removeMedicine(int add) { model.getInventory().removeMedicine(add); }
 
-    public void removeMachines(int add) { model.getInventory().removeMachines(add); }
+    void removeMachines(int add) { model.getInventory().removeMachines(add); }
 
-    public void removeNarcotics(int add) { model.getInventory().removeNarcotics(add); }
+    void removeNarcotics(int add) { model.getInventory().removeNarcotics(add); }
 
     int getNumNarcotics() {
         return model.getNumNarcotics();
     }
 
-    public void removeRobots(int add) { model.getInventory().removeRobots(add); }
+    void removeRobots(int add) { model.getInventory().removeRobots(add); }
 
-    public int getMaxCargo() { return model.getInventory().getMaxCargo(); }
+    int getMaxCargo() { return model.getInventory().getMaxCargo(); }
 
-    public void updateInventorySize() {
-        int size = model.getInventory().getNumWater()
-                + model.getInventory().getNumFurs()
-                + model.getInventory().getNumFood()
-                + model.getInventory().getNumOre()
-                + model.getInventory().getNumGames()
-                + model.getInventory().getNumFirearms()
-                + model.getInventory().getNumMedicine()
-                + model.getInventory().getNumMachines()
-                + model.getInventory().getNumNarcotics()
-                + model.getInventory().getNumRobots();
+    void updateInventorySize() {
+        ShipInventory inventory = getInventory();
+        int numWater = getWaterNum(inventory);
+        int numFurs = getFursNum(inventory);
+        int numFood = getFoodNum(inventory);
+        int numOres = getOreNum(inventory);
+        int numGames = getGamesNum(inventory);
+        int numFirearms = getFirearmsNum(inventory);
+        int numMedicine = getMedicineNum(inventory);
+        int numMachines = getMachinesNum(inventory);
+        int numNarcotics = getNarcoticsNum(inventory);
+        int numRobots = getRobotsNum(inventory);
+        int size = numWater + numFurs + numFood + numOres + numGames + numFirearms
+                + numMedicine + numMachines + numNarcotics + numRobots;
         model.getInventory().setSize(size);
     }
 
-    public int getInventorySize() {
+    int getInventorySize() {
         return model.getInventory().getSize();
+    }
+
+    private int getFoodPrice() { return model.getFoodPrice(); }
+
+    private int getFursPrice() { return model.getFursPrice(); }
+
+    private int getWaterPrice() { return model.getWaterPrice(); }
+
+    private int getOrePrice() { return model.getOrePrice(); }
+
+    private int getGamesPrice() { return model.getGamesPrice(); }
+
+    private int getFirearmsPrice() { return model.getFirearmsPrice(); }
+
+    private int getMedicinePrice() { return model.getMedicinePrice(); }
+
+    private int getMachinesPrice() { return model.getMachinesPrice(); }
+
+    private int getNarcoticsPrice() { return model.getNarcoticsPrice(); }
+
+    private int getRobotsPrice() { return model.getRobotsPrice(); }
+
+    private int getWaterNum(ShipInventory inventory) {
+        return inventory.getNumWater();
+    }
+
+    private int getFursNum(ShipInventory inventory) {
+        return inventory.getNumFurs();
+    }
+
+    private int getFoodNum(ShipInventory inventory) {
+        return inventory.getNumFood();
+    }
+
+    private int getOreNum(ShipInventory inventory) {
+        return inventory.getNumOre();
+    }
+
+    private int getGamesNum(ShipInventory inventory) {
+        return inventory.getNumGames();
+    }
+
+    private int getFirearmsNum(ShipInventory inventory) {
+        return inventory.getNumFirearms();
+    }
+
+    private int getMedicineNum(ShipInventory inventory) {
+        return inventory.getNumMedicine();
+    }
+
+    private int getMachinesNum(ShipInventory inventory) {
+        return inventory.getNumMachines();
+    }
+
+    private int getNarcoticsNum(ShipInventory inventory) {
+        return inventory.getNumNarcotics();
+    }
+
+    private int getRobotsNum(ShipInventory inventory) {
+        return inventory.getNumRobots();
     }
 
 }

@@ -51,11 +51,11 @@ public class MarketSellActivity extends AppCompatActivity {
     private Button narcoticsUp;
     private Button robotsUp;
     private Button waterDown;
-    private Button fursDown;;
+    private Button fursDown;
     private Button foodDown;
     private Button oreDown;
     private Button gamesDown;
-    private Button firearmsDown;;
+    private Button firearmsDown;
     private Button medicineDown;
     private Button machinesDown;
     private Button narcoticsDown;
@@ -72,8 +72,8 @@ public class MarketSellActivity extends AppCompatActivity {
 
         totalCred = findViewById(R.id.textView42);
         credLeft = findViewById(R.id.textView59);
-        totalCred.setText("" + marketViewModel.getCredits());
-        credLeft.setText("" + marketViewModel.getCredits());
+        totalCred.setText("" + getCredits());
+        credLeft.setText("" + getCredits());
 
         waterB = findViewById(R.id.textView48);
         fursB = findViewById(R.id.textView45);
@@ -132,17 +132,27 @@ public class MarketSellActivity extends AppCompatActivity {
 
         purchase = findViewById(R.id.sell);
         leave = findViewById(R.id.leave);
-
-        waterQ.setText("" + marketViewModel.getInventory().getNumWater());
-        fursQ.setText("" + marketViewModel.getInventory().getNumFurs());
-        foodQ.setText("" + marketViewModel.getInventory().getNumFood());
-        oreQ.setText("" + marketViewModel.getInventory().getNumOre());
-        gamesQ.setText("" + marketViewModel.getInventory().getNumGames());
-        firearmsQ.setText("" + marketViewModel.getInventory().getNumFirearms());
-        medicineQ.setText("" + marketViewModel.getInventory().getNumMedicine());
-        machinesQ.setText("" + marketViewModel.getInventory().getNumMachines());
-        narcoticsQ.setText("" + marketViewModel.getInventory().getNumNarcotics());
-        robotsQ.setText("" + marketViewModel.getInventory().getNumRobots());
+        ShipInventory inventory = getInventory();
+        int numWater = getWaterNum(inventory);
+        int numFurs = getFursNum(inventory);
+        int numFood = getFoodNum(inventory);
+        int numOres = getOreNum(inventory);
+        int numGames = getGamesNum(inventory);
+        int numFirearms = getFirearmsNum(inventory);
+        int numMedicine = getMedicineNum(inventory);
+        int numMachines = getMachinesNum(inventory);
+        int numNarcotics = getNarcoticsNum(inventory);
+        int numRobots = getRobotsNum(inventory);
+        waterQ.setText("" + numWater);
+        fursQ.setText("" + numFurs);
+        foodQ.setText("" + numFood);
+        oreQ.setText("" + numOres);
+        gamesQ.setText("" + numGames);
+        firearmsQ.setText("" + numFirearms);
+        medicineQ.setText("" + numMedicine);
+        machinesQ.setText("" + numMachines);
+        narcoticsQ.setText("" + numNarcotics);
+        robotsQ.setText("" + numRobots);
 
         Integer[] prices = marketViewModel.getPrices();
 
@@ -347,18 +357,18 @@ public class MarketSellActivity extends AppCompatActivity {
         purchase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                marketViewModel.setCredits(Integer.parseInt(credLeft.getText().toString()));
-                marketViewModel.removeWater(Integer.parseInt(waterB.getText().toString()));
-                marketViewModel.removeFurs(Integer.parseInt(fursB.getText().toString()));
-                marketViewModel.removeFood(Integer.parseInt(foodB.getText().toString()));
-                marketViewModel.removeOre(Integer.parseInt(oreB.getText().toString()));
-                marketViewModel.removeGames(Integer.parseInt(gamesB.getText().toString()));
-                marketViewModel.removeFirearms(Integer.parseInt(firearmsB.getText().toString()));
-                marketViewModel.removeMedicine(Integer.parseInt(medicineB.getText().toString()));
-                marketViewModel.removeMachines(Integer.parseInt(machinesB.getText().toString()));
-                marketViewModel.removeNarcotics(Integer.parseInt(narcoticsB.getText().toString()));
-                marketViewModel.removeRobots(Integer.parseInt(robotsB.getText().toString()));
-                marketViewModel.updateInventorySize();
+                setCredits(Integer.parseInt(credLeft.getText().toString()));
+                removeWater(Integer.parseInt(waterB.getText().toString()));
+                removeFurs(Integer.parseInt(fursB.getText().toString()));
+                removeFood(Integer.parseInt(foodB.getText().toString()));
+                removeOre(Integer.parseInt(oreB.getText().toString()));
+                removeGames(Integer.parseInt(gamesB.getText().toString()));
+                removeFirearms(Integer.parseInt(firearmsB.getText().toString()));
+                removeMedicine(Integer.parseInt(medicineB.getText().toString()));
+                removeMachines(Integer.parseInt(machinesB.getText().toString()));
+                removeNarcotics(Integer.parseInt(narcoticsB.getText().toString()));
+                removeRobots(Integer.parseInt(robotsB.getText().toString()));
+                updateInventorySize();
                 finish();
             }
         });
@@ -369,5 +379,101 @@ public class MarketSellActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private void removeWater(int add) {
+        marketViewModel.removeWater(add);
+    }
+
+    private void removeFurs(int add) {
+        marketViewModel.removeFurs(add);
+    }
+
+    private void removeFood(int add) {
+        marketViewModel.removeFood(add);
+    }
+
+    private void removeOre(int add) {
+        marketViewModel.removeOre(add);
+    }
+
+    private void removeGames(int add) {
+        marketViewModel.removeGames(add);
+    }
+
+    private void removeFirearms(int add) {
+        marketViewModel.removeFirearms(add);
+    }
+
+    private void removeMedicine(int add) {
+        marketViewModel.removeMedicine(add);
+    }
+
+    private void removeMachines(int add) {
+        marketViewModel.removeMachines(add);
+    }
+
+    private void removeNarcotics(int add) {
+        marketViewModel.removeNarcotics(add);
+    }
+
+    private void removeRobots(int add) {
+        marketViewModel.removeRobots(add);
+    }
+
+    private void setCredits(int left) {
+        marketViewModel.setCredits(left);
+    }
+
+    private ShipInventory getInventory() {
+        return marketViewModel.getInventory();
+    }
+
+    private void updateInventorySize() {
+        marketViewModel.updateInventorySize();
+    }
+
+    private int getCredits() {
+        return marketViewModel.getCredits();
+    }
+
+    private int getWaterNum(ShipInventory inventory) {
+        return inventory.getNumWater();
+    }
+
+    private int getFursNum(ShipInventory inventory) {
+        return inventory.getNumFurs();
+    }
+
+    private int getFoodNum(ShipInventory inventory) {
+        return inventory.getNumFood();
+    }
+
+    private int getOreNum(ShipInventory inventory) {
+        return inventory.getNumOre();
+    }
+
+    private int getGamesNum(ShipInventory inventory) {
+        return inventory.getNumGames();
+    }
+
+    private int getFirearmsNum(ShipInventory inventory) {
+        return inventory.getNumFirearms();
+    }
+
+    private int getMedicineNum(ShipInventory inventory) {
+        return inventory.getNumMedicine();
+    }
+
+    private int getMachinesNum(ShipInventory inventory) {
+        return inventory.getNumMachines();
+    }
+
+    private int getNarcoticsNum(ShipInventory inventory) {
+        return inventory.getNumNarcotics();
+    }
+
+    private int getRobotsNum(ShipInventory inventory) {
+        return inventory.getNumRobots();
     }
 }

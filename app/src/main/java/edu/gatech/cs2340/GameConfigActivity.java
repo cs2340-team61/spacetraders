@@ -20,6 +20,7 @@ public class GameConfigActivity extends AppCompatActivity {
     private TextView skillT;
     private TextView PointsR;
     private Spinner gameDiffSpin;
+    private static final int skillMax = 16;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +63,7 @@ public class GameConfigActivity extends AppCompatActivity {
         upE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(skillE.getText().toString()) < 16 && Integer.parseInt(PointsR.getText().toString()) > 0) {
+                if (Integer.parseInt(skillE.getText().toString()) < skillMax && Integer.parseInt(PointsR.getText().toString()) > 0) {
                     skillE.setText("" + (Integer.parseInt(skillE.getText().toString()) + 1));
                     PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) - 1));
                 }
@@ -72,7 +73,7 @@ public class GameConfigActivity extends AppCompatActivity {
         upP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(skillP.getText().toString()) < 16 && Integer.parseInt(PointsR.getText().toString()) > 0) {
+                if (Integer.parseInt(skillP.getText().toString()) < skillMax && Integer.parseInt(PointsR.getText().toString()) > 0) {
                     skillP.setText("" + (Integer.parseInt(skillP.getText().toString()) + 1));
                     PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) - 1));
                 }
@@ -82,7 +83,7 @@ public class GameConfigActivity extends AppCompatActivity {
         upF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(skillF.getText().toString()) < 16 && Integer.parseInt(PointsR.getText().toString()) > 0) {
+                if (Integer.parseInt(skillF.getText().toString()) < skillMax && Integer.parseInt(PointsR.getText().toString()) > 0) {
                     skillF.setText("" + (Integer.parseInt(skillF.getText().toString()) + 1));
                     PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) - 1));
                 }
@@ -92,7 +93,7 @@ public class GameConfigActivity extends AppCompatActivity {
         upT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(skillT.getText().toString()) < 16 && Integer.parseInt(PointsR.getText().toString()) > 0) {
+                if (Integer.parseInt(skillT.getText().toString()) < skillMax && Integer.parseInt(PointsR.getText().toString()) > 0) {
                     skillT.setText("" + (Integer.parseInt(skillT.getText().toString()) + 1));
                     PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) - 1));
                 }
@@ -102,7 +103,7 @@ public class GameConfigActivity extends AppCompatActivity {
         downE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(skillE.getText().toString()) > 0 && Integer.parseInt(PointsR.getText().toString()) < 16) {
+                if (Integer.parseInt(skillE.getText().toString()) > 0 && Integer.parseInt(PointsR.getText().toString()) < skillMax) {
                     skillE.setText("" + (Integer.parseInt(skillE.getText().toString()) - 1));
                     PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) + 1));
                 }
@@ -112,7 +113,7 @@ public class GameConfigActivity extends AppCompatActivity {
         downP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(skillP.getText().toString()) > 0 && Integer.parseInt(PointsR.getText().toString()) < 16) {
+                if (Integer.parseInt(skillP.getText().toString()) > 0 && Integer.parseInt(PointsR.getText().toString()) < skillMax) {
                     skillP.setText("" + (Integer.parseInt(skillP.getText().toString()) - 1));
                     PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) + 1));
                 }
@@ -122,7 +123,7 @@ public class GameConfigActivity extends AppCompatActivity {
         downF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(skillF.getText().toString()) > 0 && Integer.parseInt(PointsR.getText().toString()) < 16) {
+                if (Integer.parseInt(skillF.getText().toString()) > 0 && Integer.parseInt(PointsR.getText().toString()) < skillMax) {
                     skillF.setText("" + (Integer.parseInt(skillF.getText().toString()) - 1));
                     PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) + 1));
                 }
@@ -132,7 +133,7 @@ public class GameConfigActivity extends AppCompatActivity {
         downT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(skillT.getText().toString()) > 0 && Integer.parseInt(PointsR.getText().toString()) < 16) {
+                if (Integer.parseInt(skillT.getText().toString()) > 0 && Integer.parseInt(PointsR.getText().toString()) < skillMax) {
                     skillT.setText("" + (Integer.parseInt(skillT.getText().toString()) - 1));
                     PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) + 1));
                 }
@@ -148,7 +149,7 @@ public class GameConfigActivity extends AppCompatActivity {
                 int sF = Integer.parseInt(skillF.getText().toString());
                 int sT = Integer.parseInt(skillT.getText().toString());
                 Difficulty dif = (Difficulty) gameDiffSpin.getSelectedItem();
-                if (sT + sP + sF + sE == 16) {
+                if (sT + sP + sF + sE == skillMax) {
                     gameViewModel = new GameViewModel(getApplication());
                     gameViewModel.createGame(name, sE, sP, sF, sT, dif);
                     postConfig(v);

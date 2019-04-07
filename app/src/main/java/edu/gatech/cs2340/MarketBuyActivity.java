@@ -53,11 +53,11 @@ public class MarketBuyActivity extends AppCompatActivity {
     private Button narcoticsUp;
     private Button robotsUp;
     private Button waterDown;
-    private Button fursDown;;
+    private Button fursDown;
     private Button foodDown;
     private Button oreDown;
     private Button gamesDown;
-    private Button firearmsDown;;
+    private Button firearmsDown;
     private Button medicineDown;
     private Button machinesDown;
     private Button narcoticsDown;
@@ -74,12 +74,12 @@ public class MarketBuyActivity extends AppCompatActivity {
 
         totalCred = findViewById(R.id.textView6);
         credLeft = findViewById(R.id.textView17);
-        totalCred.setText("" + marketViewModel.getCredits());
-        credLeft.setText("" + marketViewModel.getCredits());
+        totalCred.setText("" + getCredits());
+        credLeft.setText("" + getCredits());
         cargoCurr = findViewById(R.id.cargo_curr);
         cargoMax = findViewById(R.id.cargo_max);
-        cargoCurr.setText("" + marketViewModel.getInventorySize());
-        cargoMax.setText("" + marketViewModel.getMaxCargo());
+        cargoCurr.setText("" + getInventorySize());
+        cargoMax.setText("" + getMaxCargo());
 
 
         waterB = findViewById(R.id.textView7);
@@ -152,7 +152,7 @@ public class MarketBuyActivity extends AppCompatActivity {
         narcoticsQ.setText("" + quants[8]);
         robotsQ.setText("" + quants[9]);
 
-        Integer[] prices = marketViewModel.getPrices();
+        Integer[] prices = getPrices();
         waterP.setText("" + prices[0]);
         fursP.setText("" + prices[1]);
         foodP.setText("" + prices[2]);
@@ -479,18 +479,18 @@ public class MarketBuyActivity extends AppCompatActivity {
         purchase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                marketViewModel.setCredits(Integer.parseInt(credLeft.getText().toString()));
-                marketViewModel.addWater(Integer.parseInt(waterB.getText().toString()));
-                marketViewModel.addFurs(Integer.parseInt(fursB.getText().toString()));
-                marketViewModel.addFood(Integer.parseInt(foodB.getText().toString()));
-                marketViewModel.addOre(Integer.parseInt(oreB.getText().toString()));
-                marketViewModel.addGames(Integer.parseInt(gamesB.getText().toString()));
-                marketViewModel.addFirearms(Integer.parseInt(firearmsB.getText().toString()));
-                marketViewModel.addMedicine(Integer.parseInt(medicineB.getText().toString()));
-                marketViewModel.addMachines(Integer.parseInt(machinesB.getText().toString()));
-                marketViewModel.addNarcotics(Integer.parseInt(narcoticsB.getText().toString()));
-                marketViewModel.addRobots(Integer.parseInt(robotsB.getText().toString()));
-                marketViewModel.updateInventorySize();
+                setCredits(Integer.parseInt(credLeft.getText().toString()));
+                addWater(Integer.parseInt(waterB.getText().toString()));
+                addFurs(Integer.parseInt(fursB.getText().toString()));
+                addFood(Integer.parseInt(foodB.getText().toString()));
+                addOre(Integer.parseInt(oreB.getText().toString()));
+                addGames(Integer.parseInt(gamesB.getText().toString()));
+                addFirearms(Integer.parseInt(firearmsB.getText().toString()));
+                addMedicine(Integer.parseInt(medicineB.getText().toString()));
+                addMachines(Integer.parseInt(machinesB.getText().toString()));
+                addNarcotics(Integer.parseInt(narcoticsB.getText().toString()));
+                addRobots(Integer.parseInt(robotsB.getText().toString()));
+                updateInventorySize();
                 finish();
             }
         });
@@ -502,4 +502,69 @@ public class MarketBuyActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void addWater(int add) {
+        marketViewModel.addWater(add);
+    }
+
+    private void addFurs(int add) {
+        marketViewModel.addFurs(add);
+    }
+
+    private void addFood(int add) {
+        marketViewModel.addFood(add);
+    }
+
+    private void addOre(int add) {
+        marketViewModel.addOre(add);
+    }
+
+    private void addGames(int add) {
+        marketViewModel.addGames(add);
+    }
+
+    private void addFirearms(int add) {
+        marketViewModel.addFirearms(add);
+    }
+
+    private void addMedicine(int add) {
+        marketViewModel.addMedicine(add);
+    }
+
+    private void addMachines(int add) {
+        marketViewModel.addMachines(add);
+    }
+
+    private void addNarcotics(int add) {
+        marketViewModel.addNarcotics(add);
+    }
+
+    private void addRobots(int add) {
+        marketViewModel.addRobots(add);
+    }
+
+    private void setCredits(int left) {
+        marketViewModel.setCredits(left);
+    }
+
+    private void updateInventorySize() {
+        marketViewModel.updateInventorySize();
+    }
+
+    private int getCredits() {
+        return marketViewModel.getCredits();
+    }
+
+    private int getInventorySize() {
+        return marketViewModel.getInventorySize();
+    }
+
+    private int getMaxCargo() {
+        return marketViewModel.getMaxCargo();
+    }
+
+    private Integer[] getPrices() {
+        return marketViewModel.getPrices();
+    }
+
 }

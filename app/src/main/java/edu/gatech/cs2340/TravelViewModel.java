@@ -5,7 +5,8 @@ import android.arch.lifecycle.AndroidViewModel;
 import android.support.annotation.NonNull;
 
 public class TravelViewModel extends AndroidViewModel {
-    private Game model;
+    private final Game model;
+    private static final int totalPlanetNum = 15;
 
     public TravelViewModel(@NonNull Application application) {
         super(application);
@@ -15,7 +16,7 @@ public class TravelViewModel extends AndroidViewModel {
     public Planet[] getPlanets() {
         Universe tempUniverse = model.getUniverse();
         SolarSystem[] solarSystems = tempUniverse.getSolarSystems();
-        Planet[] planets = new Planet[15];
+        Planet[] planets = new Planet[totalPlanetNum];
         int iterator = 0;
         for (int i = 0; i < 5; i++) {
             Planet[] tempPlanets = solarSystems[i].getPlanets();

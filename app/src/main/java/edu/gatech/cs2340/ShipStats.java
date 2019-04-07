@@ -6,13 +6,15 @@ public class ShipStats implements Serializable {
     private int health;
     private int fuel;
     private int speed;
-    private int laser;
+    private final int laser;
+    private static final int initialSpeed = 50;
+    private static final int initialLaser = 50;
 
     public ShipStats() {
         health = 100;
         fuel = 100;
-        speed = 50;
-        laser = 50;
+        speed = initialSpeed;
+        laser = initialLaser;
     }
 
     public void useFuel(double used) {

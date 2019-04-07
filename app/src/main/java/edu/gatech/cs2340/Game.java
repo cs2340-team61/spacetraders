@@ -7,7 +7,8 @@ public class Game implements Serializable {
     private Player player;
     private Universe universe;
     private SolarSystem[] sols;
-    private Planet[] plans = new Planet[15];
+    private static  final int totalPlanets = 15;
+    private final Planet[] plans = new Planet[totalPlanets];
     private Planet playerLocation;
     private Marketplace water;
     private Marketplace furs;
@@ -30,9 +31,9 @@ public class Game implements Serializable {
     private int narcoticsPrice;
     private int robotsPrice;
     private ShipInventory inventory;
-    private Travel travel;
-    private ShipStats shipStats;
-    private RandomEvent rE;
+    private final Travel travel;
+    private final ShipStats shipStats;
+    private final RandomEvent rE;
 
     public Game() {
         travel = new Travel();
@@ -41,11 +42,9 @@ public class Game implements Serializable {
     }
 
     public void addS() {
-        universe.addSolarSystem();
-        universe.addSolarSystem();
-        universe.addSolarSystem();
-        universe.addSolarSystem();
-        universe.addSolarSystem();
+        for (int i = 0; i < 5; i++) {
+            universe.addSolarSystem();
+        }
 
         sols = universe.getSolarSystems();
         for (int j = 0; j < 5; j++) {
@@ -59,52 +58,41 @@ public class Game implements Serializable {
     }
 
     public void createMarketGoods() {
-        water = new Marketplace();
-        furs = new Marketplace();
-        food = new Marketplace();
-        ore = new Marketplace();
-        games = new Marketplace();
-        firearms = new Marketplace();
-        medicine = new Marketplace();
-        machines = new Marketplace();
-        narcotics = new Marketplace();
-        robots = new Marketplace();
-
-        water.Water();
-        furs.Furs();
-        food.Food();
-        ore.Ore();
-        games.Games();
-        firearms.Firearms();
-        medicine.Medicine();
-        machines.Machines();
-        narcotics.Narcotics();
-        robots.Robots();
+        water = createWater();
+        furs = createFurs();
+        food = createFood();
+        ore = createOre();
+        games = createGames();
+        firearms = createFirearms();
+        medicine = createMedicine();
+        machines = createMachines();
+        narcotics = createNarcotics();
+        robots = createRobots();
     }
 
     public void createMarketplace() {
-        String planName = playerLocation.getPlanetName();
-        water.techLevel(planName);
-        furs.techLevel(planName);
-        food.techLevel(planName);
-        ore.techLevel(planName);
-        games.techLevel(planName);
-        firearms.techLevel(planName);
-        medicine.techLevel(planName);
-        machines.techLevel(planName);
-        narcotics.techLevel(planName);
-        robots.techLevel(planName);
+        setTechLevel(water);
+        setTechLevel(furs);
+        setTechLevel(food);
+        setTechLevel(ore);
+        setTechLevel(games);
+        setTechLevel(firearms);
+        setTechLevel(medicine);
+        setTechLevel(machines);
+        setTechLevel(narcotics);
+        setTechLevel(robots);
 
-        waterPrice = water.calculatePrice();
-        fursPrice = furs.calculatePrice();
-        foodPrice = food.calculatePrice();
-        orePrice = ore.calculatePrice();
-        gamesPrice = games.calculatePrice();
-        firearmsPrice = firearms.calculatePrice();
-        medicinePrice = medicine.calculatePrice();
-        machinesPrice = machines.calculatePrice();
-        narcoticsPrice = narcotics.calculatePrice();
-        robotsPrice = robots.calculatePrice();
+
+        waterPrice = calculatePrice(water);
+        fursPrice = calculatePrice(furs);
+        foodPrice = calculatePrice(food);
+        orePrice = calculatePrice(ore);
+        gamesPrice = calculatePrice(games);
+        firearmsPrice = calculatePrice(firearms);
+        medicinePrice = calculatePrice(medicine);
+        machinesPrice = calculatePrice(machines);
+        narcoticsPrice = calculatePrice(narcotics);
+        robotsPrice = calculatePrice(robots);
     }
 
     public void setGameDiff(Difficulty diff) { gameDiff = diff; }
@@ -129,25 +117,74 @@ public class Game implements Serializable {
 
     public void setPlayerLocation(Planet playerLocation) { this.playerLocation = playerLocation; }
 
-    public Marketplace getFirearms() { return firearms; }
+    private Marketplace createWater() {
+        Marketplace waterObject = new Marketplace();
+        waterObject.Water();
+        return waterObject;
+    }
 
-    public Marketplace getFood() { return food; }
+    private Marketplace createFurs() {
+        Marketplace fursObject = new Marketplace();
+        fursObject.Furs();
+        return fursObject;
+    }
 
-    public Marketplace getFurs() { return furs; }
+    private Marketplace createFood() {
+        Marketplace foodObject = new Marketplace();
+        foodObject.Food();
+        return foodObject;
+    }
 
-    public Marketplace getGames() { return games; }
+    private Marketplace createOre() {
+        Marketplace oreObject = new Marketplace();
+        oreObject.Ore();
+        return oreObject;
+    }
 
-    public Marketplace getMachines() { return machines; }
+    private Marketplace createGames() {
+        Marketplace gamesObject = new Marketplace();
+        gamesObject.Games();
+        return gamesObject;
+    }
 
-    public Marketplace getMedicine() { return medicine; }
+    private Marketplace createFirearms() {
+        Marketplace firearmsObject = new Marketplace();
+        firearmsObject.Firearms();
+        return firearmsObject;
+    }
 
-    public Marketplace getNarcotics() { return narcotics; }
+    private Marketplace createMedicine() {
+        Marketplace medicineObject = new Marketplace();
+        medicineObject.Medicine();
+        return medicineObject;
+    }
 
-    public Marketplace getOre() { return ore; }
+    private Marketplace createMachines() {
+        Marketplace machinesObject = new Marketplace();
+        machinesObject.Machines();
+        return machinesObject;
+    }
 
-    public Marketplace getRobots() { return robots; }
+    private Marketplace createNarcotics() {
+        Marketplace narcoticsObject = new Marketplace();
+        narcoticsObject.Narcotics();
+        return narcoticsObject;
+    }
 
-    public Marketplace getWater() { return water; }
+    private Marketplace createRobots() {
+        Marketplace robotsObject = new Marketplace();
+        robotsObject.Robots();
+        return robotsObject;
+    }
+
+    private int calculatePrice(Marketplace marketplace) {
+        return marketplace.calculatePrice();
+    }
+
+    private void setTechLevel(Marketplace marketplace) {
+        marketplace.techLevel(playerLocation.getTechLevel());
+    }
+
 
     public int getFoodPrice() { return foodPrice; }
 

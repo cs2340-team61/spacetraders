@@ -71,6 +71,12 @@ public class TravelActivity extends AppCompatActivity {
     private Button pDown;
     private Button go;
     private Button cancel;
+    private static final int magic11 = 11;
+    private static final int magic12 = 12;
+    private static final int magic13 = 13;
+    private static final int magic14 = 14;
+    private static final int magic15 = 15;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -159,12 +165,12 @@ public class TravelActivity extends AppCompatActivity {
         planet9.setText(planets[8].getPlanetName());
         planet10.setText(planets[9].getPlanetName());
         planet11.setText(planets[10].getPlanetName());
-        planet12.setText(planets[11].getPlanetName());
-        planet13.setText(planets[12].getPlanetName());
-        planet14.setText(planets[13].getPlanetName());
-        planet15.setText(planets[14].getPlanetName());
+        planet12.setText(planets[magic11].getPlanetName());
+        planet13.setText(planets[magic12].getPlanetName());
+        planet14.setText(planets[magic13].getPlanetName());
+        planet15.setText(planets[magic14].getPlanetName());
 
-        int distances[] = new int[15];
+        int distances[] = new int[magic15];
         for (int i = 0; i < distances.length; i++) {
             distances[i] = travelViewModel.getDistance(planets[i].getxPlanet(),
                     playerLocation.getxPlanet(),planets[i].getyPlanet(),
@@ -182,10 +188,10 @@ public class TravelActivity extends AppCompatActivity {
         distance9.setText(distances[8] + " Units");
         distance10.setText(distances[9] + " Units");
         distance11.setText(distances[10] + " Units");
-        distance12.setText(distances[11] + " Units");
-        distance13.setText(distances[12] + " Units");
-        distance14.setText(distances[13] + " Units");
-        distance15.setText(distances[14] + " Units");
+        distance12.setText(distances[magic11] + " Units");
+        distance13.setText(distances[magic12] + " Units");
+        distance14.setText(distances[magic13] + " Units");
+        distance15.setText(distances[magic14] + " Units");
 
         fuelCost1.setText(travelViewModel.getFuelCost(distances[0]) + " fuel");
         fuelCost2.setText(travelViewModel.getFuelCost(distances[1]) + " fuel");
@@ -198,10 +204,10 @@ public class TravelActivity extends AppCompatActivity {
         fuelCost9.setText(travelViewModel.getFuelCost(distances[8]) + " fuel");
         fuelCost10.setText(travelViewModel.getFuelCost(distances[9]) + " fuel");
         fuelCost11.setText(travelViewModel.getFuelCost(distances[10]) + " fuel");
-        fuelCost12.setText(travelViewModel.getFuelCost(distances[11]) + " fuel");
-        fuelCost13.setText(travelViewModel.getFuelCost(distances[12]) + " fuel");
-        fuelCost14.setText(travelViewModel.getFuelCost(distances[13]) + " fuel");
-        fuelCost15.setText(travelViewModel.getFuelCost(distances[14]) + " fuel");
+        fuelCost12.setText(travelViewModel.getFuelCost(distances[magic11]) + " fuel");
+        fuelCost13.setText(travelViewModel.getFuelCost(distances[magic12]) + " fuel");
+        fuelCost14.setText(travelViewModel.getFuelCost(distances[magic13]) + " fuel");
+        fuelCost15.setText(travelViewModel.getFuelCost(distances[magic14]) + " fuel");
 
         currentHealth.setText("" + travelViewModel.getHealth());
         currentFuel.setText("" + travelViewModel.getFuel());

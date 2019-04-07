@@ -12,12 +12,13 @@ import java.util.Random;
 public class Planet implements Serializable {
     private int xPlanet;
     private int yPlanet;
-    private String planetName;
+    private final String planetName;
     private String techLevel;
     private String resources;
-    private ArrayList<String> names;
+    private static final int randBound13 = 13;
+    private static final int randBound53 = 53;
 
-    private String[] planetNames = {
+    private final String[] planetNames = {
         "Earth",
         "Mercury",
         "Venus",
@@ -75,7 +76,7 @@ public class Planet implements Serializable {
 
     };
 
-    private String[] techLevels = {
+    private final String[] techLevels = {
          "Pre-Agriculture",
          "Agriculture",
          "Medieval",
@@ -86,7 +87,7 @@ public class Planet implements Serializable {
          "Hi-Tech"
     };
 
-    private String[] resourceLevels = {
+    private final String[] resourceLevels = {
          "No Special Resources",
          "Mineral Rich",
          "Mineral Poor",
@@ -109,8 +110,8 @@ public class Planet implements Serializable {
             yPlanet = y;
             Random rand = new Random();
             techLevel = techLevels[rand.nextInt(8)];
-            resources = resourceLevels[rand.nextInt(2) * rand.nextInt(13)];
-            planetName = planetNames[rand.nextInt(53)];
+            resources = resourceLevels[rand.nextInt(2) * rand.nextInt(randBound13)];
+            planetName = planetNames[rand.nextInt(randBound53)];
         } else {
             throw new IndexOutOfBoundsException("x and y cannot be negative");
         }
@@ -122,7 +123,7 @@ public class Planet implements Serializable {
             yPlanet = y;
             Random rand = new Random();
             techLevel = techLevels[rand.nextInt(8)];
-            resources = resourceLevels[rand.nextInt(2) * rand.nextInt(13)];
+            resources = resourceLevels[rand.nextInt(2) * rand.nextInt(randBound13)];
         } else {
             throw new IndexOutOfBoundsException("x and y cannot be negative");
         }

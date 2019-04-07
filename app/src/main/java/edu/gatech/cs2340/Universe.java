@@ -4,28 +4,32 @@ import java.io.Serializable;
 import java.util.Random;
 
 public class Universe implements Serializable {
-    private int xLow;
-    private int xHigh;
-    private int yLow;
-    private int yHigh;
+    private final int xLow;
+    private final int xHigh;
+    private final int yLow;
+    private final int yHigh;
     private int numOfSS;
     private int nameHelp;
+    private static final int xBound = 250;
+    private static final int yBound = 250;
+    private static final int nameDivisor = 13;
+    private static final int spreader = 50;
 
-    private SolarSystem[] solarSystems;
+    private final SolarSystem[] solarSystems;
 
     public Universe() {
-        xHigh = 250;
+        xHigh = xBound;
         xLow = 0;
-        yHigh = 250;
+        yHigh = yBound;
         yLow = 0;
         numOfSS = 0;
         Random rand = new Random();
-        nameHelp = rand.nextInt(13);
+        nameHelp = rand.nextInt(nameDivisor);
         solarSystems = new SolarSystem[5];
     }
 
     public void addSolarSystem() {
-        solarSystems[numOfSS] = new SolarSystem(numOfSS * 50, nameHelp % 13);
+        solarSystems[numOfSS] = new SolarSystem(numOfSS * spreader, nameHelp % nameDivisor);
         numOfSS++;
         nameHelp++;
     }

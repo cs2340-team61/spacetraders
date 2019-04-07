@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Player implements Serializable {
 
-    private String playerName;
+    private final String playerName;
 
     private Ship shipOwned;
 

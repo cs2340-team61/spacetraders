@@ -9,6 +9,7 @@ import android.widget.Button;
 import java.util.Random;
 
 public class TraderActivity extends AppCompatActivity {
+    private static final int magic500 = 500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class TraderActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Random random = new Random();
-                int credits = marketViewModel.getCredits() + 500 + random.nextInt(500);
+                int credits = marketViewModel.getCredits() + magic500 + random.nextInt(magic500);
                 marketViewModel.setCredits(credits);
                 restartMain(v);
                 finish();

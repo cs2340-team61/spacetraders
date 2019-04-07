@@ -15,6 +15,7 @@ public class ShipInventory implements Serializable {
     private int numRobots;
     private int maxCargo;
     private int size;
+    private static final int initialMaxCargo = 15;
 
     public ShipInventory() {
         numWater = 0;
@@ -27,7 +28,7 @@ public class ShipInventory implements Serializable {
         numMachines = 0;
         numNarcotics = 0;
         numRobots = 0;
-        maxCargo = 15;
+        maxCargo = initialMaxCargo;
         size = 0;
     }
 

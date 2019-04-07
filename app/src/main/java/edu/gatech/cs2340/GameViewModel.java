@@ -24,13 +24,15 @@ public class GameViewModel extends AndroidViewModel {
     public void createGame(String playerName, int sE, int sP, int sF, int sT, Difficulty dif) {
         Universe universe = new Universe();
         Player player = new Player(playerName, sE, sP, sF, sT);
-        model.setGameDiff(dif);
-        model.setPlayer(player);
-        model.setUniverse(universe);
+        setGameDiff(dif);
+        setPlayer(player);
+        setUniverse(universe);
         model.addS();
-        model.setInventory(new ShipInventory());
-        Log.d("APP", model.getPlayer().toString());
-        Log.d("APP", model.getUniverse().toString());
+        setInventory(new ShipInventory());
+        Player tempPlayer = getPlayer();
+        Universe tempUniverse = getUniverse();
+        Log.d("APP", tempPlayer.toString());
+        Log.d("APP", tempUniverse.toString());
     }
 
     public boolean saveGame() {
@@ -64,6 +66,30 @@ public class GameViewModel extends AndroidViewModel {
             Log.e("APP", "ClassNotFoundException while loading saved game.", e);
         }
         return false;
+    }
+
+    private void setGameDiff(Difficulty diff) {
+        model.setGameDiff(diff);
+    }
+
+    private void setPlayer(Player player) {
+        model.setPlayer(player);
+    }
+
+    private void setUniverse(Universe universe) {
+        model.setUniverse(universe);
+    }
+
+    private void setInventory(ShipInventory inventory) {
+        model.setInventory(inventory);
+    }
+
+    private Player getPlayer() {
+        return model.getPlayer();
+    }
+
+    private Universe getUniverse() {
+        return model.getUniverse();
     }
 
     public Planet getPlayerLocation() {
