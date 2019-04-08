@@ -26,10 +26,10 @@ public class PoliceActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Random random = new Random();
                 if (1 == random.nextInt(2)) {
-                    restartMain(v);
+                    restartMain();
                     finish();
                 } else {
-                    gotCaught(v);
+                    gotCaught();
                     finish();
                 }
             }
@@ -40,22 +40,22 @@ public class PoliceActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Random random = new Random();
                 if (1 == random.nextInt(2)) {
-                    restartMain(v);
+                    restartMain();
                     finish();
                 } else {
-                    gotCaught(v);
+                    gotCaught();
                     finish();
                 }
             }
         });
     }
 
-    public void restartMain(View view) {
+    private void restartMain() {
         Intent intent = new Intent(this,GameMainActivity.class);
         startActivity(intent);
     }
 
-    public void gotCaught(View view) {
+    private void gotCaught() {
         Intent intent = new Intent(this,PoliceCaughtActivity.class);
         startActivity(intent);
     }

@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class PoliceCaughtActivity extends AppCompatActivity {
 
-    final MarketViewModel marketViewModel = new MarketViewModel(getApplication());
+    private final MarketViewModel marketViewModel = new MarketViewModel(getApplication());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +26,13 @@ public class PoliceCaughtActivity extends AppCompatActivity {
                 setCredits(credits);
                 int numNarcs = marketViewModel.getNumNarcotics();
                 removeNarcotics(numNarcs);
-                restartMain(v);
+                restartMain();
                 finish();
             }
         });
     }
 
-    private void restartMain(View view) {
+    private void restartMain() {
         Intent intent = new Intent(this,GameMainActivity.class);
         startActivity(intent);
     }

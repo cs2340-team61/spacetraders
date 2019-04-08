@@ -2,10 +2,7 @@ package edu.gatech.cs2340;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,6 +16,7 @@ public class PostConfigActivity extends AppCompatActivity {
     private TextView tSkill;
     private TextView diffG;
     private TextView pName;
+    private final GameViewModel gameViewModel = new GameViewModel(getApplication());
 
 
     @Override
@@ -33,18 +31,20 @@ public class PostConfigActivity extends AppCompatActivity {
         diffG = findViewById(R.id.gameDiff);
         pName = findViewById(R.id.playerName);
 
-        eSkill.setText(getIntent().getStringExtra("EngineerSkill"));
-        pSkill.setText(getIntent().getStringExtra("PilotSkill"));
-        fSkill.setText(getIntent().getStringExtra("FighterSkill"));
-        tSkill.setText(getIntent().getStringExtra("TraderSkill"));
-        diffG.setText("Game Difficulty: " + getIntent().getStringExtra("Difficulty"));
-        pName.setText(getIntent().getStringExtra("name"));
+        Player player = gameViewModel.getPlayer();
+        eSkill.setText(player.getSkillEngineer());
+        pSkill.setText(player.getSkillPilot());
+        fSkill.setText(player.getSkillFighter());
+        tSkill.setText(player.getSkillTrader());
+        Difficulty difficulty = gameViewModel.getDifficulty();
+        diffG.setText("Game Difficulty: " + difficulty.getDiff());
+        pName.setText(player.getPlayerName());
 
         continueB = findViewById(R.id.button_cont);
         continueB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gameStart(v);
+                gameStart();
                 finish();
             }
         });
@@ -58,7 +58,7 @@ public class PostConfigActivity extends AppCompatActivity {
         });
     }
 
-    public void gameStart(View view) {
+    private void gameStart() {
         Intent intent = new Intent(this, GameStartActivity.class);
         startActivity(intent);
     }

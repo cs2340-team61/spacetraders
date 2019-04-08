@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         configGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gameConfig(v);
+                gameConfig();
             }
         });
         exitGame.setOnClickListener(new View.OnClickListener() {
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void gameConfig(View view) {
+    private void gameConfig() {
         Intent intent = new Intent(this, GameConfigActivity.class);
         startActivity(intent);
     }

@@ -2,10 +2,10 @@ package edu.gatech.cs2340;
 
 import java.io.Serializable;
 
-public class ShipStats implements Serializable {
+class ShipStats implements Serializable {
     private int health;
     private int fuel;
-    private int speed;
+    private final int speed;
     private final int laser;
     private static final int initialSpeed = 50;
     private static final int initialLaser = 50;
@@ -21,7 +21,7 @@ public class ShipStats implements Serializable {
         fuel -= used;
     }
 
-    public void refillFuel(double fill) {
+    /*public void refillFuel(double fill) {
         fuel += fill;
     }
 
@@ -35,7 +35,7 @@ public class ShipStats implements Serializable {
 
     public void upgradeSpeed() {
         speed += 10;
-    }
+    } */
 
     public int getFuel() { return fuel; }
 

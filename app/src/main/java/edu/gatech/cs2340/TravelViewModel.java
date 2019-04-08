@@ -4,7 +4,7 @@ import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.support.annotation.NonNull;
 
-public class TravelViewModel extends AndroidViewModel {
+class TravelViewModel extends AndroidViewModel {
     private final Game model;
     private static final int totalPlanetNum = 15;
 
@@ -30,8 +30,7 @@ public class TravelViewModel extends AndroidViewModel {
 
     public SolarSystem[] getSolarSystems() {
         Universe tempUniverse = model.getUniverse();
-        SolarSystem[] solarSystems = tempUniverse.getSolarSystems();
-        return solarSystems;
+        return tempUniverse.getSolarSystems();
     }
 
     public int getDistance(int x1, int x2, int y1, int y2) {
@@ -58,7 +57,7 @@ public class TravelViewModel extends AndroidViewModel {
         return model.getHealth();
     }
 
-    protected void setHealth(int health) {
+    void setHealth(int health) {
         model.setHealth(health);
     }
 
@@ -66,9 +65,9 @@ public class TravelViewModel extends AndroidViewModel {
         return model.getFuel();
     }
 
-    protected int getSpeed() {return model.getSpeed();}
+    int getSpeed() {return model.getSpeed();}
 
-    protected int getLaser() {return model.getLaser();}
+    int getLaser() {return model.getLaser();}
 
     public int checkForEvent() {
         int event = 0;

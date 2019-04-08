@@ -9,7 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class TravelActivity extends AppCompatActivity {
-    private TravelViewModel travelViewModel = new TravelViewModel(getApplication());
+    private final TravelViewModel travelViewModel = new TravelViewModel(getApplication());
     private TextView solarSystem1;
     private TextView solarSystem2;
     private TextView solarSystem3;
@@ -264,16 +264,16 @@ public class TravelActivity extends AppCompatActivity {
                                 getX(playerLocation), getY(update), getY(playerLocation))));
                         int eventCheck = travelViewModel.checkForEvent();
                         if (eventCheck == 1) {
-                            pirateStart(v);
+                            pirateStart();
                             finish();
                         } else if (eventCheck == 2) {
-                            policeStart(v);
+                            policeStart();
                             finish();
                         } else if (eventCheck == 3) {
-                            traderStart(v);
+                            traderStart();
                             finish();
                         } else {
-                            restartMain(v);
+                            restartMain();
                             finish();
                         }
                     } else {
@@ -287,28 +287,28 @@ public class TravelActivity extends AppCompatActivity {
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                restartMain(v);
+                restartMain();
                 finish();
             }
         });
     }
 
-    public void restartMain(View view) {
+    private void restartMain() {
         Intent intent = new Intent(this, GameMainActivity.class);
         startActivity(intent);
     }
 
-    public void pirateStart(View view) {
+    private void pirateStart() {
         Intent intent = new Intent(this, PirateActivity.class);
         startActivity(intent);
     }
 
-    public void policeStart(View view) {
+    private void policeStart() {
         Intent intent = new Intent(this, PoliceActivity.class);
         startActivity(intent);
     }
 
-    public void traderStart(View view) {
+    private void traderStart() {
         Intent intent = new Intent(this, TraderActivity.class);
         startActivity(intent);
     }

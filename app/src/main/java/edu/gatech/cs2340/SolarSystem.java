@@ -1,7 +1,5 @@
 package edu.gatech.cs2340;
 
-import android.media.Image;
-
 import java.io.Serializable;
 import java.util.Random;
 
@@ -46,21 +44,21 @@ public class SolarSystem implements Serializable {
         ssName = ssNames[nameHelp];
     }
 
-    public int getX() { return x; }
+    /*public int getX() { return x; }
 
-    public int getY() { return y; }
+    public int getY() { return y; }*/
 
-    public Planet[] getPlanets() { return planets; }
+    public Planet[] getPlanets() { return planets.clone(); }
 
     public String getSsName() { return ssName; }
 
-    private String getPlanetData(int planet) {
+    /*private String getPlanetData(int planet) {
         return planets[planet].toString();
-    }
+    }*/
 
-    @Override
+    /*@Override
     public String toString() {
         return String.format("\n\nSolar System Name %s \nX center: %d \nY center: %d \nPlanets:      " +
                 getPlanetData(0) + getPlanetData(1) + getPlanetData(2), ssName, x, y);
-    }
+    }*/
 }

@@ -1,12 +1,6 @@
 package edu.gatech.cs2340;
 
-import android.service.notification.NotificationListenerService;
-
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 import java.util.Random;
 
 public class Planet implements Serializable {
@@ -139,9 +133,9 @@ public class Planet implements Serializable {
 
     public String getTechLevel() { return techLevel; }
 
-    @Override
+    /*@Override
     public String toString() {
         return String.format("\nPlanet name: %s \nX: %d \nY: %d \nResource: %s \nTech Level: %s",
                 planetName, xPlanet, yPlanet, resources, techLevel );
-    }
+    }*/
 }

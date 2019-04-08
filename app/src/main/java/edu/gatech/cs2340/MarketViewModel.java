@@ -6,7 +6,7 @@ import android.support.annotation.NonNull;
 
 import java.util.Random;
 
-public class MarketViewModel extends AndroidViewModel {
+class MarketViewModel extends AndroidViewModel {
     private final Game model;
     private static final int bigB = 11;
     private static final int addB = 20;

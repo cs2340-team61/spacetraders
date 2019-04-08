@@ -151,8 +151,13 @@ public class GameConfigActivity extends AppCompatActivity {
                 Difficulty dif = (Difficulty) gameDiffSpin.getSelectedItem();
                 if (sT + sP + sF + sE == skillMax) {
                     gameViewModel = new GameViewModel(getApplication());
-                    gameViewModel.createGame(name, sE, sP, sF, sT, dif);
-                    postConfig(v);
+                    int[] skillArray = new int[4];
+                    skillArray[0] = sE;
+                    skillArray[1] = sP;
+                    skillArray[2] = sF;
+                    skillArray[3] = sT;
+                    gameViewModel.createGame(name, skillArray, dif);
+                    postConfig();
 
                     finish();
                 } else {
@@ -167,7 +172,7 @@ public class GameConfigActivity extends AppCompatActivity {
                 gameViewModel = new GameViewModel(getApplication());
                 boolean loadSuccess = gameViewModel.resumeSavedGame();
                 if (loadSuccess) {
-                    mainGame(v);
+                    mainGame();
                     finish();
                 } else {
                     Toast.makeText(getApplication(), "No game saved", Toast.LENGTH_LONG).show();
@@ -176,19 +181,12 @@ public class GameConfigActivity extends AppCompatActivity {
         });
     }
 
-    public void postConfig(View view) {
+    private void postConfig() {
         Intent intent = new Intent(this, PostConfigActivity.class);
-        intent.putExtra("EngineerSkill", "" +Integer.parseInt(skillE.getText().toString()));
-        intent.putExtra("PilotSkill", "" +Integer.parseInt(skillP.getText().toString()));
-        intent.putExtra("FighterSkill", "" + Integer.parseInt(skillF.getText().toString()));
-        intent.putExtra("TraderSkill", "" + Integer.parseInt(skillT.getText().toString()));
-        intent.putExtra("name", playerName.getText());
-        intent.putExtra("Difficulty", ((Difficulty) gameDiffSpin.getSelectedItem()).getDiff());
-
         startActivity(intent);
     }
 
-    public void mainGame(View view) {
+    private void mainGame() {
         Intent intent = new Intent(this, GameMainActivity.class);
         startActivity(intent);
     }

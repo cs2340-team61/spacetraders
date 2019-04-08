@@ -11,7 +11,7 @@ import java.util.Random;
 
 public class PirateActivity extends AppCompatActivity {
 
-    final TravelViewModel travelViewModel = new TravelViewModel(getApplication());
+    private final TravelViewModel travelViewModel = new TravelViewModel(getApplication());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +50,12 @@ public class PirateActivity extends AppCompatActivity {
                 }
 
                 if (getHealth() <= 0) {
-                    gameOver(v);
+                    gameOver();
                     finish();
                 }
 
                 if (Integer.parseInt(pirateHealth.getText().toString()) <= 0) {
-                    restartMain(v);
+                    restartMain();
                     finish();
                 }
             }
@@ -66,7 +66,7 @@ public class PirateActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Random random = new Random();
                 if (getSpeed() < random.nextInt(100)) {
-                    restartMain(v);
+                    restartMain();
                     finish();
                 } else {
                     conText.setText("You failed to escape");
@@ -75,7 +75,7 @@ public class PirateActivity extends AppCompatActivity {
                                 (getLaser() * 2 / 3)));
 
                         if (getHealth() <= 0) {
-                            gameOver(v);
+                            gameOver();
                             finish();
                         }
                     }
@@ -86,12 +86,12 @@ public class PirateActivity extends AppCompatActivity {
 
     }
 
-    public void restartMain(View view) {
+    private void restartMain() {
         Intent intent = new Intent(this,GameMainActivity.class);
         startActivity(intent);
     }
 
-    public void gameOver(View view) {
+    private void gameOver() {
         Intent intent = new Intent(this,PirateLoseActivity.class);
         startActivity(intent);
     }

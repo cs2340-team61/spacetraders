@@ -28,21 +28,21 @@ public class MarketplaceActivity extends AppCompatActivity {
         buyItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                marketplaceBuy(v);
+                marketplaceBuy();
             }
         });
 
         sellItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                marketplaceSell(v);
+                marketplaceSell();
             }
         });
 
         leaveMarket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                leaveMarket(v);
+                leaveMarket();
                 finish();
             }
         });
@@ -50,27 +50,27 @@ public class MarketplaceActivity extends AppCompatActivity {
         inven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                viewInven(v);
+                viewInven();
             }
         });
     }
 
-    public void marketplaceBuy(View view) {
+    private void marketplaceBuy() {
         Intent intent = new Intent(this, MarketBuyActivity.class);
         startActivity(intent);
     }
 
-    public void marketplaceSell(View view) {
+    private void marketplaceSell() {
         Intent intent = new Intent(this, MarketSellActivity.class);
         startActivity(intent);
     }
 
-    public void leaveMarket(View view) {
+    private void leaveMarket() {
         Intent intent = new Intent(this,GameMainActivity.class);
         startActivity(intent);
     }
 
-    public void viewInven(View view) {
+    private void viewInven() {
         Intent intent = new Intent(this, ShipInventoryActivity.class);
         startActivity(intent);
     }

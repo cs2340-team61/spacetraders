@@ -8,42 +8,39 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-
 public class GameMainActivity extends AppCompatActivity {
+
+    private final GameViewModel gameViewModel = new GameViewModel(getApplication());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_main);
 
-        final GameViewModel gameViewModel;
         TextView startMessage;
-        Button goBank;
+        //Button goBank;
         Button goMarket;
         Button goTravel;
-        Button viewShip;
+        //Button viewShip;
         Button saveGame;
         Button exit;
 
         startMessage = findViewById(R.id.start_msg);
-        goBank = findViewById(R.id.button);
+        //goBank = findViewById(R.id.button);
         goMarket = findViewById(R.id.button2);
         goTravel = findViewById(R.id.button4);
-        viewShip = findViewById(R.id.button5);
+        //viewShip = findViewById(R.id.button5);
         saveGame = findViewById(R.id.button8);
         exit = findViewById(R.id.button3);
-        gameViewModel = new GameViewModel(getApplication());
 
-        startMessage.setText("Welcome Trader! You are currently located on the planet " + gameViewModel.getPlayerLocation().getPlanetName()
+        Planet planet = getPlayerLocation();
+        startMessage.setText("Welcome Trader! You are currently located on the planet " + planet.getPlanetName()
                 + " and you have started with a Gnat Ship, 1000 credits.\n What to do?");
 
         goMarket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                marketplace(v);
+                marketplace();
                 finish();
             }
         });
@@ -51,7 +48,7 @@ public class GameMainActivity extends AppCompatActivity {
         goTravel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                travel(v);
+                travel();
                 finish();
             }
         });
@@ -76,13 +73,17 @@ public class GameMainActivity extends AppCompatActivity {
         });
     }
 
-    public void marketplace(View view) {
+    private void marketplace() {
         Intent intent = new Intent(this, MarketplaceActivity.class);
         startActivity(intent);
     }
 
-    public void travel(View view) {
+    private void travel() {
         Intent intent = new Intent(this, TravelActivity.class);
         startActivity(intent);
+    }
+
+    private Planet getPlayerLocation() {
+        return gameViewModel.getPlayerLocation();
     }
 }

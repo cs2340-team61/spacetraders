@@ -10,10 +10,10 @@ import android.widget.TextView;
 public class GameStartActivity extends AppCompatActivity {
     private GameViewModel gameViewModel;
     private TextView startMessage;
-    private Button goBank;
+    //private Button goBank;
     private Button goMarket;
     private Button goTravel;
-    private Button viewShip;
+    //private Button viewShip;
     private Button exit;
 
     @Override
@@ -23,20 +23,21 @@ public class GameStartActivity extends AppCompatActivity {
 
         startMessage = findViewById(R.id.start_msg);
         goMarket = findViewById(R.id.button2);
-        goBank = findViewById(R.id.button);
+        //goBank = findViewById(R.id.button);
         goTravel = findViewById(R.id.button4);
-        viewShip = findViewById(R.id.button5);
+        //viewShip = findViewById(R.id.button5);
         exit = findViewById(R.id.button3);
         gameViewModel = new GameViewModel(getApplication());
 
-        startMessage.setText("Welcome Trader! You are currently located on the planet " + gameViewModel.getPlayerLocation().getPlanetName()
+        Planet planet = getPlayerLocation();
+        startMessage.setText("Welcome Trader! You are currently located on the planet " + planet.getPlanetName()
                 + " and you have started with a Gnat Ship, 1000 credits.\n What to do?");
 
 
         goMarket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                marketplace(v);
+                marketplace();
                 finish();
             }
         });
@@ -44,7 +45,7 @@ public class GameStartActivity extends AppCompatActivity {
         goTravel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                travel(v);
+                travel();
                 finish();
             }
         });
@@ -58,13 +59,17 @@ public class GameStartActivity extends AppCompatActivity {
 
     }
 
-    public void marketplace(View view) {
+    private void marketplace() {
         Intent intent = new Intent(this, MarketplaceActivity.class);
         startActivity(intent);
     }
 
-    public void travel(View view) {
+    private void travel() {
         Intent intent = new Intent(this, TravelActivity.class);
         startActivity(intent);
+    }
+
+    private Planet getPlayerLocation() {
+        return gameViewModel.getPlayerLocation();
     }
 }

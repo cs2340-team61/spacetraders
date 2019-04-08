@@ -13,7 +13,7 @@ public class ShipInventory implements Serializable {
     private int numMachines;
     private int numNarcotics;
     private int numRobots;
-    private int maxCargo;
+    private final int maxCargo;
     private int size;
     private static final int initialMaxCargo = 15;
 
@@ -138,5 +138,5 @@ public class ShipInventory implements Serializable {
 
     public void setSize(int size) { this.size = size; }
 
-    public void setMaxCargo(int maxCargo) { this.maxCargo = maxCargo; }
+    //public void setMaxCargo(int maxCargo) { this.maxCargo = maxCargo; }
 }

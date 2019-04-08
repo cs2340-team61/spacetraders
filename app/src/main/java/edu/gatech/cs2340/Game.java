@@ -47,10 +47,12 @@ public class Game implements Serializable {
         }
 
         sols = universe.getSolarSystems();
+        int incrementer = 0;
         for (int j = 0; j < 5; j++) {
             Planet[] planets = sols[j].getPlanets();
             for (int i = 0; i < 3; i++) {
-                plans[i] = planets[i];
+                plans[incrementer] = planets[i];
+                incrementer++;
             }
         }
 
@@ -216,15 +218,15 @@ public class Game implements Serializable {
 
     public int getHealth() { return shipStats.getHealth(); }
 
-    protected void setHealth(int health) {
+    void setHealth(int health) {
         shipStats.setHealth(health);
     }
 
     public int getFuel() {return shipStats.getFuel(); }
 
-    protected int getSpeed() {return shipStats.getSpeed();}
+    int getSpeed() {return shipStats.getSpeed();}
 
-    protected int getLaser() {return shipStats.getLaser();}
+    int getLaser() {return shipStats.getLaser();}
 
     public boolean pirateCheck() {
         return rE.encounterPirates();

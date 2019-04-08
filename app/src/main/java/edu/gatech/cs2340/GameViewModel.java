@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+@SuppressWarnings("ALL")
 public class GameViewModel extends AndroidViewModel {
     private Game model;
 
@@ -21,9 +22,10 @@ public class GameViewModel extends AndroidViewModel {
         model = Model.getInstance().getMyGame();
     }
 
-    public void createGame(String playerName, int sE, int sP, int sF, int sT, Difficulty dif) {
+    public void createGame(String playerName, int[] skillArray, Difficulty dif) {
         Universe universe = new Universe();
-        Player player = new Player(playerName, sE, sP, sF, sT);
+        Player player = new Player(playerName, skillArray[0], skillArray[1],
+                skillArray[2], skillArray[3]);
         setGameDiff(dif);
         setPlayer(player);
         setUniverse(universe);
@@ -72,6 +74,8 @@ public class GameViewModel extends AndroidViewModel {
         model.setGameDiff(diff);
     }
 
+    public Difficulty getDifficulty() {return model.getGameDiff();}
+
     private void setPlayer(Player player) {
         model.setPlayer(player);
     }
@@ -84,7 +88,7 @@ public class GameViewModel extends AndroidViewModel {
         model.setInventory(inventory);
     }
 
-    private Player getPlayer() {
+    public Player getPlayer() {
         return model.getPlayer();
     }
 

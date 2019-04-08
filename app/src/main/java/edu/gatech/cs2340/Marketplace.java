@@ -3,7 +3,7 @@ package edu.gatech.cs2340;
 import java.io.Serializable;
 import java.util.Random;
 
-public class Marketplace implements Serializable {
+class Marketplace implements Serializable {
     private int MTLP;
     private int BasePrice;
     private int IPL;
@@ -142,8 +142,7 @@ public class Marketplace implements Serializable {
     public int calculatePrice() {
         Random rand = new Random();
         int buffer = (rand.nextInt(getVar()) + 1);
-        int price = getBasePrice() + (getIPL() * (level - getMTLP())) + (buffer);
-        return price;
+        return getBasePrice() + (getIPL() * (level - getMTLP())) + (buffer);
     }
 }
 

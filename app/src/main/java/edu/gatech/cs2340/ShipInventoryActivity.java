@@ -6,10 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class ShipInventoryActivity extends AppCompatActivity {
-    private MarketViewModel marketViewModel = new MarketViewModel(getApplication());
+    private final MarketViewModel marketViewModel = new MarketViewModel(getApplication());
     private TextView water;
     private TextView furs;
     private TextView food;

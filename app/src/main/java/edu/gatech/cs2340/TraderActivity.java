@@ -26,7 +26,7 @@ public class TraderActivity extends AppCompatActivity {
         ignore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                restartMain(v);
+                restartMain();
                 finish();
             }
         });
@@ -37,13 +37,13 @@ public class TraderActivity extends AppCompatActivity {
                 Random random = new Random();
                 int credits = marketViewModel.getCredits() + magic500 + random.nextInt(magic500);
                 marketViewModel.setCredits(credits);
-                restartMain(v);
+                restartMain();
                 finish();
             }
         });
     }
 
-    public void restartMain(View view) {
+    private void restartMain() {
         Intent intent = new Intent(this,GameMainActivity.class);
         startActivity(intent);
     }
