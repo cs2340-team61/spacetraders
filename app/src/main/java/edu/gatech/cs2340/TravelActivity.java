@@ -9,7 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class TravelActivity extends AppCompatActivity {
-    private TravelViewModel travelViewModel;
+    private TravelViewModel travelViewModel = new TravelViewModel(getApplication());
     private TextView solarSystem1;
     private TextView solarSystem2;
     private TextView solarSystem3;
@@ -83,7 +83,6 @@ public class TravelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travel);
 
-        travelViewModel = new TravelViewModel(getApplication());
         solarSystem1 = findViewById(R.id.solarSystem1);
         solarSystem2 = findViewById(R.id.solarSystem2);
         solarSystem3 = findViewById(R.id.solarSystem3);
@@ -145,36 +144,35 @@ public class TravelActivity extends AppCompatActivity {
         go = findViewById(R.id.travel);
         cancel = findViewById(R.id.cancel);
 
-        Planet playerLocation = travelViewModel.getPlayerLocation();
-        SolarSystem[] solarSystems = travelViewModel.getSolarSystems();
-        final Planet[] planets = travelViewModel.getPlanets();
+        Planet playerLocation = getPlayerLocation();
+        SolarSystem[] solarSystems = getSolarSystems();
+        final Planet[] planets = getPlanets();
 
-        solarSystem1.setText(solarSystems[0].getSsName());
-        solarSystem2.setText(solarSystems[1].getSsName());
-        solarSystem3.setText(solarSystems[2].getSsName());
-        solarSystem4.setText(solarSystems[3].getSsName());
-        solarSystem5.setText(solarSystems[4].getSsName());
-        planet1.setText(planets[0].getPlanetName());
-        planet2.setText(planets[1].getPlanetName());
-        planet3.setText(planets[2].getPlanetName());
-        planet4.setText(planets[3].getPlanetName());
-        planet5.setText(planets[4].getPlanetName());
-        planet6.setText(planets[5].getPlanetName());
-        planet7.setText(planets[6].getPlanetName());
-        planet8.setText(planets[7].getPlanetName());
-        planet9.setText(planets[8].getPlanetName());
-        planet10.setText(planets[9].getPlanetName());
-        planet11.setText(planets[10].getPlanetName());
-        planet12.setText(planets[magic11].getPlanetName());
-        planet13.setText(planets[magic12].getPlanetName());
-        planet14.setText(planets[magic13].getPlanetName());
-        planet15.setText(planets[magic14].getPlanetName());
+        solarSystem1.setText(getSSname(solarSystems[0]));
+        solarSystem2.setText(getSSname(solarSystems[1]));
+        solarSystem3.setText(getSSname(solarSystems[2]));
+        solarSystem4.setText(getSSname(solarSystems[3]));
+        solarSystem5.setText(getSSname(solarSystems[4]));
+        planet1.setText(getPlanetName(planets[0]));
+        planet2.setText(getPlanetName(planets[1]));
+        planet3.setText(getPlanetName(planets[2]));
+        planet4.setText(getPlanetName(planets[3]));
+        planet5.setText(getPlanetName(planets[4]));
+        planet6.setText(getPlanetName(planets[5]));
+        planet7.setText(getPlanetName(planets[6]));
+        planet8.setText(getPlanetName(planets[7]));
+        planet9.setText(getPlanetName(planets[8]));
+        planet10.setText(getPlanetName(planets[9]));
+        planet11.setText(getPlanetName(planets[10]));
+        planet12.setText(getPlanetName(planets[magic11]));
+        planet13.setText(getPlanetName(planets[magic12]));
+        planet14.setText(getPlanetName(planets[magic13]));
+        planet15.setText(getPlanetName(planets[magic14]));
 
         int distances[] = new int[magic15];
         for (int i = 0; i < distances.length; i++) {
-            distances[i] = travelViewModel.getDistance(planets[i].getxPlanet(),
-                    playerLocation.getxPlanet(),planets[i].getyPlanet(),
-                    playerLocation.getyPlanet());
+            distances[i] = getDistance(getX(planets[i]), getX(playerLocation), getY(planets[i]),
+                    getY(playerLocation));
         }
 
         distance1.setText(distances[0] + " Units");
@@ -193,29 +191,29 @@ public class TravelActivity extends AppCompatActivity {
         distance14.setText(distances[magic13] + " Units");
         distance15.setText(distances[magic14] + " Units");
 
-        fuelCost1.setText(travelViewModel.getFuelCost(distances[0]) + " fuel");
-        fuelCost2.setText(travelViewModel.getFuelCost(distances[1]) + " fuel");
-        fuelCost3.setText(travelViewModel.getFuelCost(distances[2]) + " fuel");
-        fuelCost4.setText(travelViewModel.getFuelCost(distances[3]) + " fuel");
-        fuelCost5.setText(travelViewModel.getFuelCost(distances[4]) + " fuel");
-        fuelCost6.setText(travelViewModel.getFuelCost(distances[5]) + " fuel");
-        fuelCost7.setText(travelViewModel.getFuelCost(distances[6]) + " fuel");
-        fuelCost8.setText(travelViewModel.getFuelCost(distances[7]) + " fuel");
-        fuelCost9.setText(travelViewModel.getFuelCost(distances[8]) + " fuel");
-        fuelCost10.setText(travelViewModel.getFuelCost(distances[9]) + " fuel");
-        fuelCost11.setText(travelViewModel.getFuelCost(distances[10]) + " fuel");
-        fuelCost12.setText(travelViewModel.getFuelCost(distances[magic11]) + " fuel");
-        fuelCost13.setText(travelViewModel.getFuelCost(distances[magic12]) + " fuel");
-        fuelCost14.setText(travelViewModel.getFuelCost(distances[magic13]) + " fuel");
-        fuelCost15.setText(travelViewModel.getFuelCost(distances[magic14]) + " fuel");
+        fuelCost1.setText(getFuelCost(distances[0]) + " fuel");
+        fuelCost2.setText(getFuelCost(distances[1]) + " fuel");
+        fuelCost3.setText(getFuelCost(distances[2]) + " fuel");
+        fuelCost4.setText(getFuelCost(distances[3]) + " fuel");
+        fuelCost5.setText(getFuelCost(distances[4]) + " fuel");
+        fuelCost6.setText(getFuelCost(distances[5]) + " fuel");
+        fuelCost7.setText(getFuelCost(distances[6]) + " fuel");
+        fuelCost8.setText(getFuelCost(distances[7]) + " fuel");
+        fuelCost9.setText(getFuelCost(distances[8]) + " fuel");
+        fuelCost10.setText(getFuelCost(distances[9]) + " fuel");
+        fuelCost11.setText(getFuelCost(distances[10]) + " fuel");
+        fuelCost12.setText(getFuelCost(distances[magic11]) + " fuel");
+        fuelCost13.setText(getFuelCost(distances[magic12]) + " fuel");
+        fuelCost14.setText(getFuelCost(distances[magic13]) + " fuel");
+        fuelCost15.setText(getFuelCost(distances[magic14]) + " fuel");
 
-        currentHealth.setText("" + travelViewModel.getHealth());
-        currentFuel.setText("" + travelViewModel.getFuel());
+        currentHealth.setText("" + getHealth());
+        currentFuel.setText("" + getFuel());
 
         ssUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(ssChoice.getText().toString()) < 5 ) {
+                if (Integer.parseInt(ssChoice.getText().toString()) < 5) {
                     ssChoice.setText("" + (Integer.parseInt(ssChoice.getText().toString()) + 1));
                 }
             }
@@ -224,7 +222,7 @@ public class TravelActivity extends AppCompatActivity {
         ssDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(ssChoice.getText().toString()) > 1 ) {
+                if (Integer.parseInt(ssChoice.getText().toString()) > 1) {
                     ssChoice.setText("" + (Integer.parseInt(ssChoice.getText().toString()) - 1));
                 }
             }
@@ -233,7 +231,7 @@ public class TravelActivity extends AppCompatActivity {
         pUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(pChoice.getText().toString()) < 3 ) {
+                if (Integer.parseInt(pChoice.getText().toString()) < 3) {
                     pChoice.setText("" + (Integer.parseInt(pChoice.getText().toString()) + 1));
                 }
             }
@@ -242,7 +240,7 @@ public class TravelActivity extends AppCompatActivity {
         pDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(pChoice.getText().toString()) > 1 ) {
+                if (Integer.parseInt(pChoice.getText().toString()) > 1) {
                     pChoice.setText("" + (Integer.parseInt(pChoice.getText().toString()) - 1));
                 }
             }
@@ -253,19 +251,17 @@ public class TravelActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Planet update = planets[Integer.parseInt(ssChoice.getText().toString()) * 3
                         + Integer.parseInt(pChoice.getText().toString()) - 4];
-                Planet playerLocation = travelViewModel.getPlayerLocation();
+                Planet playerLocation = getPlayerLocation();
                 if (update.equals(playerLocation)) {
                     (Toast.makeText(getApplication(), "You are already on this planet!",
                             Toast.LENGTH_LONG)).show();
                 } else {
-                    if (Integer.parseInt(currentFuel.getText().toString())
-                            > travelViewModel.getFuelCost(travelViewModel.getDistance(
-                                    update.getxPlanet(), playerLocation.getxPlanet(),
-                                    update.getyPlanet(), playerLocation.getyPlanet()))) {
-                        Planet[] tempPlanets = travelViewModel.getPlanets();
-                        travelViewModel.updatePlayerLocation(update);
-                        travelViewModel.updateFuel(travelViewModel.getFuelCost(travelViewModel.getDistance(update.getxPlanet(),
-                                playerLocation.getxPlanet(), update.getyPlanet(), playerLocation.getyPlanet())));
+                    if (Integer.parseInt(currentFuel.getText().toString()) >
+                            getFuelCost(getDistance(getX(update), getX(playerLocation),
+                            getY(update), getY(playerLocation)))) {
+                        updatePlayerLocation(update);
+                        updateFuel(getFuelCost(getDistance(getX(update),
+                                getX(playerLocation), getY(update), getY(playerLocation))));
                         int eventCheck = travelViewModel.checkForEvent();
                         if (eventCheck == 1) {
                             pirateStart(v);
@@ -298,7 +294,7 @@ public class TravelActivity extends AppCompatActivity {
     }
 
     public void restartMain(View view) {
-        Intent intent = new Intent(this,GameMainActivity.class);
+        Intent intent = new Intent(this, GameMainActivity.class);
         startActivity(intent);
     }
 
@@ -315,5 +311,57 @@ public class TravelActivity extends AppCompatActivity {
     public void traderStart(View view) {
         Intent intent = new Intent(this, TraderActivity.class);
         startActivity(intent);
+    }
+
+    private Planet getPlayerLocation() {
+        return travelViewModel.getPlayerLocation();
+    }
+
+    private SolarSystem[] getSolarSystems() {
+        return travelViewModel.getSolarSystems();
+    }
+
+    private Planet[] getPlanets() {
+        return travelViewModel.getPlanets();
+    }
+
+    private int getDistance(int x1, int x2, int y1, int y2) {
+        return travelViewModel.getDistance(x1, x2, y1, y2);
+    }
+
+    private int getX(Planet planet) {
+        return planet.getxPlanet();
+    }
+
+    private int getY(Planet planet) {
+        return planet.getyPlanet();
+    }
+
+    private String getSSname(SolarSystem solarSystem) {
+        return solarSystem.getSsName();
+    }
+
+    private String getPlanetName(Planet planet) {
+        return planet.getPlanetName();
+    }
+
+    private int getFuelCost(int distance) {
+        return travelViewModel.getFuelCost(distance);
+    }
+
+    private int getHealth() {
+        return travelViewModel.getHealth();
+    }
+
+    private int getFuel() {
+        return travelViewModel.getFuel();
+    }
+
+    private void updatePlayerLocation(Planet planet) {
+        travelViewModel.updatePlayerLocation(planet);
+    }
+
+    private void updateFuel(int fuel) {
+        travelViewModel.updateFuel(fuel);
     }
 }

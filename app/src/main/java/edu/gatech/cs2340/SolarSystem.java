@@ -54,9 +54,13 @@ public class SolarSystem implements Serializable {
 
     public String getSsName() { return ssName; }
 
+    private String getPlanetData(int planet) {
+        return planets[planet].toString();
+    }
+
     @Override
     public String toString() {
         return String.format("\n\nSolar System Name %s \nX center: %d \nY center: %d \nPlanets:      " +
-                planets[0].toString() + planets[1].toString() + planets[2].toString(), ssName, x, y);
+                getPlanetData(0) + getPlanetData(1) + getPlanetData(2), ssName, x, y);
     }
 }

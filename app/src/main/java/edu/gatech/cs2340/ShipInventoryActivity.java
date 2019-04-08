@@ -9,7 +9,7 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 public class ShipInventoryActivity extends AppCompatActivity {
-    private MarketViewModel marketViewModel;
+    private MarketViewModel marketViewModel = new MarketViewModel(getApplication());
     private TextView water;
     private TextView furs;
     private TextView food;
@@ -26,7 +26,6 @@ public class ShipInventoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ship_inventory);
-        marketViewModel = new MarketViewModel(getApplication());
 
         water = findViewById(R.id.water_Quanitity2);
         furs = findViewById(R.id.furs_Quantity2);
@@ -40,16 +39,17 @@ public class ShipInventoryActivity extends AppCompatActivity {
         robots = findViewById(R.id.robots_Quanity2);
         cancel = findViewById(R.id.cancel);
 
-        water.setText("" + marketViewModel.getInventory().getNumWater());
-        furs.setText("" + marketViewModel.getInventory().getNumFurs());
-        food.setText("" + marketViewModel.getInventory().getNumFood());
-        ore.setText("" + marketViewModel.getInventory().getNumOre());
-        games.setText("" + marketViewModel.getInventory().getNumGames());
-        firearms.setText("" + marketViewModel.getInventory().getNumFirearms());
-        medicine.setText("" + marketViewModel.getInventory().getNumMedicine());
-        machines.setText("" + marketViewModel.getInventory().getNumMachines());
-        narcotics.setText("" + marketViewModel.getInventory().getNumNarcotics());
-        robots.setText("" + marketViewModel.getInventory().getNumRobots());
+        ShipInventory inventory = getInventory();
+        water.setText("" + getWaterNum(inventory));
+        furs.setText("" + getFursNum(inventory));
+        food.setText("" + getFoodNum(inventory));
+        ore.setText("" + getOreNum(inventory));
+        games.setText("" + getGamesNum(inventory));
+        firearms.setText("" + getFirearmsNum(inventory));
+        medicine.setText("" + getMedicineNum(inventory));
+        machines.setText("" + getMachinesNum(inventory));
+        narcotics.setText("" + getNarcoticsNum(inventory));
+        robots.setText("" + getRobotsNum(inventory));
 
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,5 +58,49 @@ public class ShipInventoryActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private ShipInventory getInventory() {
+        return marketViewModel.getInventory();
+    }
+
+    private int getWaterNum(ShipInventory inventory) {
+        return inventory.getNumWater();
+    }
+
+    private int getFursNum(ShipInventory inventory) {
+        return inventory.getNumFurs();
+    }
+
+    private int getFoodNum(ShipInventory inventory) {
+        return inventory.getNumFood();
+    }
+
+    private int getOreNum(ShipInventory inventory) {
+        return inventory.getNumOre();
+    }
+
+    private int getGamesNum(ShipInventory inventory) {
+        return inventory.getNumGames();
+    }
+
+    private int getFirearmsNum(ShipInventory inventory) {
+        return inventory.getNumFirearms();
+    }
+
+    private int getMedicineNum(ShipInventory inventory) {
+        return inventory.getNumMedicine();
+    }
+
+    private int getMachinesNum(ShipInventory inventory) {
+        return inventory.getNumMachines();
+    }
+
+    private int getNarcoticsNum(ShipInventory inventory) {
+        return inventory.getNumNarcotics();
+    }
+
+    private int getRobotsNum(ShipInventory inventory) {
+        return inventory.getNumRobots();
     }
 }

@@ -44,13 +44,17 @@ public class Universe implements Serializable {
 
     public SolarSystem[] getSolarSystems() { return solarSystems; }
 
+    private String getSSData(SolarSystem solarSystem) {
+        return solarSystem.toString();
+    }
+
     @Override
     public String toString() {
         return String.format("Universe:\n     "
-                + solarSystems[0].toString()
-                + solarSystems[1].toString()
-                + solarSystems[2].toString()
-                + solarSystems[3].toString()
-                + solarSystems[4].toString());
+                + getSSData(solarSystems[0])
+                + getSSData(solarSystems[1])
+                + getSSData(solarSystems[2])
+                + getSSData(solarSystems[3])
+                + getSSData(solarSystems[4]));
     }
 }

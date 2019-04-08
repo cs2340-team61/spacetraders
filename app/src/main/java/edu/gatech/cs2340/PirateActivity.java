@@ -11,12 +11,13 @@ import java.util.Random;
 
 public class PirateActivity extends AppCompatActivity {
 
+    final TravelViewModel travelViewModel = new TravelViewModel(getApplication());
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pirate);
 
-        final TravelViewModel travelViewModel = new TravelViewModel(getApplication());
         final TextView pirateHealth;
         final TextView playerHealth;
         final TextView conText;
@@ -35,7 +36,7 @@ public class PirateActivity extends AppCompatActivity {
                 Random random = new Random();
                 if (1 == random.nextInt(2)) {
                     pirateHealth.setText("" + (Integer.parseInt(pirateHealth.getText().toString()) -
-                            travelViewModel.getLaser()));
+                            getLaser()));
                     conText.setText("You dealt 50 damage to the Pirate");
                 } else {
                     conText.setText("Your attack missed, :(");
@@ -43,12 +44,12 @@ public class PirateActivity extends AppCompatActivity {
 
                 if (random.nextInt(3) == random.nextInt(3)) {
                     playerHealth.setText("" + (Integer.parseInt(playerHealth.getText().toString()) -
-                            (travelViewModel.getLaser() * 2 / 3)));
+                            (getLaser() * 2 / 3)));
                     travelViewModel.setHealth(Integer.parseInt(playerHealth.getText().toString()));
 
                 }
 
-                if (travelViewModel.getHealth() <= 0) {
+                if (getHealth() <= 0) {
                     gameOver(v);
                     finish();
                 }
@@ -64,16 +65,16 @@ public class PirateActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Random random = new Random();
-                if (travelViewModel.getSpeed() < random.nextInt(100)) {
+                if (getSpeed() < random.nextInt(100)) {
                     restartMain(v);
                     finish();
                 } else {
                     conText.setText("You failed to escape");
                     if (random.nextInt(3) == random.nextInt(3)) {
                         playerHealth.setText("" + (Integer.parseInt(playerHealth.getText().toString()) -
-                                (travelViewModel.getLaser() * 2 / 3)));
+                                (getLaser() * 2 / 3)));
 
-                        if (travelViewModel.getHealth() <= 0) {
+                        if (getHealth() <= 0) {
                             gameOver(v);
                             finish();
                         }
@@ -93,5 +94,17 @@ public class PirateActivity extends AppCompatActivity {
     public void gameOver(View view) {
         Intent intent = new Intent(this,PirateLoseActivity.class);
         startActivity(intent);
+    }
+
+    private int getHealth() {
+        return travelViewModel.getHealth();
+    }
+
+    private int getLaser() {
+        return travelViewModel.getLaser();
+    }
+
+    private int getSpeed() {
+        return travelViewModel.getSpeed();
     }
 }
