@@ -42,28 +42,28 @@ class Marketplace implements Serializable {
 
     public void techLevel(String string) {
         level = -1;
-        if (string.equals("Pre-Agriculture")) {
+        if ("Pre-Agriculture".equals(string)) {
             level = 0;
         }
-        if (string.equals("Agriculture")) {
+        if ("Agriculture".equals(string)) {
             level = 1;
         }
-        if (string.equals("Medieval")) {
+        if ("Medieval".equals(string)) {
             level = 2;
         }
-        if (string.equals("Renaissance")) {
+        if ("Renaissance".equals(string)) {
             level = 3;
         }
-        if (string.equals("Early Industrial")) {
+        if ("Early Industrial".equals(string)) {
             level = 4;
         }
-        if (string.equals("Industrial")) {
+        if ("Industrial".equals(string)) {
             level = 5;
         }
-        if (string.equals("Post-Industrial")) {
+        if ("Post-Industrial".equals(string)) {
             level = 6;
         }
-        if (string.equals("Hi-Tech")) {
+        if ("Hi-Tech".equals(string)) {
             level = 7;
         }
 

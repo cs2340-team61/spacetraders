@@ -56,14 +56,16 @@ public class GameConfigActivity extends AppCompatActivity {
         downT = findViewById(R.id.down1_button4);
         loadSavedGame = findViewById(R.id.up1_button5);
 
-        ArrayAdapter<Difficulty> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, Difficulty.values());
+        ArrayAdapter<Difficulty> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, Difficulty.values());
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         gameDiffSpin.setAdapter(adapter);
 
         upE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(skillE.getText().toString()) < skillMax && Integer.parseInt(PointsR.getText().toString()) > 0) {
+                if ((Integer.parseInt(skillE.getText().toString()) < skillMax)
+                        && (Integer.parseInt(PointsR.getText().toString()) > 0)) {
                     skillE.setText("" + (Integer.parseInt(skillE.getText().toString()) + 1));
                     PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) - 1));
                 }
@@ -73,7 +75,8 @@ public class GameConfigActivity extends AppCompatActivity {
         upP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(skillP.getText().toString()) < skillMax && Integer.parseInt(PointsR.getText().toString()) > 0) {
+                if ((Integer.parseInt(skillP.getText().toString()) < skillMax)
+                        && (Integer.parseInt(PointsR.getText().toString()) > 0)) {
                     skillP.setText("" + (Integer.parseInt(skillP.getText().toString()) + 1));
                     PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) - 1));
                 }
@@ -83,7 +86,8 @@ public class GameConfigActivity extends AppCompatActivity {
         upF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(skillF.getText().toString()) < skillMax && Integer.parseInt(PointsR.getText().toString()) > 0) {
+                if ((Integer.parseInt(skillF.getText().toString()) < skillMax)
+                        && (Integer.parseInt(PointsR.getText().toString()) > 0)) {
                     skillF.setText("" + (Integer.parseInt(skillF.getText().toString()) + 1));
                     PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) - 1));
                 }
@@ -93,7 +97,8 @@ public class GameConfigActivity extends AppCompatActivity {
         upT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(skillT.getText().toString()) < skillMax && Integer.parseInt(PointsR.getText().toString()) > 0) {
+                if ((Integer.parseInt(skillT.getText().toString()) < skillMax)
+                        && (Integer.parseInt(PointsR.getText().toString()) > 0)) {
                     skillT.setText("" + (Integer.parseInt(skillT.getText().toString()) + 1));
                     PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) - 1));
                 }
@@ -103,7 +108,8 @@ public class GameConfigActivity extends AppCompatActivity {
         downE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(skillE.getText().toString()) > 0 && Integer.parseInt(PointsR.getText().toString()) < skillMax) {
+                if ((Integer.parseInt(skillE.getText().toString()) > 0)
+                        && (Integer.parseInt(PointsR.getText().toString()) < skillMax)) {
                     skillE.setText("" + (Integer.parseInt(skillE.getText().toString()) - 1));
                     PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) + 1));
                 }
@@ -113,7 +119,8 @@ public class GameConfigActivity extends AppCompatActivity {
         downP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(skillP.getText().toString()) > 0 && Integer.parseInt(PointsR.getText().toString()) < skillMax) {
+                if ((Integer.parseInt(skillP.getText().toString()) > 0)
+                        && (Integer.parseInt(PointsR.getText().toString()) < skillMax)) {
                     skillP.setText("" + (Integer.parseInt(skillP.getText().toString()) - 1));
                     PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) + 1));
                 }
@@ -123,7 +130,8 @@ public class GameConfigActivity extends AppCompatActivity {
         downF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(skillF.getText().toString()) > 0 && Integer.parseInt(PointsR.getText().toString()) < skillMax) {
+                if ((Integer.parseInt(skillF.getText().toString()) > 0)
+                        && (Integer.parseInt(PointsR.getText().toString()) < skillMax)) {
                     skillF.setText("" + (Integer.parseInt(skillF.getText().toString()) - 1));
                     PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) + 1));
                 }
@@ -133,7 +141,8 @@ public class GameConfigActivity extends AppCompatActivity {
         downT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(skillT.getText().toString()) > 0 && Integer.parseInt(PointsR.getText().toString()) < skillMax) {
+                if ((Integer.parseInt(skillT.getText().toString()) > 0)
+                        && (Integer.parseInt(PointsR.getText().toString()) < skillMax)) {
                     skillT.setText("" + (Integer.parseInt(skillT.getText().toString()) - 1));
                     PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) + 1));
                 }
@@ -149,7 +158,7 @@ public class GameConfigActivity extends AppCompatActivity {
                 int sF = Integer.parseInt(skillF.getText().toString());
                 int sT = Integer.parseInt(skillT.getText().toString());
                 Difficulty dif = (Difficulty) gameDiffSpin.getSelectedItem();
-                if (sT + sP + sF + sE == skillMax) {
+                if ((sT + sP + sF + sE) == skillMax) {
                     gameViewModel = new GameViewModel(getApplication());
                     int[] skillArray = new int[4];
                     skillArray[0] = sE;
@@ -161,7 +170,8 @@ public class GameConfigActivity extends AppCompatActivity {
 
                     finish();
                 } else {
-                    (Toast.makeText(getApplication(), "Totals Allocation must be equal to 16!", Toast.LENGTH_LONG)).show();
+                    (Toast.makeText(getApplication(), "Totals Allocation must be equal to 16!",
+                            Toast.LENGTH_LONG)).show();
                 }
             }
         });
@@ -175,7 +185,8 @@ public class GameConfigActivity extends AppCompatActivity {
                     mainGame();
                     finish();
                 } else {
-                    Toast.makeText(getApplication(), "No game saved", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplication(), "No game saved",
+                            Toast.LENGTH_LONG).show();
                 }
             }
         });

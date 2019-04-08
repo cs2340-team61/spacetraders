@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 public class MarketBuyActivity extends AppCompatActivity {
     private MarketViewModel marketViewModel;
-    private TextView totalCred;
     private TextView credLeft;
     private TextView waterQ;
     private TextView fursQ;
@@ -42,28 +41,6 @@ public class MarketBuyActivity extends AppCompatActivity {
     private TextView robotsB;
     private TextView cargoMax;
     private TextView cargoCurr;
-    private Button waterUp;
-    private Button fursUp;
-    private Button foodUp;
-    private Button oreUp;
-    private Button gamesUp;
-    private Button firearmsUp;
-    private Button medicineUp;
-    private Button machinesUp;
-    private Button narcoticsUp;
-    private Button robotsUp;
-    private Button waterDown;
-    private Button fursDown;
-    private Button foodDown;
-    private Button oreDown;
-    private Button gamesDown;
-    private Button firearmsDown;
-    private Button medicineDown;
-    private Button machinesDown;
-    private Button narcoticsDown;
-    private Button robotsDown;
-    private Button purchase;
-    private Button leave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +49,7 @@ public class MarketBuyActivity extends AppCompatActivity {
 
         marketViewModel = new MarketViewModel(getApplication());
 
-        totalCred = findViewById(R.id.textView6);
+        TextView totalCred = findViewById(R.id.textView6);
         credLeft = findViewById(R.id.textView17);
         totalCred.setText("" + getCredits());
         credLeft.setText("" + getCredits());
@@ -115,30 +92,30 @@ public class MarketBuyActivity extends AppCompatActivity {
         narcoticsQ = findViewById(R.id.games_Quanity3);
         robotsQ = findViewById(R.id.games_Quanity4);
 
-        waterUp = findViewById(R.id.Plus_Water);
-        fursUp = findViewById(R.id.Plus_Furs);
-        foodUp = findViewById(R.id.Plus_Food);
-        oreUp = findViewById(R.id.Plus_Ore);
-        gamesUp = findViewById(R.id.Plus_Games);
-        firearmsUp = findViewById(R.id.Plus_Firearms);
-        medicineUp = findViewById(R.id.Plus_Medicine);
-        machinesUp = findViewById(R.id.button6);
-        narcoticsUp = findViewById(R.id.Plus_Narcotics);
-        robotsUp = findViewById(R.id.Plus_Robots);
+        Button waterUp = findViewById(R.id.Plus_Water);
+        Button fursUp = findViewById(R.id.Plus_Furs);
+        Button foodUp = findViewById(R.id.Plus_Food);
+        Button oreUp = findViewById(R.id.Plus_Ore);
+        Button gamesUp = findViewById(R.id.Plus_Games);
+        Button firearmsUp = findViewById(R.id.Plus_Firearms);
+        Button medicineUp = findViewById(R.id.Plus_Medicine);
+        Button machinesUp = findViewById(R.id.button6);
+        Button narcoticsUp = findViewById(R.id.Plus_Narcotics);
+        Button robotsUp = findViewById(R.id.Plus_Robots);
 
-        waterDown = findViewById(R.id.Minus_Water);
-        fursDown = findViewById(R.id.Minus_Furs);
-        foodDown = findViewById(R.id.Minus_Food);
-        oreDown = findViewById(R.id.Minus_Ore);
-        gamesDown = findViewById(R.id.Minus_Games);
-        firearmsDown = findViewById(R.id.Minus_Firearms);
-        medicineDown = findViewById(R.id.Minus_Medicine);
-        machinesDown = findViewById(R.id.button7);
-        narcoticsDown = findViewById(R.id.Minus_Narcotics);
-        robotsDown = findViewById(R.id.Minus_Robots);
+        Button waterDown = findViewById(R.id.Minus_Water);
+        Button fursDown = findViewById(R.id.Minus_Furs);
+        Button foodDown = findViewById(R.id.Minus_Food);
+        Button oreDown = findViewById(R.id.Minus_Ore);
+        Button gamesDown = findViewById(R.id.Minus_Games);
+        Button firearmsDown = findViewById(R.id.Minus_Firearms);
+        Button medicineDown = findViewById(R.id.Minus_Medicine);
+        Button machinesDown = findViewById(R.id.button7);
+        Button narcoticsDown = findViewById(R.id.Minus_Narcotics);
+        Button robotsDown = findViewById(R.id.Minus_Robots);
 
-        purchase = findViewById(R.id.Purchase);
-        leave = findViewById(R.id.Leave);
+        Button purchase = findViewById(R.id.Purchase);
+        Button leave = findViewById(R.id.Leave);
 
         Integer[] quants = marketViewModel.quantityMarket();
         waterQ.setText("" + quants[0]);
@@ -173,8 +150,8 @@ public class MarketBuyActivity extends AppCompatActivity {
                 int credLeftVal = Integer.parseInt(credLeft.getText().toString());
                 int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
                 int cargoMaxVal = Integer.parseInt(cargoMax.getText().toString());
-                if (waterBVal < waterQVal && credLeftVal > waterPVal
-                        && cargoCurrVal < cargoMaxVal) {
+                if ((waterBVal < waterQVal) && (credLeftVal > waterPVal)
+                        && (cargoCurrVal < cargoMaxVal)) {
                     waterB.setText("" + (waterBVal + 1));
                     credLeft.setText("" + (credLeftVal - waterPVal));
                     cargoCurr.setText("" + (cargoCurrVal + 1));
@@ -190,8 +167,8 @@ public class MarketBuyActivity extends AppCompatActivity {
                 int credLeftVal = Integer.parseInt(credLeft.getText().toString());
                 int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
                 int cargoMaxVal = Integer.parseInt(cargoMax.getText().toString());
-                if (fursBVal < fursQVal && credLeftVal > fursPVal
-                        && cargoCurrVal < cargoMaxVal) {
+                if ((fursBVal < fursQVal) && (credLeftVal > fursPVal)
+                        && (cargoCurrVal < cargoMaxVal)) {
                     fursB.setText("" + (fursBVal + 1));
                     credLeft.setText("" + (credLeftVal - fursPVal));
                     cargoCurr.setText("" + (cargoCurrVal + 1));
@@ -207,8 +184,8 @@ public class MarketBuyActivity extends AppCompatActivity {
                 int credLeftVal = Integer.parseInt(credLeft.getText().toString());
                 int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
                 int cargoMaxVal = Integer.parseInt(cargoMax.getText().toString());
-                if (foodBVal < foodQVal && credLeftVal > foodPVal
-                        && cargoCurrVal < cargoMaxVal) {
+                if ((foodBVal < foodQVal) && (credLeftVal > foodPVal)
+                        && (cargoCurrVal < cargoMaxVal)) {
                     foodB.setText("" + (foodBVal + 1));
                     credLeft.setText("" + (credLeftVal - foodPVal));
                     cargoCurr.setText("" + (cargoCurrVal + 1));
@@ -224,8 +201,8 @@ public class MarketBuyActivity extends AppCompatActivity {
                 int credLeftVal = Integer.parseInt(credLeft.getText().toString());
                 int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
                 int cargoMaxVal = Integer.parseInt(cargoMax.getText().toString());
-                if (oreBVal < oreQVal && credLeftVal > orePVal
-                        && cargoCurrVal < cargoMaxVal) {
+                if ((oreBVal < oreQVal) && (credLeftVal > orePVal)
+                        && (cargoCurrVal < cargoMaxVal)) {
                     oreB.setText("" + (oreBVal + 1));
                     credLeft.setText("" + (credLeftVal - orePVal));
                     cargoCurr.setText("" + (cargoCurrVal + 1));
@@ -241,8 +218,8 @@ public class MarketBuyActivity extends AppCompatActivity {
                 int credLeftVal = Integer.parseInt(credLeft.getText().toString());
                 int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
                 int cargoMaxVal = Integer.parseInt(cargoMax.getText().toString());
-                if (gamesBVal < gamesQVal && credLeftVal > gamesPVal
-                        && cargoCurrVal < cargoMaxVal) {
+                if ((gamesBVal < gamesQVal) && (credLeftVal > gamesPVal)
+                        && (cargoCurrVal < cargoMaxVal)) {
                     gamesB.setText("" + (gamesBVal + 1));
                     credLeft.setText("" + (credLeftVal - gamesPVal));
                     cargoCurr.setText("" + (cargoCurrVal + 1));
@@ -258,8 +235,8 @@ public class MarketBuyActivity extends AppCompatActivity {
                 int credLeftVal = Integer.parseInt(credLeft.getText().toString());
                 int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
                 int cargoMaxVal = Integer.parseInt(cargoMax.getText().toString());
-                if (firearmsBVal < firearmsQVal && credLeftVal > firearmsPVal
-                        && cargoCurrVal < cargoMaxVal) {
+                if ((firearmsBVal < firearmsQVal) && (credLeftVal > firearmsPVal)
+                        && (cargoCurrVal < cargoMaxVal)) {
                     firearmsB.setText("" + (firearmsBVal + 1));
                     credLeft.setText("" + (credLeftVal - firearmsPVal));
                     cargoCurr.setText("" + (cargoCurrVal + 1));
@@ -275,8 +252,8 @@ public class MarketBuyActivity extends AppCompatActivity {
                 int credLeftVal = Integer.parseInt(credLeft.getText().toString());
                 int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
                 int cargoMaxVal = Integer.parseInt(cargoMax.getText().toString());
-                if (medicineBVal < medicineQVal && credLeftVal > medicinePVal
-                        && cargoCurrVal < cargoMaxVal) {
+                if ((medicineBVal < medicineQVal) && (credLeftVal > medicinePVal)
+                        && (cargoCurrVal < cargoMaxVal)) {
                     medicineB.setText("" + (medicineBVal + 1));
                     credLeft.setText("" + (credLeftVal - medicinePVal));
                     cargoCurr.setText("" + (cargoCurrVal + 1));
@@ -292,8 +269,8 @@ public class MarketBuyActivity extends AppCompatActivity {
                 int credLeftVal = Integer.parseInt(credLeft.getText().toString());
                 int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
                 int cargoMaxVal = Integer.parseInt(cargoMax.getText().toString());
-                if (machinesBVal < machinesQVal && credLeftVal > machinesPVal
-                        && cargoCurrVal < cargoMaxVal) {
+                if ((machinesBVal < machinesQVal) && (credLeftVal > machinesPVal)
+                        && (cargoCurrVal < cargoMaxVal)) {
                     machinesB.setText("" + (machinesBVal + 1));
                     credLeft.setText("" + (credLeftVal - machinesPVal));
                     cargoCurr.setText("" + (cargoCurrVal + 1));
@@ -309,8 +286,8 @@ public class MarketBuyActivity extends AppCompatActivity {
                 int credLeftVal = Integer.parseInt(credLeft.getText().toString());
                 int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
                 int cargoMaxVal = Integer.parseInt(cargoMax.getText().toString());
-                if (narcoticsBVal < narcoticsQVal && credLeftVal > narcoticsPVal
-                        && cargoCurrVal < cargoMaxVal) {
+                if ((narcoticsBVal < narcoticsQVal) && (credLeftVal > narcoticsPVal)
+                        && (cargoCurrVal < cargoMaxVal)) {
                     narcoticsB.setText("" + (narcoticsBVal + 1));
                     credLeft.setText("" + (credLeftVal - narcoticsPVal));
                     cargoCurr.setText("" + (cargoCurrVal + 1));
@@ -326,8 +303,8 @@ public class MarketBuyActivity extends AppCompatActivity {
                 int credLeftVal = Integer.parseInt(credLeft.getText().toString());
                 int cargoCurrVal = Integer.parseInt(cargoCurr.getText().toString());
                 int cargoMaxVal = Integer.parseInt(cargoMax.getText().toString());
-                if (robotsBVal < robotsQVal && credLeftVal > robotsPVal
-                        && cargoCurrVal < cargoMaxVal) {
+                if ((robotsBVal < robotsQVal) && (credLeftVal > robotsPVal)
+                        && (cargoCurrVal < cargoMaxVal)) {
                     robotsB.setText("" + (robotsBVal + 1));
                     credLeft.setText("" + (credLeftVal - robotsPVal));
                     cargoCurr.setText("" + (cargoCurrVal + 1));

@@ -1,6 +1,6 @@
 package edu.gatech.cs2340;
 
-public enum Ship {
+enum Ship {
     //Gnat ();
 
     //private final String shp;

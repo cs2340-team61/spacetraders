@@ -7,14 +7,12 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private Button configGame;
-    private Button exitGame;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        configGame = findViewById(R.id.start_config);
-        exitGame = findViewById(R.id.exit_button);
+        Button configGame = findViewById(R.id.start_config);
+        Button exitGame = findViewById(R.id.exit_button);
         configGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

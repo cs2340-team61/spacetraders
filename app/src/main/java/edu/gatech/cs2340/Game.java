@@ -6,7 +6,6 @@ public class Game implements Serializable {
     private Difficulty gameDiff;
     private Player player;
     private Universe universe;
-    private SolarSystem[] sols;
     private static  final int totalPlanets = 15;
     private final Planet[] plans = new Planet[totalPlanets];
     private Planet playerLocation;
@@ -46,7 +45,7 @@ public class Game implements Serializable {
             universe.addSolarSystem();
         }
 
-        sols = universe.getSolarSystems();
+        SolarSystem[] sols = universe.getSolarSystems();
         int incrementer = 0;
         for (int j = 0; j < 5; j++) {
             Planet[] planets = sols[j].getPlanets();
@@ -241,5 +240,9 @@ public class Game implements Serializable {
 
     int getNumNarcotics() {
         return inventory.getNumNarcotics();
+    }
+
+    public int getCredits() {
+        return player.getCredits();
     }
 }

@@ -10,7 +10,8 @@ class TravelViewModel extends AndroidViewModel {
 
     public TravelViewModel(@NonNull Application application) {
         super(application);
-        model = Model.getInstance().getMyGame();
+        Model modelInstance = Model.getInstance();
+        model = modelInstance.getMyGame();
     }
 
     public Planet[] getPlanets() {

@@ -33,8 +33,8 @@ public class GameMainActivity extends AppCompatActivity {
         saveGame = findViewById(R.id.button8);
         exit = findViewById(R.id.button3);
 
-        Planet planet = getPlayerLocation();
-        startMessage.setText("Welcome Trader! You are currently located on the planet " + planet.getPlanetName()
+        String planetName = getPlanetName();
+        startMessage.setText("Welcome Trader! You are currently located on the planet " + planetName
                 + " and you have started with a Gnat Ship, 1000 credits.\n What to do?");
 
         goMarket.setOnClickListener(new View.OnClickListener() {
@@ -60,7 +60,8 @@ public class GameMainActivity extends AppCompatActivity {
                 if (saveSuccess) {
                     Toast.makeText(getApplication(), "Game saved", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getApplication(), "Could not save game", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplication(), "Could not save game",
+                            Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -85,5 +86,10 @@ public class GameMainActivity extends AppCompatActivity {
 
     private Planet getPlayerLocation() {
         return gameViewModel.getPlayerLocation();
+    }
+
+    private String getPlanetName() {
+        Planet planet = getPlayerLocation();
+        return planet.getPlanetName();
     }
 }

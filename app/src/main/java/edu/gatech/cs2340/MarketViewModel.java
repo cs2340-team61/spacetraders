@@ -17,7 +17,8 @@ class MarketViewModel extends AndroidViewModel {
 
     public MarketViewModel(@NonNull Application application) {
         super(application);
-        model = Model.getInstance().getMyGame();
+        Model modelInstance = Model.getInstance();
+        model = modelInstance.getMyGame();
     }
 
     public void createMarket() {
@@ -26,20 +27,21 @@ class MarketViewModel extends AndroidViewModel {
     }
 
     public int getCredits() {
-        return model.getPlayer().getCredits();
+        return model.getCredits();
     }
 
     public void setCredits(int cred) {
-        model.getPlayer().setCredits(cred);
+        Player player = model.getPlayer();
+        player.setCredits(cred);
     }
 
     public Integer[] quantityMarket() {
         String tech = model.getPlayerLocation().getTechLevel();
         Integer[] quantArr = new Integer[bigB];
         Random rand = new Random();
-        if (tech.equals("Pre-Agriculture")) {
-            quantArr[0] = ((rand.nextInt(bigB)) + addB) * addB + rand.nextInt(10);
-            quantArr[1] = ((rand.nextInt(bigB)) + addB) * addB + rand.nextInt(10);
+        if ("Pre-Agriculture".equals(tech)) {
+            quantArr[0] = (((rand.nextInt(bigB)) + addB) * addB) + rand.nextInt(10);
+            quantArr[1] = (((rand.nextInt(bigB)) + addB) * addB) + rand.nextInt(10);
             quantArr[2] = 0;
             quantArr[3] = 0;
             quantArr[4] = 0;
@@ -49,10 +51,10 @@ class MarketViewModel extends AndroidViewModel {
             quantArr[8] = 0;
             quantArr[9] = 0;
         }
-        if (tech.equals("Agriculture")) {
-            quantArr[0] = ((rand.nextInt(bigB)) + addB) * addB + rand.nextInt(10);
-            quantArr[1] = ((rand.nextInt(bigB)) + addB) * 10 + rand.nextInt(10);
-            quantArr[2] = ((rand.nextInt(bigB)) + addB) * magic25 + rand.nextInt(10);
+        if ("Agriculture".equals(tech)) {
+            quantArr[0] = (((rand.nextInt(bigB)) + addB) * addB) + rand.nextInt(10);
+            quantArr[1] = (((rand.nextInt(bigB)) + addB) * 10) + rand.nextInt(10);
+            quantArr[2] = (((rand.nextInt(bigB)) + addB) * magic25) + rand.nextInt(10);
             quantArr[3] = 0;
             quantArr[4] = 0;
             quantArr[5] = 0;
@@ -61,11 +63,11 @@ class MarketViewModel extends AndroidViewModel {
             quantArr[8] = 0;
             quantArr[9] = 0;
         }
-        if (tech.equals("Medieval")) {
-            quantArr[0] = ((rand.nextInt(bigB)) + addB) * magic30 + rand.nextInt(10);
-            quantArr[1] = ((rand.nextInt(bigB)) + addB) * 10 + rand.nextInt(10);
-            quantArr[2] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
-            quantArr[3] = ((rand.nextInt(bigB)) + addB) * 5 + rand.nextInt(10);
+        if ("Medieval".equals(tech)) {
+            quantArr[0] = (((rand.nextInt(bigB)) + addB) * magic30) + rand.nextInt(10);
+            quantArr[1] = (((rand.nextInt(bigB)) + addB) * 10) + rand.nextInt(10);
+            quantArr[2] = (((rand.nextInt(bigB)) + addB) * otherB) + rand.nextInt(10);
+            quantArr[3] = (((rand.nextInt(bigB)) + addB) * 5) + rand.nextInt(10);
             quantArr[4] = 0;
             quantArr[5] = 0;
             quantArr[6] = 0;
@@ -73,11 +75,11 @@ class MarketViewModel extends AndroidViewModel {
             quantArr[8] = 0;
             quantArr[9] = 0;
         }
-        if (tech.equals("Renaissance")) {
-            quantArr[0] = ((rand.nextInt(bigB)) + addB) * addB + rand.nextInt(10);
-            quantArr[1] = ((rand.nextInt(bigB)) + addB) * 10 + rand.nextInt(10);
-            quantArr[2] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
-            quantArr[3] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
+        if ("Renaissance".equals(tech)) {
+            quantArr[0] = (((rand.nextInt(bigB)) + addB) * addB) + rand.nextInt(10);
+            quantArr[1] = (((rand.nextInt(bigB)) + addB) * 10) + rand.nextInt(10);
+            quantArr[2] = (((rand.nextInt(bigB)) + addB) * otherB) + rand.nextInt(10);
+            quantArr[3] = (((rand.nextInt(bigB)) + addB) * otherB) + rand.nextInt(10);
             quantArr[4] = (rand.nextInt(bigB))  + rand.nextInt(10);
             quantArr[5] = ((rand.nextInt(bigB)) + addB)  + rand.nextInt(10);
             quantArr[6] = 0;
@@ -85,53 +87,53 @@ class MarketViewModel extends AndroidViewModel {
             quantArr[8] = 0;
             quantArr[9] = 0;
         }
-        if (tech.equals("Early Industrial")) {
-            quantArr[0] = ((rand.nextInt(bigB)) + addB) * addB + rand.nextInt(10);
-            quantArr[1] = ((rand.nextInt(bigB)) + addB) * 10 + rand.nextInt(10);
-            quantArr[2] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
-            quantArr[3] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
-            quantArr[4] = ((rand.nextInt(bigB)) + 10) * 3  + rand.nextInt(10);
-            quantArr[5] = ((rand.nextInt(bigB)) + addB) * 4  + rand.nextInt(10);
-            quantArr[6] = ((rand.nextInt(bigB)) + 5) * 2  + rand.nextInt(10);
+        if ("Early Industrial".equals(tech)) {
+            quantArr[0] = (((rand.nextInt(bigB)) + addB) * addB) + rand.nextInt(10);
+            quantArr[1] = (((rand.nextInt(bigB)) + addB) * 10) + rand.nextInt(10);
+            quantArr[2] = (((rand.nextInt(bigB)) + addB) * otherB) + rand.nextInt(10);
+            quantArr[3] = (((rand.nextInt(bigB)) + addB) * otherB) + rand.nextInt(10);
+            quantArr[4] = (((rand.nextInt(bigB)) + 10) * 3) + rand.nextInt(10);
+            quantArr[5] = (((rand.nextInt(bigB)) + addB) * 4) + rand.nextInt(10);
+            quantArr[6] = (((rand.nextInt(bigB)) + 5) * 2) + rand.nextInt(10);
             quantArr[7] = ((rand.nextInt(bigB)) + 5)  + rand.nextInt(10);
             quantArr[8] = 0;
             quantArr[9] = 0;
         }
-        if (tech.equals("Industrial")) {
-            quantArr[0] = ((rand.nextInt(bigB)) + addB) * addB + rand.nextInt(10);
-            quantArr[1] = ((rand.nextInt(bigB)) + addB) * 10 + rand.nextInt(10);
-            quantArr[2] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
-            quantArr[3] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
+        if ("Industrial".equals(tech)) {
+            quantArr[0] = (((rand.nextInt(bigB)) + addB) * addB) + rand.nextInt(10);
+            quantArr[1] = (((rand.nextInt(bigB)) + addB) * 10) + rand.nextInt(10);
+            quantArr[2] = (((rand.nextInt(bigB)) + addB) * otherB) + rand.nextInt(10);
+            quantArr[3] = (((rand.nextInt(bigB)) + addB) * otherB) + rand.nextInt(10);
             quantArr[4] = ((rand.nextInt(biggerB)) + 10)  + rand.nextInt(10);
-            quantArr[5] = ((rand.nextInt(bigB)) + addB) * 6  + rand.nextInt(10);
-            quantArr[6] = ((rand.nextInt(biggerB)) + addB) * 4  + rand.nextInt(10);
-            quantArr[7] = ((rand.nextInt(bigB)) + addB) * 6  + rand.nextInt(10);
-            quantArr[8] = ((rand.nextInt(biggerB)) + addB) * 5  + rand.nextInt(10);
+            quantArr[5] = (((rand.nextInt(bigB)) + addB) * 6) + rand.nextInt(10);
+            quantArr[6] = (((rand.nextInt(biggerB)) + addB) * 4) + rand.nextInt(10);
+            quantArr[7] = (((rand.nextInt(bigB)) + addB) * 6) + rand.nextInt(10);
+            quantArr[8] = (((rand.nextInt(biggerB)) + addB) * 5) + rand.nextInt(10);
             quantArr[9] = 0;
         }
-        if (tech.equals("Post-Industrial")) {
-            quantArr[0] = ((rand.nextInt(bigB)) + addB) * addB + rand.nextInt(10);
-            quantArr[1] = ((rand.nextInt(bigB)) + addB) * 10 + rand.nextInt(10);
-            quantArr[2] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
-            quantArr[3] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
-            quantArr[4] = ((rand.nextInt(bigB)) + addB) * 10  + rand.nextInt(10);
-            quantArr[5] = ((rand.nextInt(bigB)) + addB) * 3  + rand.nextInt(10);
-            quantArr[6] = ((rand.nextInt(biggerB)) + addB) * 8  + rand.nextInt(10);
-            quantArr[7] = ((rand.nextInt(bigB)) + addB) * 4  + rand.nextInt(10);
-            quantArr[8] = ((rand.nextInt(biggerB)) + addB) * 2  + rand.nextInt(10);
+        if ("Post-Industrial".equals(tech)) {
+            quantArr[0] = (((rand.nextInt(bigB)) + addB) * addB) + rand.nextInt(10);
+            quantArr[1] = (((rand.nextInt(bigB)) + addB) * 10) + rand.nextInt(10);
+            quantArr[2] = (((rand.nextInt(bigB)) + addB) * otherB) + rand.nextInt(10);
+            quantArr[3] = (((rand.nextInt(bigB)) + addB) * otherB) + rand.nextInt(10);
+            quantArr[4] = (((rand.nextInt(bigB)) + addB) * 10) + rand.nextInt(10);
+            quantArr[5] = (((rand.nextInt(bigB)) + addB) * 3) + rand.nextInt(10);
+            quantArr[6] = (((rand.nextInt(biggerB)) + addB) * 8) + rand.nextInt(10);
+            quantArr[7] = (((rand.nextInt(bigB)) + addB) * 4) + rand.nextInt(10);
+            quantArr[8] = (((rand.nextInt(biggerB)) + addB) * 2) + rand.nextInt(10);
             quantArr[9] = ((rand.nextInt(8)) + addB)  + rand.nextInt(10);
         }
-        if (tech.equals("Hi-Tech")) {
-            quantArr[0] = ((rand.nextInt(bigB)) + addB) * addB + rand.nextInt(10);
-            quantArr[1] = ((rand.nextInt(bigB)) + addB) * 10 + rand.nextInt(10);
-            quantArr[2] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
-            quantArr[3] = ((rand.nextInt(bigB)) + addB) * otherB + rand.nextInt(10);
-            quantArr[4] = ((rand.nextInt(bigB)) + addB) * 6  + rand.nextInt(10);
-            quantArr[5] = ((rand.nextInt(bigB)) + addB) * 2  + rand.nextInt(10);
-            quantArr[6] = ((rand.nextInt(biggerB)) + addB) * 4  + rand.nextInt(10);
-            quantArr[7] = ((rand.nextInt(bigB)) + addB) * 4  + rand.nextInt(10);
-            quantArr[8] = ((rand.nextInt(biggerB)) + addB) * 2  + rand.nextInt(10);
-            quantArr[9] = ((rand.nextInt(8)) + addB) * 3  + rand.nextInt(10);
+        if ("Hi-Tech".equals(tech)) {
+            quantArr[0] = (((rand.nextInt(bigB)) + addB) * addB) + rand.nextInt(10);
+            quantArr[1] = (((rand.nextInt(bigB)) + addB) * 10) + rand.nextInt(10);
+            quantArr[2] = (((rand.nextInt(bigB)) + addB) * otherB) + rand.nextInt(10);
+            quantArr[3] = (((rand.nextInt(bigB)) + addB) * otherB) + rand.nextInt(10);
+            quantArr[4] = (((rand.nextInt(bigB)) + addB) * 6) + rand.nextInt(10);
+            quantArr[5] = (((rand.nextInt(bigB)) + addB) * 2) + rand.nextInt(10);
+            quantArr[6] = (((rand.nextInt(biggerB)) + addB) * 4) + rand.nextInt(10);
+            quantArr[7] = (((rand.nextInt(bigB)) + addB) * 4) + rand.nextInt(10);
+            quantArr[8] = (((rand.nextInt(biggerB)) + addB) * 2) + rand.nextInt(10);
+            quantArr[9] = (((rand.nextInt(8)) + addB) * 3) + rand.nextInt(10);
         }
 
         return quantArr;
@@ -140,7 +142,7 @@ class MarketViewModel extends AndroidViewModel {
     Integer[] getPrices() {
         String tech = model.getPlayerLocation().getTechLevel();
         Integer[] priceArr = new Integer[bigB];
-        if (tech.equals("Pre-Agriculture")) {
+        if ("Pre-Agriculture".equals(tech)) {
             priceArr[0] = getWaterPrice();
             priceArr[1] = getFursPrice();
             priceArr[2] = 0;
@@ -153,7 +155,7 @@ class MarketViewModel extends AndroidViewModel {
             priceArr[9] = 0;
 
         }
-        if (tech.equals("Agriculture")) {
+        if ("Agriculture".equals(tech)) {
             priceArr[0] = getWaterPrice();
             priceArr[1] = getFursPrice();
             priceArr[2] = getFoodPrice();
@@ -165,7 +167,7 @@ class MarketViewModel extends AndroidViewModel {
             priceArr[8] = 0;
             priceArr[9] = 0;
         }
-        if (tech.equals("Medieval")) {
+        if ("Medieval".equals(tech)) {
             priceArr[0] = getWaterPrice();
             priceArr[1] = getFursPrice();
             priceArr[2] = getFoodPrice();
@@ -177,7 +179,7 @@ class MarketViewModel extends AndroidViewModel {
             priceArr[8] = 0;
             priceArr[9] = 0;
         }
-        if (tech.equals("Renaissance")) {
+        if ("Renaissance".equals(tech)) {
             priceArr[0] = getWaterPrice();
             priceArr[1] = getFursPrice();
             priceArr[2] = getFoodPrice();
@@ -189,7 +191,7 @@ class MarketViewModel extends AndroidViewModel {
             priceArr[8] = 0;
             priceArr[9] = 0;
         }
-        if (tech.equals("Early Industrial")) {
+        if ("Early Industrial".equals(tech)) {
             priceArr[0] = getWaterPrice();
             priceArr[1] = getFursPrice();
             priceArr[2] = getFoodPrice();
@@ -201,7 +203,7 @@ class MarketViewModel extends AndroidViewModel {
             priceArr[8] = 0;
             priceArr[9] = 0;
         }
-        if (tech.equals("Industrial")) {
+        if ("Industrial".equals(tech)) {
             priceArr[0] = getWaterPrice();
             priceArr[1] = getFursPrice();
             priceArr[2] = getFoodPrice();
@@ -213,7 +215,7 @@ class MarketViewModel extends AndroidViewModel {
             priceArr[8] = getNarcoticsPrice();
             priceArr[9] = 0;
         }
-        if (tech.equals("Post-Industrial")) {
+        if ("Post-Industrial".equals(tech)) {
             priceArr[0] = getWaterPrice();
             priceArr[1] = getFursPrice();
             priceArr[2] = getFoodPrice();
@@ -225,7 +227,7 @@ class MarketViewModel extends AndroidViewModel {
             priceArr[8] = getNarcoticsPrice();
             priceArr[9] = getRobotsPrice();
         }
-        if (tech.equals("Hi-Tech")) {
+        if ("Hi-Tech".equals(tech)) {
             priceArr[0] = model.getWaterPrice();
             priceArr[1] = getFursPrice();
             priceArr[2] = getFoodPrice();
@@ -327,11 +329,13 @@ class MarketViewModel extends AndroidViewModel {
         int numRobots = getRobotsNum(inventory);
         int size = numWater + numFurs + numFood + numOres + numGames + numFirearms
                 + numMedicine + numMachines + numNarcotics + numRobots;
-        model.getInventory().setSize(size);
+
+        inventory.setSize(size);
     }
 
     int getInventorySize() {
-        return model.getInventory().getSize();
+        ShipInventory inventory = getInventory();
+        return inventory.getSize();
     }
 
     private int getFoodPrice() { return model.getFoodPrice(); }
@@ -393,5 +397,6 @@ class MarketViewModel extends AndroidViewModel {
     private int getRobotsNum(ShipInventory inventory) {
         return inventory.getNumRobots();
     }
+
 
 }

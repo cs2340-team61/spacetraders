@@ -8,39 +8,30 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class PostConfigActivity extends AppCompatActivity {
-    private Button exitGame;
-    private Button continueB;
-    private TextView eSkill;
-    private TextView pSkill;
-    private TextView fSkill;
-    private TextView tSkill;
-    private TextView diffG;
-    private TextView pName;
     private final GameViewModel gameViewModel = new GameViewModel(getApplication());
-
+    private final Player player = gameViewModel.getPlayer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_config);
 
-        eSkill = findViewById(R.id.engineer_config);
-        pSkill = findViewById(R.id.pilot_config);
-        fSkill = findViewById(R.id.fight_config);
-        tSkill = findViewById(R.id.trader_config);
-        diffG = findViewById(R.id.gameDiff);
-        pName = findViewById(R.id.playerName);
+        TextView eSkill = findViewById(R.id.engineer_config);
+        TextView pSkill = findViewById(R.id.pilot_config);
+        TextView fSkill = findViewById(R.id.fight_config);
+        TextView tSkill = findViewById(R.id.trader_config);
+        TextView diffG = findViewById(R.id.gameDiff);
+        TextView pName = findViewById(R.id.playerName);
 
-        Player player = gameViewModel.getPlayer();
-        eSkill.setText(player.getSkillEngineer());
-        pSkill.setText(player.getSkillPilot());
-        fSkill.setText(player.getSkillFighter());
-        tSkill.setText(player.getSkillTrader());
-        Difficulty difficulty = gameViewModel.getDifficulty();
+        eSkill.setText("" + getSkillEngineer());
+        pSkill.setText("" + getSkillPilot());
+        fSkill.setText("" + getSkillFighter());
+        tSkill.setText("" + getSkillTrader());
+        Difficulty difficulty = getDifficulty();
         diffG.setText("Game Difficulty: " + difficulty.getDiff());
         pName.setText(player.getPlayerName());
 
-        continueB = findViewById(R.id.button_cont);
+        Button continueB = findViewById(R.id.button_cont);
         continueB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +40,7 @@ public class PostConfigActivity extends AppCompatActivity {
             }
         });
 
-        exitGame = findViewById(R.id.exit_button);
+        Button exitGame = findViewById(R.id.exit_button);
         exitGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,6 +52,26 @@ public class PostConfigActivity extends AppCompatActivity {
     private void gameStart() {
         Intent intent = new Intent(this, GameStartActivity.class);
         startActivity(intent);
+    }
+
+    private Difficulty getDifficulty() {
+        return gameViewModel.getDifficulty();
+    }
+
+    private int getSkillEngineer() {
+        return player.getSkillEngineer();
+    }
+
+    private int getSkillPilot() {
+        return player.getSkillPilot();
+    }
+
+    private int getSkillFighter() {
+        return player.getSkillFighter();
+    }
+
+    private int getSkillTrader() {
+        return player.getSkillTrader();
     }
 
 }

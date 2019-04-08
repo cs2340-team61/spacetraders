@@ -8,34 +8,23 @@ import android.widget.TextView;
 
 public class ShipInventoryActivity extends AppCompatActivity {
     private final MarketViewModel marketViewModel = new MarketViewModel(getApplication());
-    private TextView water;
-    private TextView furs;
-    private TextView food;
-    private TextView ore;
-    private TextView games;
-    private TextView firearms;
-    private TextView medicine;
-    private TextView machines;
-    private TextView narcotics;
-    private TextView robots;
-    private Button cancel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ship_inventory);
 
-        water = findViewById(R.id.water_Quanitity2);
-        furs = findViewById(R.id.furs_Quantity2);
-        food = findViewById(R.id.food_Quantity2);
-        ore = findViewById(R.id.ore_Quantity2);
-        games = findViewById(R.id.games_Quanity6);
-        firearms = findViewById(R.id.games_Quanity10);
-        medicine = findViewById(R.id.medicine_Quanity2);
-        machines = findViewById(R.id.textView75);
-        narcotics = findViewById(R.id.games_Quanity5);
-        robots = findViewById(R.id.robots_Quanity2);
-        cancel = findViewById(R.id.cancel);
+        TextView water = findViewById(R.id.water_Quanitity2);
+        TextView furs = findViewById(R.id.furs_Quantity2);
+        TextView food = findViewById(R.id.food_Quantity2);
+        TextView ore = findViewById(R.id.ore_Quantity2);
+        TextView games = findViewById(R.id.games_Quanity6);
+        TextView firearms = findViewById(R.id.games_Quanity10);
+        TextView medicine = findViewById(R.id.medicine_Quanity2);
+        TextView machines = findViewById(R.id.textView75);
+        TextView narcotics = findViewById(R.id.games_Quanity5);
+        TextView robots = findViewById(R.id.robots_Quanity2);
+        Button cancel = findViewById(R.id.cancel);
 
         ShipInventory inventory = getInventory();
         water.setText("" + getWaterNum(inventory));

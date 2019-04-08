@@ -7,22 +7,17 @@ import android.view.View;
 import android.widget.Button;
 
 public class MarketplaceActivity extends AppCompatActivity {
-    private MarketViewModel marketViewModel;
-    private Button leaveMarket;
-    private Button buyItems;
-    private Button sellItems;
-    private Button inven;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market_select);
 
-        leaveMarket = findViewById(R.id.Leave);
-        buyItems = findViewById(R.id.buy_Market);
-        sellItems = findViewById(R.id.Sell_Market);
-        inven = findViewById(R.id.button8);
-        marketViewModel = new MarketViewModel(getApplication());
+        Button leaveMarket = findViewById(R.id.Leave);
+        Button buyItems = findViewById(R.id.buy_Market);
+        Button sellItems = findViewById(R.id.Sell_Market);
+        Button inven = findViewById(R.id.button8);
+        MarketViewModel marketViewModel = new MarketViewModel(getApplication());
         marketViewModel.createMarket();
 
         buyItems.setOnClickListener(new View.OnClickListener() {

@@ -13,13 +13,13 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-@SuppressWarnings("ALL")
-public class GameViewModel extends AndroidViewModel {
+class GameViewModel extends AndroidViewModel {
     private Game model;
 
     public GameViewModel(@NonNull Application application) {
         super(application);
-        model = Model.getInstance().getMyGame();
+        Model modelInstance = Model.getInstance();
+        model = modelInstance.getMyGame();
     }
 
     public void createGame(String playerName, int[] skillArray, Difficulty dif) {
@@ -39,7 +39,8 @@ public class GameViewModel extends AndroidViewModel {
 
     public boolean saveGame() {
         try {
-            FileOutputStream file = getApplication().openFileOutput("game.ser", Context.MODE_PRIVATE);
+            FileOutputStream file = getApplication().openFileOutput("game.ser",
+                    Context.MODE_PRIVATE);
             ObjectOutputStream outputStream = new ObjectOutputStream(file);
             outputStream.writeObject(model);
             outputStream.close();
@@ -59,12 +60,14 @@ public class GameViewModel extends AndroidViewModel {
             inputStream.close();
             file.close();
             model = g;
-            Model.getInstance().setMyGame(g);
+            Model modelInstance = Model.getInstance();
+            modelInstance.setMyGame(g);
             return true;
         } catch (IOException e) {
             Log.e("APP", "Error opening game save file.", e);
         } catch (ClassNotFoundException e) {
-            Toast.makeText(getApplication(), "Error while opening saved game", Toast.LENGTH_LONG);
+            Toast.makeText(getApplication(), "Error while opening saved game",
+                    Toast.LENGTH_LONG).show();
             Log.e("APP", "ClassNotFoundException while loading saved game.", e);
         }
         return false;

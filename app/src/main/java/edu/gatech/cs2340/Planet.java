@@ -12,64 +12,6 @@ public class Planet implements Serializable {
     private static final int randBound13 = 13;
     private static final int randBound53 = 53;
 
-    private final String[] planetNames = {
-        "Earth",
-        "Mercury",
-        "Venus",
-        "Mars",
-        "Jupiter",
-        "Saturn",
-        "Uranus",
-        "Neptune",
-        "Pluto",
-        "Acamar",
-        "Adahn",
-        "Aldea",
-        "Andevian",
-        "Antedi",
-        "Balosnee",
-        "Baratas",
-        "Brax",
-        "Bretel",
-        "Calondia",
-        "Campor",
-        "Capelle",
-        "Carzon",
-        "Castor",
-        "Cestus",
-        "Cheron",
-        "Courteney",
-        "Daled",
-        "Damast",
-        "Davlos",
-        "Deneb",
-        "Deneva",
-        "Devidia",
-        "Draylon",
-        "Drema",
-        "Endor",
-        "Esmee",
-        "Exo",
-        "Flight",
-        "Helios",
-        "Zeitnot",
-        "Zggrasdil",
-        "Zylia",
-        "Tusil",
-        "Rhode",
-        "Photos",
-        "Lima",
-        "Nendo",
-        "Portia",
-        "Onfleek",
-        "Calitrops",
-        "Sylus",
-        "Querko",
-        "Ulvanus",
-        "Orang"
-
-    };
-
     private final String[] techLevels = {
          "Pre-Agriculture",
          "Agriculture",
@@ -99,12 +41,69 @@ public class Planet implements Serializable {
 
 
     public Planet(int x, int y) {
-        if (x >= 0 && y >= 0){
+        if ((x >= 0) && (y >= 0)){
             xPlanet = x;
             yPlanet = y;
             Random rand = new Random();
             techLevel = techLevels[rand.nextInt(8)];
             resources = resourceLevels[rand.nextInt(2) * rand.nextInt(randBound13)];
+            String[] planetNames = {
+                    "Earth",
+                    "Mercury",
+                    "Venus",
+                    "Mars",
+                    "Jupiter",
+                    "Saturn",
+                    "Uranus",
+                    "Neptune",
+                    "Pluto",
+                    "Acamar",
+                    "Adahn",
+                    "Aldea",
+                    "Andevian",
+                    "Antedi",
+                    "Balosnee",
+                    "Baratas",
+                    "Brax",
+                    "Bretel",
+                    "Calondia",
+                    "Campor",
+                    "Capelle",
+                    "Carzon",
+                    "Castor",
+                    "Cestus",
+                    "Cheron",
+                    "Courteney",
+                    "Daled",
+                    "Damast",
+                    "Davlos",
+                    "Deneb",
+                    "Deneva",
+                    "Devidia",
+                    "Draylon",
+                    "Drema",
+                    "Endor",
+                    "Esmee",
+                    "Exo",
+                    "Flight",
+                    "Helios",
+                    "Zeitnot",
+                    "Zggrasdil",
+                    "Zylia",
+                    "Tusil",
+                    "Rhode",
+                    "Photos",
+                    "Lima",
+                    "Nendo",
+                    "Portia",
+                    "Onfleek",
+                    "Calitrops",
+                    "Sylus",
+                    "Querko",
+                    "Ulvanus",
+                    "Orang"
+
+            };
             planetName = planetNames[rand.nextInt(randBound53)];
         } else {
             throw new IndexOutOfBoundsException("x and y cannot be negative");
@@ -112,7 +111,7 @@ public class Planet implements Serializable {
     }
 
     public void createPlanet(int x, int y) {
-        if (x >= 0 && y >= 0){
+        if ((x >= 0) && (y >= 0)){
             xPlanet = x;
             yPlanet = y;
             Random rand = new Random();

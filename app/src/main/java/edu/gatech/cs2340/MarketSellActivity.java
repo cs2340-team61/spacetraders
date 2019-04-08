@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 public class MarketSellActivity extends AppCompatActivity {
     private MarketViewModel marketViewModel;
-    private TextView totalCred;
     private TextView credLeft;
     private TextView waterQ;
     private TextView fursQ;
@@ -40,28 +39,6 @@ public class MarketSellActivity extends AppCompatActivity {
     private TextView machinesB;
     private TextView narcoticsB;
     private TextView robotsB;
-    private Button waterUp;
-    private Button fursUp;
-    private Button foodUp;
-    private Button oreUp;
-    private Button gamesUp;
-    private Button firearmsUp;
-    private Button medicineUp;
-    private Button machinesUp;
-    private Button narcoticsUp;
-    private Button robotsUp;
-    private Button waterDown;
-    private Button fursDown;
-    private Button foodDown;
-    private Button oreDown;
-    private Button gamesDown;
-    private Button firearmsDown;
-    private Button medicineDown;
-    private Button machinesDown;
-    private Button narcoticsDown;
-    private Button robotsDown;
-    private Button purchase;
-    private Button leave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +47,7 @@ public class MarketSellActivity extends AppCompatActivity {
 
         marketViewModel = new MarketViewModel(getApplication());
 
-        totalCred = findViewById(R.id.textView42);
+        TextView totalCred = findViewById(R.id.textView42);
         credLeft = findViewById(R.id.textView59);
         totalCred.setText("" + getCredits());
         credLeft.setText("" + getCredits());
@@ -108,30 +85,30 @@ public class MarketSellActivity extends AppCompatActivity {
         narcoticsQ = findViewById(R.id.games_Quanity7);
         robotsQ = findViewById(R.id.robots_Quanity);
 
-        waterUp = findViewById(R.id.plus_Water);
-        fursUp = findViewById(R.id.plus_Furs);
-        foodUp = findViewById(R.id.plus_Food);
-        oreUp = findViewById(R.id.plus_Ore);
-        gamesUp = findViewById(R.id.plus_Games);
-        firearmsUp = findViewById(R.id.plus_Firearms);
-        medicineUp = findViewById(R.id.plus_Medicine);
-        machinesUp = findViewById(R.id.plus_machines);
-        narcoticsUp = findViewById(R.id.plus_Narcotics);
-        robotsUp = findViewById(R.id.plus_Robots);
+        Button waterUp = findViewById(R.id.plus_Water);
+        Button fursUp = findViewById(R.id.plus_Furs);
+        Button foodUp = findViewById(R.id.plus_Food);
+        Button oreUp = findViewById(R.id.plus_Ore);
+        Button gamesUp = findViewById(R.id.plus_Games);
+        Button firearmsUp = findViewById(R.id.plus_Firearms);
+        Button medicineUp = findViewById(R.id.plus_Medicine);
+        Button machinesUp = findViewById(R.id.plus_machines);
+        Button narcoticsUp = findViewById(R.id.plus_Narcotics);
+        Button robotsUp = findViewById(R.id.plus_Robots);
 
-        waterDown = findViewById(R.id.minus_Water);
-        fursDown = findViewById(R.id.minus_Furs);
-        foodDown = findViewById(R.id.minus_Food);
-        oreDown = findViewById(R.id.minus_Ore);
-        gamesDown = findViewById(R.id.minus_Games);
-        firearmsDown = findViewById(R.id.minus_Firearms);
-        medicineDown = findViewById(R.id.minus_Medicine);
-        machinesDown = findViewById(R.id.button9);
-        narcoticsDown = findViewById(R.id.minus_Narcotics);
-        robotsDown = findViewById(R.id.minus_Robots);
+        Button waterDown = findViewById(R.id.minus_Water);
+        Button fursDown = findViewById(R.id.minus_Furs);
+        Button foodDown = findViewById(R.id.minus_Food);
+        Button oreDown = findViewById(R.id.minus_Ore);
+        Button gamesDown = findViewById(R.id.minus_Games);
+        Button firearmsDown = findViewById(R.id.minus_Firearms);
+        Button medicineDown = findViewById(R.id.minus_Medicine);
+        Button machinesDown = findViewById(R.id.button9);
+        Button narcoticsDown = findViewById(R.id.minus_Narcotics);
+        Button robotsDown = findViewById(R.id.minus_Robots);
 
-        purchase = findViewById(R.id.sell);
-        leave = findViewById(R.id.leave);
+        Button purchase = findViewById(R.id.sell);
+        Button leave = findViewById(R.id.leave);
         ShipInventory inventory = getInventory();
         int numWater = getWaterNum(inventory);
         int numFurs = getFursNum(inventory);
@@ -175,90 +152,111 @@ public class MarketSellActivity extends AppCompatActivity {
         waterUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(waterB.getText().toString()) < Integer.parseInt(waterQ.getText().toString())) {
+                if (Integer.parseInt(waterB.getText().toString())
+                        < Integer.parseInt(waterQ.getText().toString())) {
                     waterB.setText("" + (Integer.parseInt(waterB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(waterP.getText().toString())));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString())
+                            + Integer.parseInt(waterP.getText().toString())));
                 }
             }
         });
         fursUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(fursB.getText().toString()) < Integer.parseInt(fursQ.getText().toString())) {
+                if (Integer.parseInt(fursB.getText().toString())
+                        < Integer.parseInt(fursQ.getText().toString())) {
                     fursB.setText("" + (Integer.parseInt(fursB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(fursP.getText().toString())));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString())
+                            + Integer.parseInt(fursP.getText().toString())));
                 }
             }
         });
         foodUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(foodB.getText().toString()) < Integer.parseInt(foodQ.getText().toString())) {
+                if (Integer.parseInt(foodB.getText().toString())
+                        < Integer.parseInt(foodQ.getText().toString())) {
                     foodB.setText("" + (Integer.parseInt(foodB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(foodP.getText().toString())));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString())
+                            + Integer.parseInt(foodP.getText().toString())));
                 }
             }
         });
         oreUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(oreB.getText().toString()) < Integer.parseInt(oreQ.getText().toString())) {
+                if (Integer.parseInt(oreB.getText().toString())
+                        < Integer.parseInt(oreQ.getText().toString())) {
                     oreB.setText("" + (Integer.parseInt(oreB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(oreP.getText().toString())));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString())
+                            + Integer.parseInt(oreP.getText().toString())));
                 }
             }
         });
         gamesUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(gamesB.getText().toString()) < Integer.parseInt(gamesQ.getText().toString())) {
+                if (Integer.parseInt(gamesB.getText().toString())
+                        < Integer.parseInt(gamesQ.getText().toString())) {
                     gamesB.setText("" + (Integer.parseInt(gamesB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(gamesP.getText().toString())));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString())
+                            + Integer.parseInt(gamesP.getText().toString())));
                 }
             }
         });
         firearmsUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(firearmsB.getText().toString()) < Integer.parseInt(firearmsQ.getText().toString())) {
+                if (Integer.parseInt(firearmsB.getText().toString())
+                        < Integer.parseInt(firearmsQ.getText().toString())) {
                     firearmsB.setText("" + (Integer.parseInt(firearmsB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(firearmsP.getText().toString())));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString())
+                            + Integer.parseInt(firearmsP.getText().toString())));
                 }
             }
         });
         medicineUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(medicineB.getText().toString()) < Integer.parseInt(medicineQ.getText().toString())) {
+                if (Integer.parseInt(medicineB.getText().toString())
+                        < Integer.parseInt(medicineQ.getText().toString())) {
                     medicineB.setText("" + (Integer.parseInt(medicineB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(medicineP.getText().toString())));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString())
+                            + Integer.parseInt(medicineP.getText().toString())));
                 }
             }
         });
         machinesUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(machinesB.getText().toString()) < Integer.parseInt(machinesQ.getText().toString())) {
+                if (Integer.parseInt(machinesB.getText().toString())
+                        < Integer.parseInt(machinesQ.getText().toString())) {
                     machinesB.setText("" + (Integer.parseInt(machinesB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(machinesP.getText().toString())));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString())
+                            + Integer.parseInt(machinesP.getText().toString())));
                 }
             }
         });
         narcoticsUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(narcoticsB.getText().toString()) < Integer.parseInt(narcoticsQ.getText().toString())) {
-                    narcoticsB.setText("" + (Integer.parseInt(narcoticsB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(narcoticsP.getText().toString())));
+                if (Integer.parseInt(narcoticsB.getText().toString())
+                        < Integer.parseInt(narcoticsQ.getText().toString())) {
+                    narcoticsB.setText("" + (Integer.parseInt(narcoticsB.getText().toString())
+                            + 1));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString())
+                            + Integer.parseInt(narcoticsP.getText().toString())));
                 }
             }
         });
         robotsUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Integer.parseInt(robotsB.getText().toString()) < Integer.parseInt(robotsQ.getText().toString())) {
+                if (Integer.parseInt(robotsB.getText().toString())
+                        < Integer.parseInt(robotsQ.getText().toString())) {
                     robotsB.setText("" + (Integer.parseInt(robotsB.getText().toString()) + 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) + Integer.parseInt(robotsP.getText().toString())));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString())
+                            + Integer.parseInt(robotsP.getText().toString())));
                 }
             }
         });
@@ -268,7 +266,8 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(waterB.getText().toString()) > 0) {
                     waterB.setText("" + (Integer.parseInt(waterB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(waterP.getText().toString())));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString())
+                            - Integer.parseInt(waterP.getText().toString())));
                 }
             }
         });
@@ -277,7 +276,8 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(fursB.getText().toString()) > 0) {
                     fursB.setText("" + (Integer.parseInt(fursB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(fursP.getText().toString())));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString())
+                            - Integer.parseInt(fursP.getText().toString())));
                 }
             }
         });
@@ -286,7 +286,8 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(foodB.getText().toString()) > 0) {
                     foodB.setText("" + (Integer.parseInt(foodB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(foodP.getText().toString())));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString())
+                            - Integer.parseInt(foodP.getText().toString())));
                 }
             }
         });
@@ -295,7 +296,8 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(oreB.getText().toString()) > 0) {
                     oreB.setText("" + (Integer.parseInt(oreB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(oreP.getText().toString())));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString())
+                            - Integer.parseInt(oreP.getText().toString())));
                 }
             }
         });
@@ -304,7 +306,8 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(gamesB.getText().toString()) > 0) {
                     gamesB.setText("" + (Integer.parseInt(gamesB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(gamesP.getText().toString())));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString())
+                            - Integer.parseInt(gamesP.getText().toString())));
                 }
             }
         });
@@ -313,7 +316,8 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(firearmsB.getText().toString()) > 0) {
                     firearmsB.setText("" + (Integer.parseInt(firearmsB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(firearmsP.getText().toString())));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString())
+                            - Integer.parseInt(firearmsP.getText().toString())));
                 }
             }
         });
@@ -322,7 +326,8 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(medicineB.getText().toString()) > 0) {
                     medicineB.setText("" + (Integer.parseInt(medicineB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(medicineP.getText().toString())));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString())
+                            - Integer.parseInt(medicineP.getText().toString())));
                 }
             }
         });
@@ -331,7 +336,8 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(machinesB.getText().toString()) > 0) {
                     machinesB.setText("" + (Integer.parseInt(machinesB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(machinesP.getText().toString())));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString())
+                            - Integer.parseInt(machinesP.getText().toString())));
                 }
             }
         });
@@ -339,8 +345,10 @@ public class MarketSellActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (Integer.parseInt(narcoticsB.getText().toString()) > 0) {
-                    narcoticsB.setText("" + (Integer.parseInt(narcoticsB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(narcoticsP.getText().toString())));
+                    narcoticsB.setText("" + (Integer.parseInt(narcoticsB.getText().toString())
+                            - 1));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString())
+                            - Integer.parseInt(narcoticsP.getText().toString())));
                 }
             }
         });
@@ -349,7 +357,8 @@ public class MarketSellActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (Integer.parseInt(robotsB.getText().toString()) > 0) {
                     robotsB.setText("" + (Integer.parseInt(robotsB.getText().toString()) - 1));
-                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString()) - Integer.parseInt(robotsP.getText().toString())));
+                    credLeft.setText("" + (Integer.parseInt(credLeft.getText().toString())
+                            - Integer.parseInt(robotsP.getText().toString())));
                 }
             }
         });

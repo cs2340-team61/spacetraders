@@ -1,5 +1,8 @@
 package edu.gatech.cs2340;
 
+/**
+ *
+ */
 public enum Difficulty {
     Beginner ("Beginner"),
     Easy ("Easy"),

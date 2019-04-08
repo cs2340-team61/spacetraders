@@ -1,6 +1,6 @@
 package edu.gatech.cs2340;
 
-public class Model {
+public final class Model {
     private Game myGame;
 
     private static final Model instance = new Model();

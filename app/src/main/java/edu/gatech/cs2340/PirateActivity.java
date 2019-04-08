@@ -71,8 +71,9 @@ public class PirateActivity extends AppCompatActivity {
                 } else {
                     conText.setText("You failed to escape");
                     if (random.nextInt(3) == random.nextInt(3)) {
-                        playerHealth.setText("" + (Integer.parseInt(playerHealth.getText().toString()) -
-                                (getLaser() * 2 / 3)));
+                        playerHealth.setText(""
+                                + (Integer.parseInt(playerHealth.getText().toString())
+                                - (getLaser() * 2 / 3)));
 
                         if (getHealth() <= 0) {
                             gameOver();
