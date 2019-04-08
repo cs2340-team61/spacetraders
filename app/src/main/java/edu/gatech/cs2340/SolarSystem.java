@@ -38,7 +38,11 @@ public class SolarSystem implements Serializable {
                 "Affluent"
 
         };
-        ssName = ssNames[nameHelp];
+        if(nameHelp < 0 || nameHelp > ssNames.length)
+        {
+            ssName = null;
+        } else
+            ssName = ssNames[nameHelp];
     }
 
     /*public int getX() { return x; }
