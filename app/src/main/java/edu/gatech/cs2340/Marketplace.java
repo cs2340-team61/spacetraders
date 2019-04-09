@@ -69,6 +69,10 @@ class Marketplace implements Serializable {
 
      }
 
+    public int getLevel() {
+        return level;
+    }
+
     public void Water() {
         MTLP = 0;
         BasePrice = waterP;
