@@ -2,7 +2,7 @@ package edu.gatech.cs2340;
 
 import java.io.Serializable;
 
- class ShipInventory implements Serializable {
+public class ShipInventory implements Serializable {
     private int numWater;
     private int numFurs;
     private int numFood;
@@ -17,7 +17,7 @@ import java.io.Serializable;
     private int size;
     private static final int initialMaxCargo = 15;
 
-    ShipInventory() {
+    public ShipInventory() {
         numWater = 0;
         numFurs = 0;
         numFood = 0;
@@ -32,111 +32,111 @@ import java.io.Serializable;
         size = 0;
     }
 
-    int getNumWater() { return numWater; }
+    public int getNumWater() { return numWater; }
 
-    int getNumFurs() { return numFurs; }
+    public int getNumFurs() { return numFurs; }
 
-    int getNumFood() { return numFood; }
+    public int getNumFood() { return numFood; }
 
-    int getNumOre() { return numOre; }
+    public int getNumOre() { return numOre; }
 
-    int getNumGames() { return numGames; }
+    public int getNumGames() { return numGames; }
 
-    int getNumFirearms() { return numFirearms; }
+    public int getNumFirearms() { return numFirearms; }
 
-    int getNumMedicine() { return numMedicine; }
+    public int getNumMedicine() { return numMedicine; }
 
-    int getNumMachines() { return numMachines; }
+    public int getNumMachines() { return numMachines; }
 
-    int getNumNarcotics() { return numNarcotics; }
+    public int getNumNarcotics() { return numNarcotics; }
 
-    int getNumRobots() { return numRobots; }
+    public int getNumRobots() { return numRobots; }
 
-    void addWater(int add) {
+    public void addWater(int add) {
         numWater += add;
     }
 
-    void addFurs(int add) {
+    public void addFurs(int add) {
         numFurs += add;
     }
 
-    void addFood(int add) {
+    public void addFood(int add) {
         numFood += add;
     }
 
-    void addOre(int add) {
+    public void addOre(int add) {
         numOre += add;
     }
 
-    void addGames(int add) {
+    public void addGames(int add) {
         numGames += add;
     }
 
-    void addFirearms(int add) {
+    public void addFirearms(int add) {
         numFirearms += add;
     }
 
-    void addMedicine(int add) {
+    public void addMedicine(int add) {
         numMedicine += add;
     }
 
-    void addMachines(int add) {
+    public void addMachines(int add) {
         numMachines += add;
     }
 
-    void addNarcotics(int add) {
+    public void addNarcotics(int add) {
         numNarcotics += add;
     }
 
-    void addRobots(int add) {
+    public void addRobots(int add) {
         numRobots += add;
     }
 
-    void removeWater(int add) {
+    public void removeWater(int add) {
         numWater -= add;
     }
 
-    void removeFurs(int add) {
+    public void removeFurs(int add) {
         numFurs -= add;
     }
 
-    void removeFood(int add) {
+    public void removeFood(int add) {
         numFood -= add;
     }
 
-    void removeOre(int add) {
+    public void removeOre(int add) {
         numOre -= add;
     }
 
-    void removeGames(int add) {
+    public void removeGames(int add) {
         numGames -= add;
     }
 
-    void removeFirearms(int add) {
+    public void removeFirearms(int add) {
         numFirearms -= add;
     }
 
-    void removeMedicine(int add) {
+    public void removeMedicine(int add) {
         numMedicine -= add;
     }
 
-    void removeMachines(int add) {
+    public void removeMachines(int add) {
         numMachines -= add;
     }
 
-    void removeNarcotics(int add) {
+    public void removeNarcotics(int add) {
         numNarcotics -= add;
     }
 
-    void removeRobots(int add) {
+    public void removeRobots(int add) {
         numRobots -= add;
     }
 
-    int getMaxCargo() { return maxCargo; }
+    public int getMaxCargo() { return maxCargo; }
 
-    int getSize() { return size; }
+    public int getSize() { return size; }
 
-    void setSize(int size) { this.size = size; }
+    public void setSize(int size) { this.size = size; }
 
     //public void setMaxCargo(int maxCargo) { this.maxCargo = maxCargo; }
 }
