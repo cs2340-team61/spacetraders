@@ -1,7 +1,7 @@
 package edu.gatech.cs2340;
 
 /**
- *
+ * enum holding game difficulty values
  */
 public enum Difficulty {
     Beginner ("Beginner"),
@@ -15,7 +15,9 @@ public enum Difficulty {
     Difficulty(String diff) {
         this.diff = diff;
     }
-
+    /**
+     * Getter Method that returns difficulty
+     */
     public String getDiff() {
         return diff;
     }

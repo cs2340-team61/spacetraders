@@ -9,7 +9,11 @@ public class SolarSystem implements Serializable {
 
     private final String ssName;
     private final Planet[] planets = new Planet[3];
-
+    /**
+     * Method that creates a solarsystem
+     * @param nameHelp value to choose name
+     * @param spreader value to change the x and y values
+     */
     public SolarSystem(int spreader, int nameHelp) {
         Random rand = new Random();
         int x = ((rand.nextInt(3) + 1) * 10) + spreader;
@@ -49,9 +53,15 @@ public class SolarSystem implements Serializable {
     /*public int getX() { return x; }
 
     public int getY() { return y; }*/
-
+    /**
+     * Getter Method for planets
+     * @return an array of planets in the solar system
+     */
     public Planet[] getPlanets() { return planets.clone(); }
-
+    /**
+     * getter Method for solar system name
+     * @return name of solar system
+     */
     public String getSsName() { return ssName; }
 
     /*private String getPlanetData(int planet) {
