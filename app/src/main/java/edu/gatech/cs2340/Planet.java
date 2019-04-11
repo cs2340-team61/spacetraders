@@ -2,7 +2,9 @@ package edu.gatech.cs2340;
 
 import java.io.Serializable;
 import java.util.Random;
-
+/**
+ * Planet Class for creating Planets
+ */
 public class Planet implements Serializable {
     private int xPlanet;
     private int yPlanet;
@@ -39,7 +41,11 @@ public class Planet implements Serializable {
          "Warlike",
     };
 
-
+    /**
+     * Method to create planet with x and y coordinate
+     * @param x  Planet's x location
+     * @param y Planet's y location
+     */
     public Planet(int x, int y) {
         if ((x >= 0) && (y >= 0)){
             xPlanet = x;
@@ -109,7 +115,11 @@ public class Planet implements Serializable {
             throw new IndexOutOfBoundsException("x and y cannot be negative");
         }
     }
-
+    /**
+     * Method to create planet with x and y coordinate
+     * @param x  Planet's x location
+     * @param y Planet's y location
+     */
     public void createPlanet(int x, int y) {
         if ((x >= 0) && (y >= 0)){
             xPlanet = x;
@@ -122,14 +132,30 @@ public class Planet implements Serializable {
         }
 
     }
+    /**
+     * Getter Method for Planet's x value
+     * @return Planet's x location
+     */
     public int getxPlanet() { return xPlanet; }
-
+    /**
+     * Getter Method for Planet's y value
+     * @return Planet's y location
+     */
     public int getyPlanet() { return yPlanet; }
-
+    /**
+     * Getter Method for Planet's name
+     * @return Planet's name
+     */
     public String getPlanetName() { return planetName; }
-
+    /**
+     * Getter Method for Planet's Resource level
+     * @return Planet's resource level
+     */
     public String getResources() { return resources; }
-
+    /**
+     * Getter Method for Planet's tech level
+     * @return Planet's tech level
+     */
     public String getTechLevel() { return techLevel; }
 
     /*@Override

@@ -1,7 +1,9 @@
 package edu.gatech.cs2340;
 
 import java.io.Serializable;
-
+/**
+ * Class to create the game
+ */
 public class Game implements Serializable {
     private Difficulty gameDiff;
     private Player player;

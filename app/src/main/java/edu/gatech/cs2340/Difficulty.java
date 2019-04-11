@@ -17,6 +17,7 @@ public enum Difficulty {
     }
     /**
      * Getter Method that returns difficulty
+     * @return returns difficulty
      */
     public String getDiff() {
         return diff;

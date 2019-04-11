@@ -2,7 +2,9 @@ package edu.gatech.cs2340;
 
 import java.io.Serializable;
 import java.util.Random;
-
+/**
+ * Class for Solar System creation
+ */
 public class SolarSystem implements Serializable {
     private static final int yBound = 210;
     private static final int boundPlus = 20;

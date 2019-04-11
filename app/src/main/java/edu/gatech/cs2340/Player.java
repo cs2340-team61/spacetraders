@@ -1,7 +1,9 @@
 package edu.gatech.cs2340;
 
 import java.io.Serializable;
-
+/**
+ * Class to create Player
+ */
 public class Player implements Serializable {
 
     private final String playerName;
@@ -46,7 +48,10 @@ public class Player implements Serializable {
      * @return ship
      */
     public Ship getShipOwned() { return shipOwned; }
-
+    /**
+     * Setter Method for ship
+     * @param shipOwned  ship variable
+     */
     public void setShipOwned(Ship shipOwned) { this.shipOwned = shipOwned; }
 
     int getCredits() { return credits; }

@@ -2,7 +2,9 @@ package edu.gatech.cs2340;
 
 import java.io.Serializable;
 import java.util.Random;
-
+/**
+ * Class for Universe creation
+ */
 public class Universe implements Serializable {
     //private final int xLow;
     //private final int xHigh;
