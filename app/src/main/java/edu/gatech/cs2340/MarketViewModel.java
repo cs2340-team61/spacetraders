@@ -15,28 +15,29 @@ class MarketViewModel extends AndroidViewModel {
     private static final int magic25 = 25;
     private static final int magic30 = 30;
 
-    public MarketViewModel(@NonNull Application application) {
+    MarketViewModel(@NonNull Application application) {
         super(application);
         Model modelInstance = Model.getInstance();
-        model = modelInstance.getMyGame();
+        model = getGame(modelInstance);
     }
 
-    public void createMarket() {
+    void createMarket() {
         model.createMarketGoods();
         model.createMarketplace();
     }
 
-    public int getCredits() {
+    int getCredits() {
         return model.getCredits();
     }
 
-    public void setCredits(int cred) {
+    void setCredits(int cred) {
         Player player = model.getPlayer();
-        player.setCredits(cred);
+        setCredits(player, cred);
     }
 
-    public Integer[] quantityMarket() {
-        String tech = model.getPlayerLocation().getTechLevel();
+    Integer[] quantityMarket() {
+        Planet planet = model.getPlayerLocation();
+        String tech = getTechLevel(planet);
         Integer[] quantArr = new Integer[bigB];
         Random rand = new Random();
         if ("Pre-Agriculture".equals(tech)) {
@@ -140,7 +141,8 @@ class MarketViewModel extends AndroidViewModel {
     }
 
     Integer[] getPrices() {
-        String tech = model.getPlayerLocation().getTechLevel();
+        Planet planet = model.getPlayerLocation();
+        String tech = getTechLevel(planet);
         Integer[] priceArr = new Integer[bigB];
         if ("Pre-Agriculture".equals(tech)) {
             priceArr[0] = getWaterPrice();
@@ -246,74 +248,115 @@ class MarketViewModel extends AndroidViewModel {
     ShipInventory getInventory() { return model.getInventory(); }
 
     void addWater(int add) {
-        model.getInventory().addWater(add);
+        ShipInventory inventory = getInventory();
+        addWaterHelp(inventory, add);
     }
 
     void addFurs(int add) {
-        model.getInventory().addFurs(add);
+        ShipInventory inventory = getInventory();
+        addFursHelp(inventory, add);
     }
 
     void addFood(int add) {
-        model.getInventory().addFood(add);
+        ShipInventory inventory = getInventory();
+        addFoodHelp(inventory, add);
     }
 
     void addOre(int add) {
-        model.getInventory().addOre(add);
+        ShipInventory inventory = getInventory();
+        addOreHelp(inventory, add);
     }
 
     void addGames(int add) {
-        model.getInventory().addGames(add);
+        ShipInventory inventory = getInventory();
+        addGamesHelp(inventory, add);
     }
 
     void addFirearms(int add) {
-        model.getInventory().addFirearms(add);
+        ShipInventory inventory = getInventory();
+        addFirearmsHelp(inventory, add);
     }
 
     void addMedicine(int add) {
-        model.getInventory().addMedicine(add);
+        ShipInventory inventory = getInventory();
+        addMedicineHelp(inventory, add);
     }
 
-    void addMachines(int add) { model.getInventory().addMachines(add); }
+    void addMachines(int add) {
+        ShipInventory inventory = getInventory();
+        addMachinesHelp(inventory, add); }
 
     void addNarcotics(int add) {
-        model.getInventory().addNarcotics(add);
+        ShipInventory inventory = getInventory();
+        addNarcoticsHelp(inventory, add);
     }
 
     void addRobots(int add) {
-        model.getInventory().addRobots(add);
+        ShipInventory inventory = getInventory();
+        addRobotsHelp(inventory, add);
     }
 
     void removeWater(int add) {
-        model.getInventory().removeWater(add);
+        ShipInventory inventory = getInventory();
+        removeWaterHelp(inventory, add);
     }
 
     void removeFurs(int add) {
-        model.getInventory().removeFurs(add);
+        ShipInventory inventory = getInventory();
+        removeFursHelp(inventory, add);
     }
 
     void removeFood(int add) {
-        model.getInventory().removeFood(add);
+        ShipInventory inventory = getInventory();
+        removeFoodHelp(inventory, add);
     }
 
-    void removeOre(int add) { model.getInventory().removeOre(add); }
+    void removeOre(int add) {
+        ShipInventory inventory = getInventory();
+        removeOreHelp(inventory, add);
+    }
 
-    void removeGames(int add) { model.getInventory().removeGames(add); }
+    void removeGames(int add) {
+        ShipInventory inventory = getInventory();
+        removeGamesHelp(inventory, add);
+    }
 
-    void removeFirearms(int add) { model.getInventory().removeFirearms(add); }
+    void removeFirearms(int add) {
+        ShipInventory inventory = getInventory();
+        removeFirearmsHelp(inventory, add);
+    }
 
-    void removeMedicine(int add) { model.getInventory().removeMedicine(add); }
+    void removeMedicine(int add) {
+        ShipInventory inventory = getInventory();
+        removeMedicineHelp(inventory, add);
+    }
 
-    void removeMachines(int add) { model.getInventory().removeMachines(add); }
+    void removeMachines(int add) {
+        ShipInventory inventory = getInventory();
+        removeMachinesHelp(inventory, add); }
 
-    void removeNarcotics(int add) { model.getInventory().removeNarcotics(add); }
+    void removeNarcotics(int add) {
+        ShipInventory inventory = getInventory();
+        removeNarcoticsHelp(inventory, add);
+    }
 
     int getNumNarcotics() {
         return model.getNumNarcotics();
     }
 
-    void removeRobots(int add) { model.getInventory().removeRobots(add); }
+    void removeRobots(int add) {
+        ShipInventory inventory = getInventory();
+        removeRobotsHelp(inventory, add);
+    }
 
-    int getMaxCargo() { return model.getInventory().getMaxCargo(); }
+    int getMaxCargo() {
+        ShipInventory inventory = model.getInventory();
+        return getMaxCargoHelp(inventory);
+    }
+
+    private int getMaxCargoHelp(ShipInventory inventory) {
+        return inventory.getMaxCargo();
+    }
 
     void updateInventorySize() {
         ShipInventory inventory = getInventory();
@@ -330,12 +373,20 @@ class MarketViewModel extends AndroidViewModel {
         int size = numWater + numFurs + numFood + numOres + numGames + numFirearms
                 + numMedicine + numMachines + numNarcotics + numRobots;
 
-        inventory.setSize(size);
+        setSize(inventory, size);
     }
 
     int getInventorySize() {
         ShipInventory inventory = getInventory();
+        return getSize(inventory);
+    }
+
+    private int getSize(ShipInventory inventory) {
         return inventory.getSize();
+    }
+
+    private void setSize(ShipInventory inventory, int size) {
+        inventory.setSize(size);
     }
 
     private int getFoodPrice() { return model.getFoodPrice(); }
@@ -397,6 +448,102 @@ class MarketViewModel extends AndroidViewModel {
     private int getRobotsNum(ShipInventory inventory) {
         return inventory.getNumRobots();
     }
+
+    private Game getGame(Model model) {
+        return model.getMyGame();
+    }
+
+    private void setCredits(Player player, int credits) {
+        player.setCredits(credits);
+    }
+
+    private String getTechLevel(Planet planet) {
+        return planet.getTechLevel();
+    }
+
+    private void addWaterHelp(ShipInventory inventory, int add) {
+        inventory.addWater(add);
+    }
+
+    private void addFursHelp(ShipInventory inventory, int add) {
+        inventory.addFurs(add);
+    }
+
+    private void addFoodHelp(ShipInventory inventory, int add) {
+        inventory.addFood(add);
+    }
+
+    private void addOreHelp(ShipInventory inventory, int add) {
+        inventory.addOre(add);
+    }
+
+    private void addGamesHelp(ShipInventory inventory, int add) {
+        inventory.addGames(add);
+    }
+
+    private void addFirearmsHelp(ShipInventory inventory, int add) {
+        inventory.addFirearms(add);
+    }
+
+    private void addMachinesHelp(ShipInventory inventory, int add) {
+        inventory.addMachines(add);
+    }
+
+    private void addMedicineHelp(ShipInventory inventory, int add) {
+        inventory.addMedicine(add);
+    }
+
+    private void addNarcoticsHelp(ShipInventory inventory, int add) {
+        inventory.addNarcotics(add);
+    }
+
+    private void addRobotsHelp(ShipInventory inventory, int add) {
+        inventory.addRobots(add);
+    }
+
+    private void removeWaterHelp(ShipInventory inventory, int add) {
+        inventory.removeWater(add);
+    }
+
+    private void removeFursHelp(ShipInventory inventory, int add) {
+        inventory.removeFurs(add);
+    }
+
+    private void removeFoodHelp(ShipInventory inventory, int add) {
+        inventory.removeFood(add);
+    }
+
+    private void removeOreHelp(ShipInventory inventory, int add) {
+        inventory.removeOre(add);
+    }
+
+    private void removeGamesHelp(ShipInventory inventory, int add) {
+        inventory.removeGames(add);
+    }
+
+    private void removeFirearmsHelp(ShipInventory inventory, int add) {
+        inventory.removeFirearms(add);
+    }
+
+    private void removeMachinesHelp(ShipInventory inventory, int add) {
+        inventory.removeMachines(add);
+    }
+
+    private void removeMedicineHelp(ShipInventory inventory, int add) {
+        inventory.removeMedicine(add);
+    }
+
+    private void removeNarcoticsHelp(ShipInventory inventory, int add) {
+        inventory.removeNarcotics(add);
+    }
+
+    private void removeRobotsHelp(ShipInventory inventory, int add) {
+        inventory.removeRobots(add);
+    }
+
+
+
+
 
 
 }

@@ -28,7 +28,7 @@ public class PostConfigActivity extends AppCompatActivity {
         fSkill.setText("" + getSkillFighter());
         tSkill.setText("" + getSkillTrader());
         Difficulty difficulty = getDifficulty();
-        diffG.setText("Game Difficulty: " + difficulty.getDiff());
+        diffG.setText("Game Difficulty: " + getDiffString(difficulty));
         pName.setText(player.getPlayerName());
 
         Button continueB = findViewById(R.id.button_cont);
@@ -56,6 +56,10 @@ public class PostConfigActivity extends AppCompatActivity {
 
     private Difficulty getDifficulty() {
         return gameViewModel.getDifficulty();
+    }
+
+    private String getDiffString(Difficulty difficulty) {
+        return difficulty.getDiff();
     }
 
     private int getSkillEngineer() {

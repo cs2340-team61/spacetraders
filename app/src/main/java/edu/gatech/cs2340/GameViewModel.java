@@ -11,18 +11,19 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 
 class GameViewModel extends AndroidViewModel {
     private Game model;
 
-    public GameViewModel(@NonNull Application application) {
+    GameViewModel(@NonNull Application application) {
         super(application);
         Model modelInstance = Model.getInstance();
-        model = modelInstance.getMyGame();
+        model = getGame(modelInstance);
     }
 
-    public void createGame(String playerName, int[] skillArray, Difficulty dif) {
+    void createGame(String playerName, int[] skillArray, Difficulty dif) {
         Universe universe = new Universe();
         Player player = new Player(playerName, skillArray[0], skillArray[1],
                 skillArray[2], skillArray[3]);
@@ -37,11 +38,11 @@ class GameViewModel extends AndroidViewModel {
         Log.d("APP", tempUniverse.toString());
     }
 
-    public boolean saveGame() {
+    boolean saveGame() {
         try {
             FileOutputStream file = getApplication().openFileOutput("game.ser",
                     Context.MODE_PRIVATE);
-            ObjectOutputStream outputStream = new ObjectOutputStream(file);
+            ObjectOutput outputStream = new ObjectOutputStream(file);
             outputStream.writeObject(model);
             outputStream.close();
             file.close();
@@ -52,7 +53,7 @@ class GameViewModel extends AndroidViewModel {
         return false;
     }
 
-    public boolean resumeSavedGame() {
+    boolean resumeSavedGame() {
         try {
             FileInputStream file = getApplication().openFileInput("game.ser");
             ObjectInputStream inputStream = new ObjectInputStream(file);
@@ -61,7 +62,7 @@ class GameViewModel extends AndroidViewModel {
             file.close();
             model = g;
             Model modelInstance = Model.getInstance();
-            modelInstance.setMyGame(g);
+            setGame(modelInstance, model);
             return true;
         } catch (IOException e) {
             Log.e("APP", "Error opening game save file.", e);
@@ -77,7 +78,7 @@ class GameViewModel extends AndroidViewModel {
         model.setGameDiff(diff);
     }
 
-    public Difficulty getDifficulty() {return model.getGameDiff();}
+    Difficulty getDifficulty() {return model.getGameDiff();}
 
     private void setPlayer(Player player) {
         model.setPlayer(player);
@@ -91,7 +92,7 @@ class GameViewModel extends AndroidViewModel {
         model.setInventory(inventory);
     }
 
-    public Player getPlayer() {
+    Player getPlayer() {
         return model.getPlayer();
     }
 
@@ -99,8 +100,16 @@ class GameViewModel extends AndroidViewModel {
         return model.getUniverse();
     }
 
-    public Planet getPlayerLocation() {
+    Planet getPlayerLocation() {
         return model.getPlayerLocation();
+    }
+
+    private Game getGame(Model model) {
+        return model.getMyGame();
+    }
+
+    private void setGame(Model model, Game game) {
+        model.setMyGame(game);
     }
 
 

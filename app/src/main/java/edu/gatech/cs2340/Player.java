@@ -6,7 +6,7 @@ public class Player implements Serializable {
 
     private final String playerName;
 
-    //private final Ship shipOwned;
+    private Ship shipOwned;
 
     //private ShipInventory shipInventory;
 
@@ -22,7 +22,7 @@ public class Player implements Serializable {
 
     public Player(String pN, int sE, int sP, int sF, int sT) {
         playerName = pN;
-        //shipOwned = Ship.Gnat;
+        shipOwned = Ship.Gnat;
         credits = 1000;
         skillEngineer = sE;
         skillFighter = sF;
@@ -32,36 +32,36 @@ public class Player implements Serializable {
 
     public String getPlayerName() { return playerName; }
 
-    //public Ship getShipOwned() { return shipOwned; }
+    public Ship getShipOwned() { return shipOwned; }
 
-    //public void setShipOwned(Ship shipOwned) { this.shipOwned = shipOwned; }
+    public void setShipOwned(Ship shipOwned) { this.shipOwned = shipOwned; }
 
-    public int getCredits() { return credits; }
+    int getCredits() { return credits; }
 
-    public void setCredits(int credits) { this.credits = credits; }
+    void setCredits(int credits) { this.credits = credits; }
 
-    public int getSkillEngineer() { return skillEngineer; }
+    int getSkillEngineer() { return skillEngineer; }
 
     //public void setSkillEngineer(int skillEngineer) { this.skillEngineer = skillEngineer; }
 
-    public int getSkillFighter() { return skillFighter; }
+    int getSkillFighter() { return skillFighter; }
 
     //public void setSkillFighter(int skillFighter) { this.skillFighter = skillFighter; }
 
-    public int getSkillPilot() { return skillPilot; }
+    int getSkillPilot() { return skillPilot; }
 
     //public void setSkillPilot(int skillPilot) { this.skillPilot = skillPilot; }
 
-    public int getSkillTrader() { return skillTrader; }
+    int getSkillTrader() { return skillTrader; }
 
     //public void setSkillTrader(int skillTrader) { this.skillTrader = skillTrader; }
 
     //public ShipInventory getShipInventory() { return shipInventory; }
 
-    /*@Override
+    @Override
     public String toString() {
         return String.format("\nPlayer Name: %s, \nShip: %s, \ncredits: %d, \nEngineer Skill: %s," +
                         " \nPilot Skill: %s, \nFighter Skill: %s, \nTrader Skill: %s", playerName,
                 shipOwned, credits, skillEngineer, skillPilot, skillFighter, skillTrader);
-    }*/
+    }
 }

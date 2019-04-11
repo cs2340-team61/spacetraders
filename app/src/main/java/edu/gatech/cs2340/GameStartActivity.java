@@ -25,7 +25,7 @@ public class GameStartActivity extends AppCompatActivity {
         Button exit = findViewById(R.id.button3);
         gameViewModel = new GameViewModel(getApplication());
 
-        String planetName = getPlanetName();
+        String planetName = getPlanetName(getPlayerLocation());
         startMessage.setText("Welcome Trader! You are currently located on the planet " + planetName
                 + " and you have started with a Gnat Ship, 1000 credits.\n What to do?");
 
@@ -69,8 +69,7 @@ public class GameStartActivity extends AppCompatActivity {
         return gameViewModel.getPlayerLocation();
     }
 
-    private String getPlanetName() {
-        Planet planet = getPlayerLocation();
+    private String getPlanetName(Planet planet) {
         return planet.getPlanetName();
     }
 }

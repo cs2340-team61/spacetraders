@@ -38,11 +38,12 @@ public class SolarSystem implements Serializable {
                 "Affluent"
 
         };
-        if(nameHelp < 0 || nameHelp > ssNames.length)
+        if((nameHelp < 0) || (nameHelp > ssNames.length))
         {
-            ssName = null;
-        } else
+            ssName = "";
+        } else {
             ssName = ssNames[nameHelp];
+        }
     }
 
     /*public int getX() { return x; }

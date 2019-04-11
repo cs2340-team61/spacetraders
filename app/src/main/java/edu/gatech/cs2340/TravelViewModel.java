@@ -11,12 +11,12 @@ class TravelViewModel extends AndroidViewModel {
     public TravelViewModel(@NonNull Application application) {
         super(application);
         Model modelInstance = Model.getInstance();
-        model = modelInstance.getMyGame();
+        model = getGame(modelInstance);
     }
 
     public Planet[] getPlanets() {
         Universe tempUniverse = model.getUniverse();
-        SolarSystem[] solarSystems = tempUniverse.getSolarSystems();
+        SolarSystem[] solarSystems = getSolarSystems(tempUniverse);
         Planet[] planets = new Planet[totalPlanetNum];
         int iterator = 0;
         for (int i = 0; i < 5; i++) {
@@ -29,32 +29,27 @@ class TravelViewModel extends AndroidViewModel {
         return planets;
     }
 
-    public SolarSystem[] getSolarSystems() {
-        Universe tempUniverse = model.getUniverse();
-        return tempUniverse.getSolarSystems();
-    }
-
-    public int getDistance(int x1, int x2, int y1, int y2) {
+    int getDistance(int x1, int x2, int y1, int y2) {
         return model.getDistance(x1, x2, y1, y2);
     }
 
-    public Planet getPlayerLocation() {
+    Planet getPlayerLocation() {
         return model.getPlayerLocation();
     }
 
-    public void updatePlayerLocation(Planet planet) {
+    void updatePlayerLocation(Planet planet) {
         model.setPlayerLocation(planet);
     }
 
-    public int getFuelCost(int distance) {
+    int getFuelCost(int distance) {
         return model.getFuelCost(distance);
     }
 
-    public void updateFuel(int fuelUse) {
+    void updateFuel(int fuelUse) {
         model.useFuel(fuelUse);
     }
 
-    public int getHealth() {
+    int getHealth() {
         return model.getHealth();
     }
 
@@ -62,7 +57,7 @@ class TravelViewModel extends AndroidViewModel {
         model.setHealth(health);
     }
 
-    public int getFuel() {
+    int getFuel() {
         return model.getFuel();
     }
 
@@ -70,7 +65,7 @@ class TravelViewModel extends AndroidViewModel {
 
     int getLaser() {return model.getLaser();}
 
-    public int checkForEvent() {
+    int checkForEvent() {
         int event = 0;
         if (pirateCheck()) {
             event = 1;
@@ -93,5 +88,17 @@ class TravelViewModel extends AndroidViewModel {
 
     private boolean traderCheck() {
         return model.traderCheck();
+    }
+
+    private Game getGame(Model model) {
+        return model.getMyGame();
+    }
+
+    Universe getUniverse() {
+        return model.getUniverse();
+    }
+
+    SolarSystem[] getSolarSystems(Universe universe) {
+        return universe.getSolarSystems();
     }
 }

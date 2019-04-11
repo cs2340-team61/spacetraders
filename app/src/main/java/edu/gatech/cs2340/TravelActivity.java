@@ -261,7 +261,8 @@ public class TravelActivity extends AppCompatActivity {
     }
 
     private SolarSystem[] getSolarSystems() {
-        return travelViewModel.getSolarSystems();
+        Universe universe = travelViewModel.getUniverse();
+        return travelViewModel.getSolarSystems(universe);
     }
 
     private Planet[] getPlanets() {

@@ -1,15 +1,15 @@
 package edu.gatech.cs2340;
 
 enum Ship {
-    //Gnat ();
+    Gnat ();
 
-    //private final String shp;
+    private final String shp;
 
-    //Ship() {
-    //    this.shp = "Gnat";
-    //}
+    Ship() {
+        this.shp = "Gnat";
+    }
 
-    /*public String getShp() {
+    public String getShp() {
         return shp;
-    }*/
+    }
 }

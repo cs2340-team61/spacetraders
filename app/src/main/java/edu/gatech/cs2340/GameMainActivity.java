@@ -17,6 +17,7 @@ public class GameMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_main);
 
+        final GameViewModel tempViewModel = new GameViewModel(getApplication());
         TextView startMessage;
         //Button goBank;
         Button goMarket;
@@ -33,7 +34,7 @@ public class GameMainActivity extends AppCompatActivity {
         saveGame = findViewById(R.id.button8);
         exit = findViewById(R.id.button3);
 
-        String planetName = getPlanetName();
+        String planetName = getPlanetName(getPlayerLocation());
         startMessage.setText("Welcome Trader! You are currently located on the planet " + planetName
                 + " and you have started with a Gnat Ship, 1000 credits.\n What to do?");
 
@@ -56,7 +57,7 @@ public class GameMainActivity extends AppCompatActivity {
         saveGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean saveSuccess = gameViewModel.saveGame();
+                boolean saveSuccess = tempViewModel.saveGame();
                 if (saveSuccess) {
                     Toast.makeText(getApplication(), "Game saved", Toast.LENGTH_LONG).show();
                 } else {
@@ -88,8 +89,7 @@ public class GameMainActivity extends AppCompatActivity {
         return gameViewModel.getPlayerLocation();
     }
 
-    private String getPlanetName() {
-        Planet planet = getPlayerLocation();
+    private String getPlanetName(Planet planet) {
         return planet.getPlanetName();
     }
 }
