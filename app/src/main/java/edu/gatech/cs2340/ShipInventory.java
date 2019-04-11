@@ -2,7 +2,7 @@ package edu.gatech.cs2340;
 
 import java.io.Serializable;
 
-public class ShipInventory implements Serializable {
+ class ShipInventory implements Serializable {
     private int numWater;
     private int numFurs;
     private int numFood;
@@ -17,7 +17,7 @@ public class ShipInventory implements Serializable {
     private int size;
     private static final int initialMaxCargo = 15;
 
-    public ShipInventory() {
+    ShipInventory() {
         numWater = 0;
         numFurs = 0;
         numFood = 0;
@@ -32,111 +32,111 @@ public class ShipInventory implements Serializable {
         size = 0;
     }
 
-    public int getNumWater() { return numWater; }
+    int getNumWater() { return numWater; }
 
-    public int getNumFurs() { return numFurs; }
+    int getNumFurs() { return numFurs; }
 
-    public int getNumFood() { return numFood; }
+    int getNumFood() { return numFood; }
 
-    public int getNumOre() { return numOre; }
+    int getNumOre() { return numOre; }
 
-    public int getNumGames() { return numGames; }
+    int getNumGames() { return numGames; }
 
-    public int getNumFirearms() { return numFirearms; }
+    int getNumFirearms() { return numFirearms; }
 
-    public int getNumMedicine() { return numMedicine; }
+    int getNumMedicine() { return numMedicine; }
 
-    public int getNumMachines() { return numMachines; }
+    int getNumMachines() { return numMachines; }
 
-    public int getNumNarcotics() { return numNarcotics; }
+    int getNumNarcotics() { return numNarcotics; }
 
-    public int getNumRobots() { return numRobots; }
+    int getNumRobots() { return numRobots; }
 
-    public void addWater(int add) {
+    void addWater(int add) {
         numWater += add;
     }
 
-    public void addFurs(int add) {
+    void addFurs(int add) {
         numFurs += add;
     }
 
-    public void addFood(int add) {
+    void addFood(int add) {
         numFood += add;
     }
 
-    public void addOre(int add) {
+    void addOre(int add) {
         numOre += add;
     }
 
-    public void addGames(int add) {
+    void addGames(int add) {
         numGames += add;
     }
 
-    public void addFirearms(int add) {
+    void addFirearms(int add) {
         numFirearms += add;
     }
 
-    public void addMedicine(int add) {
+    void addMedicine(int add) {
         numMedicine += add;
     }
 
-    public void addMachines(int add) {
+    void addMachines(int add) {
         numMachines += add;
     }
 
-    public void addNarcotics(int add) {
+    void addNarcotics(int add) {
         numNarcotics += add;
     }
 
-    public void addRobots(int add) {
+    void addRobots(int add) {
         numRobots += add;
     }
 
-    public void removeWater(int add) {
+    void removeWater(int add) {
         numWater -= add;
     }
 
-    public void removeFurs(int add) {
+    void removeFurs(int add) {
         numFurs -= add;
     }
 
-    public void removeFood(int add) {
+    void removeFood(int add) {
         numFood -= add;
     }
 
-    public void removeOre(int add) {
+    void removeOre(int add) {
         numOre -= add;
     }
 
-    public void removeGames(int add) {
+    void removeGames(int add) {
         numGames -= add;
     }
 
-    public void removeFirearms(int add) {
+    void removeFirearms(int add) {
         numFirearms -= add;
     }
 
-    public void removeMedicine(int add) {
+    void removeMedicine(int add) {
         numMedicine -= add;
     }
 
-    public void removeMachines(int add) {
+    void removeMachines(int add) {
         numMachines -= add;
     }
 
-    public void removeNarcotics(int add) {
+    void removeNarcotics(int add) {
         numNarcotics -= add;
     }
 
-    public void removeRobots(int add) {
+    void removeRobots(int add) {
         numRobots -= add;
     }
 
-    public int getMaxCargo() { return maxCargo; }
+    int getMaxCargo() { return maxCargo; }
 
-    public int getSize() { return size; }
+    int getSize() { return size; }
 
-    public void setSize(int size) { this.size = size; }
+    void setSize(int size) { this.size = size; }
 
     //public void setMaxCargo(int maxCargo) { this.maxCargo = maxCargo; }
 }

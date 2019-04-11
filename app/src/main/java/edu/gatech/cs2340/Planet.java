@@ -110,7 +110,7 @@ public class Planet implements Serializable {
         }
     }
 
-    public void createPlanet(int x, int y) {
+    void createPlanet(int x, int y) {
         if ((x >= 0) && (y >= 0)){
             xPlanet = x;
             yPlanet = y;
@@ -122,15 +122,15 @@ public class Planet implements Serializable {
         }
 
     }
-    public int getxPlanet() { return xPlanet; }
+    int getxPlanet() { return xPlanet; }
 
-    public int getyPlanet() { return yPlanet; }
+    int getyPlanet() { return yPlanet; }
 
-    public String getPlanetName() { return planetName; }
+    String getPlanetName() { return planetName; }
 
-    public String getResources() { return resources; }
+    String getResources() { return resources; }
 
-    public String getTechLevel() { return techLevel; }
+    String getTechLevel() { return techLevel; }
 
     /*@Override
     public String toString() {
