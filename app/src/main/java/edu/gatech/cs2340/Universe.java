@@ -2,7 +2,9 @@ package edu.gatech.cs2340;
 
 import java.io.Serializable;
 import java.util.Random;
-
+/**
+ * Class for Universe creation
+ */
 public class Universe implements Serializable {
     //private final int xLow;
     //private final int xHigh;
@@ -16,7 +18,10 @@ public class Universe implements Serializable {
     private static final int spreader = 50;
 
     private final SolarSystem[] solarSystems;
-
+    /**
+     * Method that creates a Universe
+     *
+     */
     public Universe() {
         //xHigh = xBound;
         //xLow = 0;
@@ -27,7 +32,9 @@ public class Universe implements Serializable {
         nameHelp = rand.nextInt(nameDivisor);
         solarSystems = new SolarSystem[5];
     }
-
+    /**
+     * Method to add a SolarSystem to an existing Universe
+     */
     public void addSolarSystem() {
         solarSystems[numOfSS] = new SolarSystem(numOfSS * spreader, nameHelp % nameDivisor);
         numOfSS++;
@@ -41,7 +48,10 @@ public class Universe implements Serializable {
     public int getyHigh() { return yHigh; }
 
     public int getyLow() { return yLow; }*/
-
+    /**
+     * Getter Method for Solar System
+     * @return an array of the SolarSystem
+     */
     public SolarSystem[] getSolarSystems() { return solarSystems.clone(); }
 
     /*private String getSSData(SolarSystem solarSystem) {

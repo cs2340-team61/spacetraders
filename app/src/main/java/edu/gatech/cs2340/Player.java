@@ -1,7 +1,9 @@
 package edu.gatech.cs2340;
 
 import java.io.Serializable;
-
+/**
+ * Class to create Player
+ */
 public class Player implements Serializable {
 
     private final String playerName;
@@ -19,7 +21,14 @@ public class Player implements Serializable {
     private final int skillFighter;
 
     private final int skillTrader;
-
+    /**
+     * Method that creates Player
+     * @param pN player name
+     * @param sE skill points
+     * @param sF skill points
+     * @param sP skill points
+     * @param sT skill points
+     */
     public Player(String pN, int sE, int sP, int sF, int sT) {
         playerName = pN;
         shipOwned = Ship.Gnat;
@@ -29,11 +38,20 @@ public class Player implements Serializable {
         skillPilot = sP;
         skillTrader = sT;
     }
-
+    /**
+     * Getter Method for player name
+     * @return player's name
+     */
     public String getPlayerName() { return playerName; }
-
+    /**
+     * Getter Method ship
+     * @return ship
+     */
     public Ship getShipOwned() { return shipOwned; }
-
+    /**
+     * Setter Method for ship
+     * @param shipOwned  ship variable
+     */
     public void setShipOwned(Ship shipOwned) { this.shipOwned = shipOwned; }
 
     int getCredits() { return credits; }
