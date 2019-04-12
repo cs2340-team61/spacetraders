@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * class that shows the UI for selecting whether to buy and sell items
+ */
 public class MarketplaceActivity extends AppCompatActivity {
 
     @Override

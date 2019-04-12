@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * class that shows the UI for the situation in which
+ * you lost to the pirate
+ */
 public class PirateLoseActivity extends AppCompatActivity {
 
     @Override

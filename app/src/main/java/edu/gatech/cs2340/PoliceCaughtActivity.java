@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * class that shows the UI for getting caught by the police
+ */
 public class PoliceCaughtActivity extends AppCompatActivity {
 
     private final MarketViewModel marketViewModel = new MarketViewModel(getApplication());

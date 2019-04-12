@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * class that shows the UI for viewing the players current inventory
+ */
 public class ShipInventoryActivity extends AppCompatActivity {
     private final MarketViewModel marketViewModel = new MarketViewModel(getApplication());
 

@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * class that shows the UI for selecting a planet to travel to
+ */
 public class TravelActivity extends AppCompatActivity {
     private final TravelViewModel travelViewModel = new TravelViewModel(getApplication());
     private TextView currentFuel;

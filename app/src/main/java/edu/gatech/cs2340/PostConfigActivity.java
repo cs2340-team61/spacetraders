@@ -7,6 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * class that shows the UI for the players current skill points, difficulty, and
+ * starting credits
+ */
 public class PostConfigActivity extends AppCompatActivity {
     private final GameViewModel gameViewModel = new GameViewModel(getApplication());
     private final Player player = gameViewModel.getPlayer();
@@ -22,6 +26,7 @@ public class PostConfigActivity extends AppCompatActivity {
         TextView tSkill = findViewById(R.id.trader_config);
         TextView diffG = findViewById(R.id.gameDiff);
         TextView pName = findViewById(R.id.playerName);
+        TextView shipName = findViewById(R.id.shipName);
 
         eSkill.setText("" + getSkillEngineer());
         pSkill.setText("" + getSkillPilot());
@@ -30,6 +35,7 @@ public class PostConfigActivity extends AppCompatActivity {
         Difficulty difficulty = getDifficulty();
         diffG.setText("Game Difficulty: " + getDiffString(difficulty));
         pName.setText(player.getPlayerName());
+        shipName.setText(gameViewModel.getShipName());
 
         Button continueB = findViewById(R.id.button_cont);
         continueB.setOnClickListener(new View.OnClickListener() {

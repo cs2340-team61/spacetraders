@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * class that shows the UI for selling items at the marketplace
+ */
 public class MarketSellActivity extends AppCompatActivity {
     private MarketViewModel marketViewModel;
     private TextView credLeft;

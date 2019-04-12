@@ -8,6 +8,9 @@ import android.widget.Button;
 
 import java.util.Random;
 
+/**
+ * class that shows the UI for randomly encountering the police
+ */
 public class PoliceActivity extends AppCompatActivity {
 
     @Override

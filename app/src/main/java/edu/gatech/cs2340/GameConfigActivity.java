@@ -11,6 +11,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * class that shows the UI for game configuration
+ */
 public class GameConfigActivity extends AppCompatActivity {
     private GameViewModel gameViewModel;
     private EditText playerName;

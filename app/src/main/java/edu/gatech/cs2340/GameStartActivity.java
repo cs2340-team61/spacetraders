@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * class that shows the UI for the start screen
+ */
 public class GameStartActivity extends AppCompatActivity {
     private GameViewModel gameViewModel;
 

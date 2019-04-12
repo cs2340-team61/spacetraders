@@ -34,7 +34,7 @@ class GameViewModel extends AndroidViewModel {
         setInventory(new ShipInventory());
         Player tempPlayer = getPlayer();
         Universe tempUniverse = getUniverse();
-        Log.d("APP", tempPlayer.toString());
+        Log.d("APP", getPlayerString(tempPlayer));
         Log.d("APP", tempUniverse.toString());
     }
 
@@ -110,6 +110,14 @@ class GameViewModel extends AndroidViewModel {
 
     private void setGame(Model model, Game game) {
         model.setMyGame(game);
+    }
+
+    private String getPlayerString(Player player) {
+        return player.toString();
+    }
+
+    String getShipName() {
+        return model.getShipName();
     }
 
 

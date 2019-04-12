@@ -1,5 +1,7 @@
 package edu.gatech.cs2340;
 
+import android.support.annotation.NonNull;
+
 import java.io.Serializable;
 /**
  * Class to create Player
@@ -8,7 +10,7 @@ public class Player implements Serializable {
 
     private final String playerName;
 
-    private Ship shipOwned;
+    private final Ship shipOwned;
 
     //private ShipInventory shipInventory;
 
@@ -43,16 +45,14 @@ public class Player implements Serializable {
      * @return player's name
      */
     public String getPlayerName() { return playerName; }
-    /**
-     * Getter Method ship
-     * @return ship
-     */
-    public Ship getShipOwned() { return shipOwned; }
-    /**
-     * Setter Method for ship
-     * @param shipOwned  ship variable
-     */
-    public void setShipOwned(Ship shipOwned) { this.shipOwned = shipOwned; }
+
+    //Ship getShipOwned() { return shipOwned; }
+
+    String getShipString() {
+        return shipOwned.getShp();
+    }
+
+    //public void setShipOwned(Ship shipOwned) { this.shipOwned = shipOwned; }
 
     int getCredits() { return credits; }
 
@@ -76,6 +76,7 @@ public class Player implements Serializable {
 
     //public ShipInventory getShipInventory() { return shipInventory; }
 
+    @NonNull
     @Override
     public String toString() {
         return String.format("\nPlayer Name: %s, \nShip: %s, \ncredits: %d, \nEngineer Skill: %s," +

@@ -8,6 +8,9 @@ import android.widget.Button;
 
 import java.util.Random;
 
+/**
+ * class that shows the UI for randomly encountering a trader
+ */
 public class TraderActivity extends AppCompatActivity {
     private static final int magic500 = 500;
 

@@ -350,4 +350,8 @@ public class Game implements Serializable {
     public int getCredits() {
         return player.getCredits();
     }
+
+    String getShipName() {
+        return player.getShipString();
+    }
 }

@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * class that shows the main menu for options in our application
+ */
 public class GameMainActivity extends AppCompatActivity {
 
     private final GameViewModel gameViewModel = new GameViewModel(getApplication());

@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import java.util.Random;
 
+/**
+ * class that shows the UI a random encounter with a pirate
+ */
 public class PirateActivity extends AppCompatActivity {
 
     private final TravelViewModel travelViewModel = new TravelViewModel(getApplication());
