@@ -19,9 +19,9 @@ public class JUnitTestSolarSystem {
     @Test
     public void Correct_String_Returned(){
         SolarSystem test1 = new SolarSystem(1,-1);
-        assertEquals(test1.getSsName(), null);
+        assertEquals(test1.getSsName(), "");
         SolarSystem test2 = new SolarSystem(0, 25);
-        assertEquals(test2.getSsName(), null);
+        assertEquals(test2.getSsName(), "");
         
         
     }

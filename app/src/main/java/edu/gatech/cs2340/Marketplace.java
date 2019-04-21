@@ -40,7 +40,7 @@ class Marketplace implements Serializable {
 
     private int getVar() { return this.Var;}
 
-    public void techLevel(String string) {
+    void techLevel(String string) {
         level = -1;
         if ("Pre-Agriculture".equals(string)) {
             level = 0;
@@ -69,81 +69,81 @@ class Marketplace implements Serializable {
 
      }
 
-    public int getLevel() {
+    int getLevel() {
         return level;
     }
 
-    public void Water() {
+    void Water() {
         MTLP = 0;
         BasePrice = waterP;
         IPL = waterIPL;
         Var = 4;
     }
 
-    public void Furs() {
+    void Furs() {
         MTLP = 0;
         BasePrice = fursP;
         IPL = fursIPL;
         Var = 10;
     }
 
-    public void Food() {
+    void Food() {
         MTLP = 1;
         BasePrice = foodP;
         IPL = foodIPL;
         Var = 5;
     }
 
-    public void Ore() {
+    void Ore() {
         MTLP = 2;
         BasePrice = oreP;
         IPL = oreIPL;
         Var = 10;
     }
 
-    public void Games() {
+    void Games() {
         MTLP = 3;
         BasePrice = gamesP;
         IPL = gamesIPL;
         Var = 5;
     }
 
-    public void Firearms() {
+    void Firearms() {
         MTLP = 3;
         BasePrice = firearmsP;
         IPL = firearmsIPL;
         Var = 100;
     }
 
-    public void Medicine() {
+    void Medicine() {
         MTLP = 4;
         BasePrice = medicinesP;
         IPL = medicinesIPL;
         Var = 10;
     }
 
-    public void Machines() {
+    void Machines() {
         MTLP = 4;
         BasePrice = machinesP;
         IPL = machinesIPL;
         Var = 5;
     }
 
-    public void Narcotics() {
+    void Narcotics() {
         MTLP = 5;
         BasePrice = narcoticsP;
         IPL = narcoticsIPL;
         Var = var;
     }
 
-    public void Robots() {
+    void Robots() {
         MTLP = 6;
         BasePrice = robotsP;
         IPL = robotsIPL;
         Var = 100;
     }
 
-    public int calculatePrice() {
+    int calculatePrice() {
         Random rand = new Random();
         int buffer = (rand.nextInt(getVar()) + 1);
         return getBasePrice() + (getIPL() * (level - getMTLP())) + (buffer);

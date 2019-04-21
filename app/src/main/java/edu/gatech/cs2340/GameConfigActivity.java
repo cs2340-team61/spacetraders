@@ -67,115 +67,63 @@ public class GameConfigActivity extends AppCompatActivity {
         upE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ((Integer.parseInt(skillE.getText().toString()) < skillMax)
-                        && (Integer.parseInt(PointsR.getText().toString()) > 0)) {
-                    skillE.setText("" + (Integer.parseInt(skillE.getText().toString()) + 1));
-                    PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) - 1));
-                }
+                checkUpE(skillE);
             }
         });
 
         upP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ((Integer.parseInt(skillP.getText().toString()) < skillMax)
-                        && (Integer.parseInt(PointsR.getText().toString()) > 0)) {
-                    skillP.setText("" + (Integer.parseInt(skillP.getText().toString()) + 1));
-                    PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) - 1));
-                }
+                checkUpP(skillP);
             }
         });
 
         upF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ((Integer.parseInt(skillF.getText().toString()) < skillMax)
-                        && (Integer.parseInt(PointsR.getText().toString()) > 0)) {
-                    skillF.setText("" + (Integer.parseInt(skillF.getText().toString()) + 1));
-                    PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) - 1));
-                }
+                checkUpF(skillF);
             }
         });
 
         upT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ((Integer.parseInt(skillT.getText().toString()) < skillMax)
-                        && (Integer.parseInt(PointsR.getText().toString()) > 0)) {
-                    skillT.setText("" + (Integer.parseInt(skillT.getText().toString()) + 1));
-                    PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) - 1));
-                }
+                checkUpT(skillT);
             }
         });
 
         downE.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ((Integer.parseInt(skillE.getText().toString()) > 0)
-                        && (Integer.parseInt(PointsR.getText().toString()) < skillMax)) {
-                    skillE.setText("" + (Integer.parseInt(skillE.getText().toString()) - 1));
-                    PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) + 1));
-                }
+                checkDownE(skillE);
             }
         });
 
         downP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ((Integer.parseInt(skillP.getText().toString()) > 0)
-                        && (Integer.parseInt(PointsR.getText().toString()) < skillMax)) {
-                    skillP.setText("" + (Integer.parseInt(skillP.getText().toString()) - 1));
-                    PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) + 1));
-                }
+                checkDownP(skillP);
             }
         });
 
         downF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ((Integer.parseInt(skillF.getText().toString()) > 0)
-                        && (Integer.parseInt(PointsR.getText().toString()) < skillMax)) {
-                    skillF.setText("" + (Integer.parseInt(skillF.getText().toString()) - 1));
-                    PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) + 1));
-                }
+                checkDownF(skillF);
             }
         });
 
         downT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ((Integer.parseInt(skillT.getText().toString()) > 0)
-                        && (Integer.parseInt(PointsR.getText().toString()) < skillMax)) {
-                    skillT.setText("" + (Integer.parseInt(skillT.getText().toString()) - 1));
-                    PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) + 1));
-                }
+                checkDownT(skillT);
             }
         });
 
         startGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = playerName.getText().toString();
-                int sE = Integer.parseInt(skillE.getText().toString());
-                int sP = Integer.parseInt(skillP.getText().toString());
-                int sF = Integer.parseInt(skillF.getText().toString());
-                int sT = Integer.parseInt(skillT.getText().toString());
-                Difficulty dif = (Difficulty) gameDiffSpin.getSelectedItem();
-                if ((sT + sP + sF + sE) == skillMax) {
-                    gameViewModel = new GameViewModel(getApplication());
-                    int[] skillArray = new int[4];
-                    skillArray[0] = sE;
-                    skillArray[1] = sP;
-                    skillArray[2] = sF;
-                    skillArray[3] = sT;
-                    gameViewModel.createGame(name, skillArray, dif);
-                    postConfig();
-
-                    finish();
-                } else {
-                    (Toast.makeText(getApplication(), "Totals Allocation must be equal to 16!",
-                            Toast.LENGTH_LONG)).show();
-                }
+                startGameCheck();
             }
         });
 
@@ -193,6 +141,94 @@ public class GameConfigActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void startGameCheck() {
+        String name = playerName.getText().toString();
+        int sE = Integer.parseInt(skillE.getText().toString());
+        int sP = Integer.parseInt(skillP.getText().toString());
+        int sF = Integer.parseInt(skillF.getText().toString());
+        int sT = Integer.parseInt(skillT.getText().toString());
+        Difficulty dif = (Difficulty) gameDiffSpin.getSelectedItem();
+        if ((sT + sP + sF + sE) == skillMax) {
+            gameViewModel = new GameViewModel(getApplication());
+            int[] skillArray = new int[4];
+            skillArray[0] = sE;
+            skillArray[1] = sP;
+            skillArray[2] = sF;
+            skillArray[3] = sT;
+            gameViewModel.createGame(name, skillArray, dif);
+            postConfig();
+
+            finish();
+        } else {
+            (Toast.makeText(getApplication(), "Totals Allocation must be equal to 16!",
+                    Toast.LENGTH_LONG)).show();
+        }
+    }
+
+    private void checkDownT(TextView skillT) {
+        if ((Integer.parseInt(skillT.getText().toString()) > 0)
+                && (Integer.parseInt(PointsR.getText().toString()) < skillMax)) {
+            skillT.setText("" + (Integer.parseInt(skillT.getText().toString()) - 1));
+            PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) + 1));
+        }
+    }
+
+    private void checkDownF(TextView skillF) {
+        if ((Integer.parseInt(skillF.getText().toString()) > 0)
+                && (Integer.parseInt(PointsR.getText().toString()) < skillMax)) {
+            skillF.setText("" + (Integer.parseInt(skillF.getText().toString()) - 1));
+            PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) + 1));
+        }
+    }
+
+    private void checkDownP(TextView skillP) {
+        if ((Integer.parseInt(skillP.getText().toString()) > 0)
+                && (Integer.parseInt(PointsR.getText().toString()) < skillMax)) {
+            skillP.setText("" + (Integer.parseInt(skillP.getText().toString()) - 1));
+            PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) + 1));
+        }
+    }
+
+    private void checkDownE(TextView skillE) {
+        if ((Integer.parseInt(skillE.getText().toString()) > 0)
+                && (Integer.parseInt(PointsR.getText().toString()) < skillMax)) {
+            skillE.setText("" + (Integer.parseInt(skillE.getText().toString()) - 1));
+            PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) + 1));
+        }
+    }
+
+    private void checkUpT(TextView skillT) {
+        if ((Integer.parseInt(skillT.getText().toString()) < skillMax)
+                && (Integer.parseInt(PointsR.getText().toString()) > 0)) {
+            skillT.setText("" + (Integer.parseInt(skillT.getText().toString()) + 1));
+            PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) - 1));
+        }
+    }
+
+    private void checkUpF(TextView skillF) {
+        if ((Integer.parseInt(skillF.getText().toString()) < skillMax)
+                && (Integer.parseInt(PointsR.getText().toString()) > 0)) {
+            skillF.setText("" + (Integer.parseInt(skillF.getText().toString()) + 1));
+            PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) - 1));
+        }
+    }
+
+    private void checkUpP(TextView skillP) {
+        if ((Integer.parseInt(skillP.getText().toString()) < skillMax)
+                && (Integer.parseInt(PointsR.getText().toString()) > 0)) {
+            skillP.setText("" + (Integer.parseInt(skillP.getText().toString()) + 1));
+            PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) - 1));
+        }
+    }
+
+    private void checkUpE(TextView skillE) {
+        if ((Integer.parseInt(skillE.getText().toString()) < skillMax)
+                && (Integer.parseInt(PointsR.getText().toString()) > 0)) {
+            skillE.setText("" + (Integer.parseInt(skillE.getText().toString()) + 1));
+            PointsR.setText("" + (Integer.parseInt(PointsR.getText().toString()) - 1));
+        }
     }
 
     private void postConfig() {
