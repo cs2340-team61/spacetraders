@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".BankActivity"></activity>
         <activity android:name=".PoliceCaughtActivity" />
         <activity android:name=".PirateLoseActivity" />
         <activity android:name=".TraderActivity" />
