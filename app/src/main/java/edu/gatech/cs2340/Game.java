@@ -35,6 +35,7 @@ public class Game implements Serializable {
     private final Travel travel;
     private final ShipStats shipStats;
     private final RandomEvent rE;
+    private final Bank bank;
     /**
      * Method which initializes travel, ship stats,
      * and Random Events which might occur.
@@ -43,6 +44,7 @@ public class Game implements Serializable {
         travel = new Travel();
         shipStats = new ShipStats();
         rE = new RandomEvent();
+        bank = new Bank();
     }
     /**
      * Method which adds a Solar System to
@@ -353,5 +355,17 @@ public class Game implements Serializable {
 
     String getShipName() {
         return player.getShipString();
+    }
+
+    void deposit(int amount) {
+        bank.deposit(amount);
+    }
+
+    void withdraw(int amount) {
+        bank.withdraw(amount);
+    }
+
+    int getBankCredits() {
+        return bank.getBankCredits();
     }
 }

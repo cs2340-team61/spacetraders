@@ -16,4 +16,8 @@ public class Bank {
         bankCredits += bankCredits * interest;
     }
 
+    int getBankCredits() {
+        return bankCredits;
+    }
+
 }
