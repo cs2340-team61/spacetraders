@@ -32,6 +32,8 @@ public class BankActivity extends AppCompatActivity {
                 int num = 0;
                 try {
                     num = Integer.parseInt(withdrawEdit.getText().toString());
+                } catch (Exception e) {
+                    throw new IndexOutOfBoundsException();
                 }
                 if(num <= bankViewModel.getBankCredits()) {
 
