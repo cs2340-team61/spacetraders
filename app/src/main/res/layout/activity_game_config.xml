@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -127,14 +128,16 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="16"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/skillTitle"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.32" />
+        app:layout_constraintVertical_bias="0.323" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/trader_skill"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
@@ -151,6 +154,7 @@
         app:layout_constraintVertical_bias="0.679" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/fight_skill"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
@@ -175,14 +179,16 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="0"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintHorizontal_bias="0.219"
         app:layout_constraintStart_toEndOf="@+id/skillPilot"
         app:layout_constraintTop_toBottomOf="@+id/engineer_skill"
         app:layout_constraintVertical_bias="0.091" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/gameDiff_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -193,6 +199,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
+
         android:id="@+id/diff_spinner"
         android:layout_width="361dp"
         android:layout_height="20dp"
@@ -208,6 +215,7 @@
         app:layout_constraintVertical_bias="0.822" />
 
     <EditText
+        android:textColor="@android:color/white"
         android:id="@+id/player_name_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -227,6 +235,7 @@
         app:layout_constraintVertical_bias="0.026" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/textView"
         android:layout_width="240dp"
         android:layout_height="29dp"
@@ -239,6 +248,7 @@
         app:layout_constraintVertical_bias="0.152" />
 
     <Button
+
         android:id="@+id/start_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -254,17 +264,19 @@
     <TextView
         android:id="@+id/skillTitle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
         android:text="Skill Point Allocation --------- Available Points:"
+        android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintHorizontal_bias="0.155"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/player_name_input" />
 
     <TextView
+
+        android:textColor="@android:color/white"
         android:id="@+id/skillEngineer"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
@@ -281,6 +293,7 @@
         app:layout_constraintVertical_bias="0.395" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/skillPilot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -297,6 +310,7 @@
         app:layout_constraintVertical_bias="0.487" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/skillFighter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -317,14 +331,16 @@
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="192dp"
+        android:layout_marginBottom="164dp"
         android:text="Trader Skill Points:"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.108"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/engineer_skill"
         android:layout_width="wrap_content"
         android:layout_height="20dp"

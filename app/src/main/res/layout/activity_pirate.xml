@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +8,7 @@
     tools:context=".PirateActivity">
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/startText"
         android:layout_width="245dp"
         android:layout_height="84dp"
@@ -31,12 +33,14 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Pirate Ship Health:"
+        android:textColor="@android:color/white"
+        android:textSize="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.652"
+        app:layout_constraintHorizontal_bias="0.229"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.142" />
+        app:layout_constraintVertical_bias="0.13" />
 
     <TextView
         android:id="@+id/pHealth"
@@ -47,12 +51,14 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="228dp"
         android:text="100"
+        android:textColor="@android:color/white"
+        android:textSize="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.824"
+        app:layout_constraintHorizontal_bias="0.891"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.207" />
+        app:layout_constraintVertical_bias="0.192" />
 
     <TextView
         android:id="@+id/playerShipHealth"
@@ -63,12 +69,14 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="Your Ship Health: "
+        android:textColor="@android:color/white"
+        android:textSize="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.028"
+        app:layout_constraintHorizontal_bias="0.212"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.747" />
+        app:layout_constraintVertical_bias="0.574" />
 
     <TextView
         android:id="@+id/numHealth"
@@ -79,12 +87,14 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="100"
+        android:textColor="@android:color/white"
+        android:textSize="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.35"
+        app:layout_constraintHorizontal_bias="0.891"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.747" />
+        app:layout_constraintVertical_bias="0.574" />
 
     <Button
         android:id="@+id/attackButton"

@@ -1,5 +1,6 @@
 package edu.gatech.cs2340;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,7 @@ public class BankActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.space); mp.start();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bank);
 

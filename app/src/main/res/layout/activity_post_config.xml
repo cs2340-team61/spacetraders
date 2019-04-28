@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -22,6 +23,7 @@
         app:layout_constraintVertical_bias="0.821" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/playerName"
         android:layout_width="240dp"
         android:layout_height="29dp"
@@ -34,6 +36,7 @@
         app:layout_constraintVertical_bias="0.172" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/engineer_config"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
@@ -50,6 +53,7 @@
         app:layout_constraintVertical_bias="0.395" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/skillFighterC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,6 +70,7 @@
         app:layout_constraintVertical_bias="0.579" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/trader_config"
         android:layout_width="9dp"
         android:layout_height="20dp"
@@ -82,6 +87,7 @@
         app:layout_constraintVertical_bias="0.677" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/skillEngineerC"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
@@ -98,6 +104,7 @@
         app:layout_constraintVertical_bias="0.395" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/skillTraderC"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
@@ -110,6 +117,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/skillPilotC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -126,6 +134,7 @@
         app:layout_constraintVertical_bias="0.487" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/pilot_config"
         android:layout_width="15dp"
         android:layout_height="19dp"
@@ -142,6 +151,7 @@
         app:layout_constraintVertical_bias="0.637" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/fight_config"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
@@ -174,6 +184,7 @@
         app:layout_constraintVertical_bias="0.971" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/textView2"
         android:layout_width="125dp"
         android:layout_height="37dp"
@@ -206,6 +217,7 @@
         app:layout_constraintVertical_bias="0.971" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/shipOwned"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -222,6 +234,7 @@
         app:layout_constraintVertical_bias="0.293" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/shipName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

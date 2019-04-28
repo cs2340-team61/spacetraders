@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -69,6 +70,7 @@
         app:layout_constraintVertical_bias="0.818" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/fuelCost15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -85,6 +87,7 @@
         app:layout_constraintVertical_bias="0.683" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/fuelCost14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -101,6 +104,7 @@
         app:layout_constraintVertical_bias="0.656" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/fuelCost13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -117,6 +121,7 @@
         app:layout_constraintVertical_bias="0.629" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/fuelCost12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -133,6 +138,7 @@
         app:layout_constraintVertical_bias="0.568" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/fuelCost11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -149,6 +155,7 @@
         app:layout_constraintVertical_bias="0.541" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/fuelCost10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -165,6 +172,7 @@
         app:layout_constraintVertical_bias="0.514" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/fuelCost9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -181,6 +189,7 @@
         app:layout_constraintVertical_bias="0.452" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/fuelCost8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -197,6 +206,7 @@
         app:layout_constraintVertical_bias="0.425" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/fuelCost7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -213,6 +223,7 @@
         app:layout_constraintVertical_bias="0.397" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/fuelCost6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -229,6 +240,7 @@
         app:layout_constraintVertical_bias="0.326" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/fuelCost5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -245,6 +257,7 @@
         app:layout_constraintVertical_bias="0.298" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/fuelCost4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -261,6 +274,7 @@
         app:layout_constraintVertical_bias="0.271" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/fuelCost3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -277,6 +291,7 @@
         app:layout_constraintVertical_bias="0.219" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/fuelCost2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -293,6 +308,7 @@
         app:layout_constraintVertical_bias="0.182" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/distanceP15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -309,6 +325,7 @@
         app:layout_constraintVertical_bias="0.683" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/distanceP14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -325,6 +342,7 @@
         app:layout_constraintVertical_bias="0.656" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/distanceP13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -341,6 +359,7 @@
         app:layout_constraintVertical_bias="0.629" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/distanceP12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -357,6 +376,7 @@
         app:layout_constraintVertical_bias="0.568" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/distanceP11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -373,6 +393,7 @@
         app:layout_constraintVertical_bias="0.541" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/distanceP10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -389,6 +410,7 @@
         app:layout_constraintVertical_bias="0.514" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/distanceP9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -405,6 +427,7 @@
         app:layout_constraintVertical_bias="0.452" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/distanceP8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -421,6 +444,7 @@
         app:layout_constraintVertical_bias="0.425" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/distanceP7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -437,6 +461,7 @@
         app:layout_constraintVertical_bias="0.397" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/distanceP6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -453,6 +478,7 @@
         app:layout_constraintVertical_bias="0.326" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/distanceP5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -469,6 +495,7 @@
         app:layout_constraintVertical_bias="0.298" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/distanceP4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -485,6 +512,7 @@
         app:layout_constraintVertical_bias="0.271" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/distanceP3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -501,6 +529,7 @@
         app:layout_constraintVertical_bias="0.209" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/distanceP2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -517,6 +546,7 @@
         app:layout_constraintVertical_bias="0.182" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/distanceP1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -533,6 +563,7 @@
         app:layout_constraintVertical_bias="0.155" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/fuelCost1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -549,6 +580,7 @@
         app:layout_constraintVertical_bias="0.155" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/planet15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -565,6 +597,7 @@
         app:layout_constraintVertical_bias="0.683" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/planet14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -581,6 +614,7 @@
         app:layout_constraintVertical_bias="0.656" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/planet12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -597,6 +631,7 @@
         app:layout_constraintVertical_bias="0.568" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/planet13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -613,6 +648,7 @@
         app:layout_constraintVertical_bias="0.629" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/planet10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -629,6 +665,7 @@
         app:layout_constraintVertical_bias="0.514" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/planet11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -645,6 +682,7 @@
         app:layout_constraintVertical_bias="0.541" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/planet9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -661,6 +699,7 @@
         app:layout_constraintVertical_bias="0.452" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/planet8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -677,6 +716,7 @@
         app:layout_constraintVertical_bias="0.425" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/planet7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -693,6 +733,7 @@
         app:layout_constraintVertical_bias="0.397" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/planet5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -709,6 +750,7 @@
         app:layout_constraintVertical_bias="0.271" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/planet6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -725,6 +767,7 @@
         app:layout_constraintVertical_bias="0.326" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/planet4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -741,6 +784,7 @@
         app:layout_constraintVertical_bias="0.298" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/planet3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -757,6 +801,7 @@
         app:layout_constraintVertical_bias="0.209" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/solarSystem1"
         android:layout_width="103dp"
         android:layout_height="24dp"
@@ -773,6 +818,7 @@
         app:layout_constraintVertical_bias="0.122" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/solarSystem2"
         android:layout_width="103dp"
         android:layout_height="24dp"
@@ -789,6 +835,7 @@
         app:layout_constraintVertical_bias="0.238" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/solarSystem3"
         android:layout_width="103dp"
         android:layout_height="24dp"
@@ -805,6 +852,7 @@
         app:layout_constraintVertical_bias="0.366" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/solarSystem4"
         android:layout_width="103dp"
         android:layout_height="24dp"
@@ -821,6 +869,7 @@
         app:layout_constraintVertical_bias="0.483" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/solarSystem5"
         android:layout_width="103dp"
         android:layout_height="24dp"
@@ -837,6 +886,7 @@
         app:layout_constraintVertical_bias="0.599" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/distance"
         android:layout_width="83dp"
         android:layout_height="27dp"
@@ -852,6 +902,7 @@
         app:layout_constraintVertical_bias="0.078" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/fuelCost"
         android:layout_width="70dp"
         android:layout_height="27dp"
@@ -868,6 +919,7 @@
         app:layout_constraintVertical_bias="0.078" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/planet1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -884,6 +936,7 @@
         app:layout_constraintVertical_bias="0.155" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/planet2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -900,6 +953,7 @@
         app:layout_constraintVertical_bias="0.182" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/solarSystemC"
         android:layout_width="90dp"
         android:layout_height="25dp"
@@ -916,6 +970,7 @@
         app:layout_constraintVertical_bias="0.949" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/planetC"
         android:layout_width="50dp"
         android:layout_height="25dp"
@@ -932,6 +987,7 @@
         app:layout_constraintVertical_bias="0.885" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/ssChoice"
         android:layout_width="37dp"
         android:layout_height="31dp"
@@ -948,6 +1004,7 @@
         app:layout_constraintVertical_bias="0.82" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/pChoice"
         android:layout_width="37dp"
         android:layout_height="31dp"
@@ -996,6 +1053,7 @@
         app:layout_constraintVertical_bias="0.976" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/shipHealth"
         android:layout_width="92dp"
         android:layout_height="22dp"
@@ -1012,6 +1070,7 @@
         app:layout_constraintVertical_bias="0.011" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/shipFuel"
         android:layout_width="92dp"
         android:layout_height="23dp"
@@ -1028,6 +1087,7 @@
         app:layout_constraintVertical_bias="0.064" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/currentHealth"
         android:layout_width="36dp"
         android:layout_height="22dp"
@@ -1044,6 +1104,7 @@
         app:layout_constraintVertical_bias="0.011" />
 
     <TextView
+        android:textColor="@android:color/white"
         android:id="@+id/currentFuel"
         android:layout_width="36dp"
         android:layout_height="22dp"
