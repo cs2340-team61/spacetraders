@@ -36,4 +36,10 @@ public class BankViewModel extends AndroidViewModel {
     int getBankCredits() {
         return model.getBankCredits();
     }
+
+    void setCredits(int amount) { model.getPlayer().setCredits(amount);}
+
+    void setBankCredits(int amount) {model.setBankCredits(amount);}
+
+
 }

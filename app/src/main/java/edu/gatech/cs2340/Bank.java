@@ -20,4 +20,6 @@ public class Bank {
         return bankCredits;
     }
 
+    void setBankCredits(int amount) {bankCredits = amount;}
+
 }

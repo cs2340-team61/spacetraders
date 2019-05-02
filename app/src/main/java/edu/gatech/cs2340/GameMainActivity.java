@@ -24,18 +24,18 @@ public class GameMainActivity extends AppCompatActivity {
 
         final GameViewModel tempViewModel = new GameViewModel(getApplication());
         TextView startMessage;
-        //Button goBank;
+        Button goBank;
         Button goMarket;
         Button goTravel;
-        //Button viewShip;
+        Button viewShip;
         Button saveGame;
         Button exit;
 
         startMessage = findViewById(R.id.start_msg);
-        //goBank = findViewById(R.id.button);
+        goBank = findViewById(R.id.button);
         goMarket = findViewById(R.id.button2);
         goTravel = findViewById(R.id.button4);
-        //viewShip = findViewById(R.id.button5);
+        viewShip = findViewById(R.id.button5);
         saveGame = findViewById(R.id.button8);
         exit = findViewById(R.id.button3);
 
@@ -72,6 +72,22 @@ public class GameMainActivity extends AppCompatActivity {
             }
         });
 
+        goBank.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bank();
+                finish();
+            }
+        });
+
+        viewShip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ship();
+                finish();
+            }
+        });
+
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,6 +103,16 @@ public class GameMainActivity extends AppCompatActivity {
 
     private void travel() {
         Intent intent = new Intent(this, TravelActivity.class);
+        startActivity(intent);
+    }
+
+    private void bank() {
+        Intent intent = new Intent(this, BankActivity.class);
+        startActivity(intent);
+    }
+
+    private void ship() {
+        Intent intent = new Intent(this, ShipStatsActivity.class);
         startActivity(intent);
     }
 

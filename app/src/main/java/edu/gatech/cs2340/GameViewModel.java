@@ -119,6 +119,4 @@ class GameViewModel extends AndroidViewModel {
     String getShipName() {
         return model.getShipName();
     }
-
-
 }

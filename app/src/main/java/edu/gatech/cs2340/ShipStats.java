@@ -5,8 +5,8 @@ import java.io.Serializable;
 class ShipStats implements Serializable {
     private int health;
     private int fuel;
-    private final int speed;
-    private final int laser;
+    private int speed;
+    private int laser;
     private static final int initialSpeed = 50;
     private static final int initialLaser = 50;
 
@@ -21,12 +21,8 @@ class ShipStats implements Serializable {
         fuel -= used;
     }
 
-    /*public void refillFuel(double fill) {
-        fuel += fill;
-    }
-
-    public void healthLoss(int amount) {
-        health -= amount;
+    public void refillFuel() {
+        fuel = 100;
     }
 
     public void fixShip() {
@@ -35,7 +31,11 @@ class ShipStats implements Serializable {
 
     public void upgradeSpeed() {
         speed += 10;
-    } */
+    }
+
+    public void upgradeLaser() {laser+= 10;}
+
+    public void upgradeHealth() {}
 
     public int getFuel() { return fuel; }
 

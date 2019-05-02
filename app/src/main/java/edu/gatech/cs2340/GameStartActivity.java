@@ -21,12 +21,12 @@ public class GameStartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game_start_activity);
 
         TextView startMessage = findViewById(R.id.start_msg);
-        //private Button goBank;
+        Button goBank;
         Button goMarket = findViewById(R.id.button2);
-        //goBank = findViewById(R.id.button);
+        goBank = findViewById(R.id.button);
         Button goTravel = findViewById(R.id.button4);
-        //viewShip = findViewById(R.id.button5);
-        //private Button viewShip;
+        Button viewShip;
+        viewShip = findViewById(R.id.button5);
         Button exit = findViewById(R.id.button3);
         gameViewModel = new GameViewModel(getApplication());
 
@@ -51,6 +51,22 @@ public class GameStartActivity extends AppCompatActivity {
             }
         });
 
+        goBank.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bank();
+                finish();
+            }
+        });
+
+        viewShip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ship();
+                finish();
+            }
+        });
+
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,6 +85,17 @@ public class GameStartActivity extends AppCompatActivity {
         Intent intent = new Intent(this, TravelActivity.class);
         startActivity(intent);
     }
+
+    private void bank() {
+        Intent intent = new Intent(this, BankActivity.class);
+        startActivity(intent);
+    }
+
+    private void ship() {
+        Intent intent = new Intent(this, ShipStatsActivity.class);
+        startActivity(intent);
+    }
+
 
     private Planet getPlayerLocation() {
         return gameViewModel.getPlayerLocation();

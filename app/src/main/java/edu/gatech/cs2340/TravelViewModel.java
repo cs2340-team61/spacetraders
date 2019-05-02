@@ -101,4 +101,20 @@ class TravelViewModel extends AndroidViewModel {
     SolarSystem[] getSolarSystems(Universe universe) {
         return universe.getSolarSystems();
     }
+
+    void addInterest() {model.updateInterest();}
+
+    int getCredits() {return model.getPlayer().getCredits();}
+
+    void refuelShip() {
+        model.refuelShip();
+    }
+
+    void upgradeSpeed() {model.upgradeSpeed();}
+
+    void upgradeLaser() {model.upgradeLaser();}
+
+    void fixShip() {
+        model.fixShip();
+    }
 }

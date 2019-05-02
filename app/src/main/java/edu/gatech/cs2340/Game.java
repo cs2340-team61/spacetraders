@@ -368,4 +368,17 @@ public class Game implements Serializable {
     int getBankCredits() {
         return bank.getBankCredits();
     }
+
+    void setBankCredits(int amount) {bank.setBankCredits(amount);}
+
+    void updateInterest() {bank.addInterest();}
+
+    void refuelShip() {shipStats.refillFuel();}
+
+    void upgradeSpeed() {shipStats.upgradeSpeed();}
+
+    void upgradeLaser() {shipStats.upgradeLaser();}
+
+    void fixShip() {shipStats.fixShip();}
+
 }

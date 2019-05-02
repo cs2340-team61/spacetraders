@@ -25,4 +25,8 @@ public final class Model {
      * @param g game variable
      */
     public void setMyGame(Game g) { myGame = g; }
+
+    public void clearGame() {
+        myGame = new Game();
+    }
 }

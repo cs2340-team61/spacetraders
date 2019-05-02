@@ -39,10 +39,10 @@ public class PirateActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Random random = new Random();
-                if (1 == random.nextInt(2)) {
+                if (0 == random.nextInt(1)) {
                     pirateHealth.setText("" + (Integer.parseInt(pirateHealth.getText().toString()) -
                             getLaser()));
-                    conText.setText("You dealt 50 damage to the Pirate");
+                    conText.setText("You dealt " + getLaser() + " damage to the Pirate");
                 } else {
                     conText.setText("Your attack missed, :(");
                 }
@@ -78,7 +78,7 @@ public class PirateActivity extends AppCompatActivity {
                     if (random.nextInt(3) == random.nextInt(3)) {
                         playerHealth.setText(""
                                 + (Integer.parseInt(playerHealth.getText().toString())
-                                - (getLaser() * 2 / 3)));
+                                - (50 * 2 / 3)));
 
                         if (getHealth() <= 0) {
                             gameOver();
