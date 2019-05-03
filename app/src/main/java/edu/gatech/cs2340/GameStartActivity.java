@@ -25,6 +25,7 @@ public class GameStartActivity extends AppCompatActivity {
         Button goMarket = findViewById(R.id.button2);
         goBank = findViewById(R.id.button);
         Button goTravel = findViewById(R.id.button4);
+        final Button stock = findViewById(R.id.stockB);
         Button viewShip;
         viewShip = findViewById(R.id.button5);
         Button exit = findViewById(R.id.button3);
@@ -47,6 +48,14 @@ public class GameStartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 travel();
+                finish();
+            }
+        });
+
+        stock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stock();
                 finish();
             }
         });
@@ -96,6 +105,10 @@ public class GameStartActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void stock() {
+        Intent intent = new Intent(this, StockActivity.class);
+        startActivity(intent);
+    }
 
     private Planet getPlayerLocation() {
         return gameViewModel.getPlayerLocation();

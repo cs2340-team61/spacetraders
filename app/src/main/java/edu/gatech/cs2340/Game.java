@@ -36,6 +36,7 @@ public class Game implements Serializable {
     private final ShipStats shipStats;
     private final RandomEvent rE;
     private final Bank bank;
+    private final Stock stock;
     /**
      * Method which initializes travel, ship stats,
      * and Random Events which might occur.
@@ -45,6 +46,7 @@ public class Game implements Serializable {
         shipStats = new ShipStats();
         rE = new RandomEvent();
         bank = new Bank();
+        stock = new Stock();
     }
     /**
      * Method which adds a Solar System to
@@ -380,5 +382,59 @@ public class Game implements Serializable {
     void upgradeLaser() {shipStats.upgradeLaser();}
 
     void fixShip() {shipStats.fixShip();}
+
+    void updateStock() {
+        stock.updateStock();
+    }
+
+    int getStock1() {return stock.getStock1();}
+
+    int getStock2() {return stock.getStock2();}
+
+    int getStock3() {return stock.getStock3();}
+
+    int getStock4() {return stock.getStock4();}
+
+    int getStock5() {return stock.getStock5();}
+
+    public int getStockOwned1() {
+        return stock.getStockOwned1();
+    }
+
+    public int getStockOwned2() {
+        return stock.getStockOwned2();
+    }
+
+    public int getStockOwned3() {
+        return stock.getStockOwned3();
+    }
+
+    public int getStockOwned4() {
+        return stock.getStockOwned4();
+    }
+
+    public int getStockOwned5() {
+        return stock.getStockOwned5();
+    }
+
+    void setStockOwned1(int amount) {
+        stock.setStockOwned1(amount);
+    }
+
+    void setStockOwned2(int amount) {
+        stock.setStockOwned2(amount);
+    }
+
+    void setStockOwned3(int amount) {
+        stock.setStockOwned3(amount);
+    }
+
+    void setStockOwned4(int amount) {
+        stock.setStockOwned4(amount);
+    }
+
+    void setStockOwned5(int amount) {
+        stock.setStockOwned5(amount);
+    }
 
 }

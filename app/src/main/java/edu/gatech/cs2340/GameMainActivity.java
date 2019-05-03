@@ -27,6 +27,7 @@ public class GameMainActivity extends AppCompatActivity {
         Button goBank;
         Button goMarket;
         Button goTravel;
+        final Button stock;
         Button viewShip;
         Button saveGame;
         Button exit;
@@ -35,6 +36,7 @@ public class GameMainActivity extends AppCompatActivity {
         goBank = findViewById(R.id.button);
         goMarket = findViewById(R.id.button2);
         goTravel = findViewById(R.id.button4);
+        stock = findViewById(R.id.stockButton);
         viewShip = findViewById(R.id.button5);
         saveGame = findViewById(R.id.button8);
         exit = findViewById(R.id.button3);
@@ -55,6 +57,14 @@ public class GameMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 travel();
+                finish();
+            }
+        });
+
+        stock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stock();
                 finish();
             }
         });
@@ -113,6 +123,11 @@ public class GameMainActivity extends AppCompatActivity {
 
     private void ship() {
         Intent intent = new Intent(this, ShipStatsActivity.class);
+        startActivity(intent);
+    }
+
+    private void stock() {
+        Intent intent = new Intent(this, StockActivity.class);
         startActivity(intent);
     }
 

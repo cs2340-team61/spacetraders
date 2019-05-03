@@ -211,6 +211,7 @@ public class TravelActivity extends AppCompatActivity {
                         updateFuel(getFuelCost(getDistance(getX(update),
                                 getX(playerLocation), getY(update), getY(playerLocation))));
                         travelViewModel.addInterest();
+                        travelViewModel.updateStock();
                         int eventCheck = travelViewModel.checkForEvent();
                         if (eventCheck == 1) {
                             pirateStart();

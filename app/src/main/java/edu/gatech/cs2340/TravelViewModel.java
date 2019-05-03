@@ -117,4 +117,36 @@ class TravelViewModel extends AndroidViewModel {
     void fixShip() {
         model.fixShip();
     }
+
+    void updateStock() {model.updateStock();}
+
+    int getStock1() {return model.getStock1();}
+
+    int getStock2() {return model.getStock2();}
+
+    int getStock3() {return model.getStock3();}
+
+    int getStock4() {return model.getStock4();}
+
+    int getStock5() {return model.getStock5();}
+
+    int getStockOwned1() {return model.getStockOwned1();}
+
+    int getStockOwned2() {return model.getStockOwned2();}
+
+    int getStockOwned3() {return model.getStockOwned3();}
+
+    int getStockOwned4() {return model.getStockOwned4();}
+
+    int getStockOwned5() {return model.getStockOwned5();}
+
+    void setStockOwned1(int amount) {model.setStockOwned1(amount);}
+
+    void setStockOwned2(int amount) {model.setStockOwned2(amount);}
+
+    void setStockOwned3(int amount) {model.setStockOwned3(amount);}
+
+    void setStockOwned4(int amount) {model.setStockOwned4(amount);}
+
+    void setStockOwned5(int amount) {model.setStockOwned5(amount);}
 }
