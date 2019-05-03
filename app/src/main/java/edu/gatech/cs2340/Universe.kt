@@ -1,44 +1,43 @@
-package edu.gatech.cs2340;
+package edu.gatech.cs2340
 
-import java.io.Serializable;
-import java.util.Random;
+import java.io.Serializable
+import java.util.Random
+
 /**
  * Class for Universe creation
  */
-public class Universe implements Serializable {
+class Universe : Serializable {
     //private final int xLow;
     //private final int xHigh;
     //private final int yLow;
     //private final int yHigh;
-    private int numOfSS;
-    private int nameHelp;
-    //private static final int xBound = 250;
-    //private static final int yBound = 250;
-    private static final int nameDivisor = 13;
-    private static final int spreader = 50;
+    private var numOfSS: Int = 0
+    private var nameHelp: Int = 0
 
-    private final SolarSystem[] solarSystems;
+    private val solarSystems: Array<SolarSystem?>
+
     /**
      * Method that creates a Universe
      *
      */
-    public Universe() {
+    init {
         //xHigh = xBound;
         //xLow = 0;
         //yHigh = yBound;
         //yLow = 0;
-        numOfSS = 0;
-        Random rand = new Random();
-        nameHelp = rand.nextInt(nameDivisor);
-        solarSystems = new SolarSystem[5];
+        numOfSS = 0
+        val rand = Random()
+        nameHelp = rand.nextInt(nameDivisor)
+        solarSystems = arrayOfNulls(5)
     }
+
     /**
      * Method to add a SolarSystem to an existing Universe
      */
-    public void addSolarSystem() {
-        solarSystems[numOfSS] = new SolarSystem(numOfSS * spreader, nameHelp % nameDivisor);
-        numOfSS++;
-        nameHelp++;
+    fun addSolarSystem() {
+        solarSystems[numOfSS] = SolarSystem(numOfSS * spreader, nameHelp % nameDivisor)
+        numOfSS++
+        nameHelp++
     }
 
     /*public int getxHigh() { return xHigh; }
@@ -52,7 +51,16 @@ public class Universe implements Serializable {
      * Getter Method for Solar System
      * @return an array of the SolarSystem
      */
-    public SolarSystem[] getSolarSystems() { return solarSystems.clone(); }
+    fun getSolarSystems(): Array<SolarSystem?> {
+        return solarSystems.clone()
+    }
+
+    companion object {
+        //private static final int xBound = 250;
+        //private static final int yBound = 250;
+        private val nameDivisor = 13
+        private val spreader = 50
+    }
 
     /*private String getSSData(SolarSystem solarSystem) {
         return solarSystem.toString();
